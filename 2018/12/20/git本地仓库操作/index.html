@@ -8,10 +8,10 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="Hello World">
+  <meta property="og:title" content="Hexo">
   <meta property="og:description" content="">
   <meta property="og:site_name" content="Hexo">
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="website">
   <meta property="og:image" content="http://yoursite.com">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -43,7 +43,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">Hello World</p>
+          <p class="title">Untitled Post</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -99,7 +99,7 @@
           
           <!-- Date -->
           <span class="date-time info">On
-            <span class="date">2018-12-19</span>
+            <span class="date">2018-12-20</span>
             <span class="time">17:49:31</span>
           </span>
           
@@ -108,15 +108,31 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+          <p><strong>注意：切换版本时需保持工作区clean</strong><br>git使用：工作区+.git（缓存区+本地仓库）</p>
+<blockquote>
+<p>1.创建一个空文件夹，作为本地仓库</p>
+</blockquote>
+<p>Initialized empty Git repository in D:/python/软件/git本地仓库/.git/  （在该文件夹目录下git init创建仓库；创建成功）</p>
+<blockquote>
+<p>2.在仓库新建hello.py文件</p>
+</blockquote>
+<p>问题1：git config –global user.email “<a href="mailto:you@example.com" target="_blank" rel="noopener">you@example.com</a>“  解决：git config –global user.email “<a href="mailto:1607470930@qq.com" target="_blank" rel="noopener">1607470930@qq.com</a>“<br>           git config –global user.name “Your Name”             解决：git config –global user.name “Z”</p>
+<blockquote>
+<blockquote>
+<p>git add hello.py           将工作区对应的文件添加到仓库缓存区中<br>git add -A                   将当前工作区目录中所有文件添加到缓存区中<br>git commit -m ‘创建文件’           将缓存区所有文件放在本地仓库中；并写好提交日志。<br>git commit -a -m ‘创建文件’<br>注意：commit 7f351e2da066f63a756e5e2fd586a842c176d8e4 (HEAD -&gt; master)<br>HEAD -&gt; master     这是现在的版本<br>7f351e2da066f63a756e5e2fd586a842c176d8e4  这是对应的版本号</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>git status                                   查看状态信息，在工作区修改了未提交为红色；修改了提交到缓存区未提交到仓库为绿色<br>git log                                       查看修改信息及日志<br>git reset –hard                            回到仓库中保存的最新版本<br>git reset –hard HEAD^^                        回到当前版本的上一个版本</p>
+</blockquote>
+</blockquote>
+<p><strong>注意：</strong>在windows的cmd控制台下操作git，想要回滚到上一次提交，但是输入git reset –hard HEAD^后就显示more?，多按<br>几次回车后就报错<br>这是因为cmd控制台中换行符默认是^，而不是\ ，所以它的more？的意思是问你下一行是否需要再输入，而^ 符号就被当做换<br>行符而被git命令忽略掉了。<br>解决方法有如下几种：<br>加引号：git reset –hard “HEAD^”<br>加一个^：git reset –hard HEAD^^<br>换成~：git reset –hard HEAD~ 或者 git reset –hard HEAD~1<br>~ 后面的数字表示回退几次提交，<br>默认是一次<br>当然还可以换成git bash，powershell等就不会出现这种问题了</p>
+<blockquote>
+<blockquote>
+<p>git reset –hard 1da602c5a92e2bd3eb9c6279ad4bfec48688c53a      回到对应版本号的版本<br>git checkout – 文件名                让工作区指定的文件回到上次提交后的状态<br>git push -u origin master(分支名)            提交分支，第一次提交时加-u<br>git config –global i18n.commitencoding utf-8<br>git config –global i18n.logoutputencoding utf-8<br>SET LESSCHARSET=utf-8                    cmd中设置git提示信息为中文<br>HEAD is now at 7f351e2 ‘添加一张图片’          切换版本成功</p>
+</blockquote>
+</blockquote>
 
         </div>
       </div>
