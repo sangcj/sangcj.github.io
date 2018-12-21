@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="#8.1 字典相关方法  1.clear字典.clear() - 清空字典（删除字典中所有的键值对）123dict1 = &amp;#123;&apos;a&apos;: 100, &apos;b&apos;: 200 &amp;#125;dict1.clear()print(dict1)        # &amp;#123;&amp;#125;   2.copy字典.copy() - 复制字典中所有的键值对产生一个新的字典(浅拷贝)1234567dict1 = &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="四川小旋风">
+<meta property="og:url" content="http://yoursite.com/2018/12/21/day8-函数基础知识总结/index.html">
+<meta property="og:site_name" content="四川小旋风">
+<meta property="og:description" content="#8.1 字典相关方法  1.clear字典.clear() - 清空字典（删除字典中所有的键值对）123dict1 = &amp;#123;&apos;a&apos;: 100, &apos;b&apos;: 200 &amp;#125;dict1.clear()print(dict1)        # &amp;#123;&amp;#125;   2.copy字典.copy() - 复制字典中所有的键值对产生一个新的字典(浅拷贝)1234567dict1 = &amp;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-21T01:31:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="四川小旋风">
+<meta name="twitter:description" content="#8.1 字典相关方法  1.clear字典.clear() - 清空字典（删除字典中所有的键值对）123dict1 = &amp;#123;&apos;a&apos;: 100, &apos;b&apos;: 200 &amp;#125;dict1.clear()print(dict1)        # &amp;#123;&amp;#125;   2.copy字典.copy() - 复制字典中所有的键值对产生一个新的字典(浅拷贝)1234567dict1 = &amp;">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/21/day8-函数基础知识总结/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title> | 四川小旋风</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">四川小旋风</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-首页">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-标签">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-分类">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-归档">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-日程表">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>日程表</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-关于">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/21/day8-函数基础知识总结/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="酱油壹号">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tusun.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="四川小旋风">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-21 09:34:21 / 修改时间：09:31:35" itemprop="dateCreated datePublished" datetime="2018-12-21T09:34:21+08:00">2018-12-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div>  <div>
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+ </div>
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#8.1 字典相关方法</p>
+<blockquote>
+<p>1.clear<br>字典.clear() - 清空字典（删除字典中所有的键值对）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">'a'</span>: <span class="number">100</span>, <span class="string">'b'</span>: <span class="number">200</span> &#125;</span><br><span class="line">dict1.clear()</span><br><span class="line">print(dict1)        <span class="comment"># &#123;&#125;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>2.copy<br>字典.copy() - 复制字典中所有的键值对产生一个新的字典(浅拷贝)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">'a'</span>: <span class="number">100</span>, <span class="string">'b'</span>: <span class="number">200</span> &#125;</span><br><span class="line">dict2 = dict1</span><br><span class="line">print(dict2)               <span class="comment"># &#123;'a': 100, 'b': 200 &#125;</span></span><br><span class="line"></span><br><span class="line">dict1 = &#123;<span class="string">'a'</span>: <span class="number">100</span>, <span class="string">'b'</span>: <span class="number">200</span> &#125;</span><br><span class="line">dict2 = dict1.copy()        <span class="comment"># 这会产生新的地址，改变1不会影响2</span></span><br><span class="line">print(dict2)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>3.fromkeys<br>通过字典类型来调用，是类方法，静态方法<br>dict.fromkeys(序列，值) - 以序列中元素作为key，值作为所有key对应的默认值，创建一个字典。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dict3 = dict.fromkeys(<span class="string">'abc'</span>, <span class="number">100</span>)</span><br><span class="line">print(dict3)                          <span class="comment">#  &#123;'a': 100, 'b': 100, 'c': 100&#125;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>4.get<br>字典.get（key） - 获取key对应的值，如果key不存在，返回None。<br>字典.get（key， 值1） - 获取key对应的值，如果key不存在，返回值1。<br>值1可以是任意类型。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(dict3.get(<span class="string">'d'</span>))             <span class="comment"># None</span></span><br><span class="line">print(dict3.get(<span class="string">'d'</span>, <span class="number">0</span>))          <span class="comment"># 0</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>5.keys,values,items<br>字典.keys() - 获取字典所有的key（返回一个序列，序列中元素就是字典的key）<br>字典.values() - 获取字典所有的值（返回一个序列，序列中元素就是字典的value）<br>字典.items() - 获取字典所有的键值对（返回一个序列，序列中元素是元组，元组中<br>元素有两个，分别为key和value）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">'a'</span>: <span class="number">100</span>, <span class="string">'b'</span>: <span class="number">200</span>, <span class="string">'c'</span>:<span class="number">120</span>&#125;</span><br><span class="line">keys = dict1.keys()</span><br><span class="line">print(keys, type(keys))  <span class="comment"># dict_keys(['a', 'b', 'c']) &lt;class 'dict_keys'&gt;</span></span><br><span class="line"><span class="comment">#只是一个单纯的序列，可遍历(for i in keys:)，但若要单独取则需要先转换成列表或元组等。</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> keys:</span><br><span class="line">    print(i)       <span class="comment"># a b c</span></span><br><span class="line"></span><br><span class="line">print(dict1.items()) <span class="comment"># dict_items([('a', 100), ('b', 200), ('c', 120)])生成式</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>6.setdefault(key, value)<br>字典.setdefault(key, value) - 给字典添加键值对，如果字典中已存在key则不会修改相应的值。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">'a'</span>: <span class="number">100</span>, <span class="string">'b'</span>: <span class="number">200</span>, <span class="string">'c'</span>:<span class="number">120</span>&#125;</span><br><span class="line">dict1.setdefault(<span class="string">'a'</span>, <span class="number">300</span>)</span><br><span class="line">print(dict1)               <span class="comment"># &#123;'a': 100, 'b': 200, 'c': 120&#125;</span></span><br><span class="line">dict1.setdefault(<span class="string">'d'</span>, <span class="number">300</span>)</span><br><span class="line">print(dict1)               <span class="comment"># &#123;'a': 100, 'b': 200, 'c': 120, 'd': 300&#125;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>#8.2 集合基本操作</p>
+<blockquote>
+<p>1.什么是集合（set）<br>集合是python内置的一个容器类数据类型，是可变、无序的<br>字面量 - 使用{}括起来，里面有多个元素，多个元素之间用逗号隔开{1， 2， 3}<br>元素 - 不是键值对；必须是不可变的，而且是唯一的。可用于列表去重！！<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">set1 = &#123;<span class="number">1</span>, <span class="string">'hello'</span>, (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)&#125;</span><br><span class="line"><span class="comment">#set2 = &#123;1, 'hello', [1, 2, 3]&#125;  # TypeError: unhashable type: 'list'</span></span><br><span class="line">set3 = &#123;<span class="number">1</span>, <span class="string">'hello'</span>, (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>), <span class="keyword">True</span>, <span class="number">1</span>&#125;</span><br><span class="line">print(set3)         <span class="comment"># &#123;'hello', 1, (1, 2, 3)&#125;</span></span><br><span class="line"></span><br><span class="line">set4 = &#123;&#125;</span><br><span class="line">print(type(set4))  <span class="comment">#  &lt;class 'dict'&gt;</span></span><br><span class="line">set4 = set()       <span class="comment"># 创建一个空的集合</span></span><br><span class="line">print(type(set4))  <span class="comment">#  &lt;class 'set'&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>2.集合的增删改查</p>
+</blockquote>
+<blockquote>
+<p>a.查（获取集合元素）<br>不能直接获取集合中单独的某个元素，只能遍历。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> set3:</span><br><span class="line">    print(item)         <span class="comment">#1   hello   (1, 2, 3)</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>b.增（添加元素）<br>集合.add（元素） - 将指定的元素添加到集合中<br>集合.update（序列） - 将序列中的每个元素添加到集合中<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set3.add(<span class="number">333</span>)</span><br><span class="line">set3.update([<span class="number">222</span>, <span class="number">3333</span>, <span class="number">2323</span>])</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>c.删（集合中只有remove）<br>集合.remove（元素） - 删除集合中指定的元素<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set3.remove(<span class="number">333</span>)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>d.集合不能修改元素的值，无序的拿不到，只能增加<br>set(序列) - 将序列转换成集合</p>
+</blockquote>
+<p>#8.3 数学集合运算<br><strong>python中的集合支持数学相关的集合运算</strong></p>
+<blockquote>
+<ol>
+<li>包含关系<br>集合1 &gt;= 集合2   判断集合1中是否包含集合2（判断集合2是否是1的子集）<br>集合1 &lt;= 集合2   判断集合2中是否包含集合1（判断集合1是否是2的子集）<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125; &gt;= &#123;<span class="number">1</span>, <span class="number">2</span>&#125;)     <span class="comment"># True</span></span><br><span class="line">print(&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125; &gt;= &#123;<span class="number">1</span>, <span class="number">10</span>&#125;)     <span class="comment"># False</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>求并集<br>集合1 | 集合2 - 将两个集合中的元素合并在一起产生一个新的集合<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">set2 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>&#125;</span><br><span class="line">print(set1 | set2)            <span class="comment">#   &#123;1, 2, 3, 4, 5, 6, 7, 8, 9&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>求交集<br>集合1 &amp; 集合2 - 使用两集合的公共元素创建一个新的集合<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(set1 &amp; set2)           <span class="comment">#     &#123;1, 2, 3, 4, 5, 6&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li>求差集<br>集合1 - 集合2 – 使用集合1中除了（1和2共有的部分）集合2的部分以外的元素，创建一个新的集合 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(set2 - set1)   <span class="comment">#   &#123;8, 9, 7&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="5">
+<li>求补集<br>补集 = 并集 - 交集<br>集合1 ^ 集合2 - 将俩个集合中除了公共部分以外的元素，创建为一个新的集合<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(set1 ^ set2)   <span class="comment"># &#123;8, 9, 7&#125;集合无序</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<p>#8.4 认识函数</p>
+<blockquote>
+<ol>
+<li>函数的定义<br><strong>定义：</strong><br>函数就是对实现某一特定代码段的封装。<br><strong>分类：</strong><br><strong>函数可以分为python内置函数和自定义函数</strong><br><strong>内置函数：</strong>python已经声明好了，程序员直接调用的函数。print函数，input函数等。<br>max和min函数等。相当于已经造好的机器，程序员只需要知道使用方法。<br><strong>自定义函数：</strong>程序员自己声明，自己实现功能的函数。可以提供给别人用，也可以自己用。相当于自己设置和创建机器。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>函数的声明<br>语法：<br>def 函数名（形参列表）：<br> “””‘函数说明文档’”””<br> 函数体<br>说明：<br>def - python中声明函数的关键字<br>函数名 - 自己命名；要求：标识符，不能是关键字。<pre><code>PEP8规范（名字中的字母小写，多个单词之间用下划线隔开），见名知意（
+看到函数名，大概知道函数的功能）
+</code></pre>（） - 固定写法<br>形参列表 - 一个或多个参数也可以没有参数。<pre><code>作用：从函数外部向函数内部传递数据
+</code></pre>： - 固定写法<br>函数说明文档 - 用来对函数功能进行说明的注释。需要用3个”引起来。<br>函数体 - 实现函数功能的代码段</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>初学者函数声明步骤：<br>1.确定函数功能<br>2.根据函数功能，确定函数名<br>3.确定参数，看实现函数功能需不需要向内部传递额外的数据。需要几个数据就需要几<br>个参数。<br>4.实现函数功能<br>5.确定返回值<br>前后两行。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 声明一个函数求两数和,并打印</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(num1, num2)</span>:</span></span><br><span class="line">    <span class="string">"""求两个数的和"""</span></span><br><span class="line">    <span class="keyword">return</span> num1 + num2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(add(<span class="number">4</span>, <span class="number">5</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 声明一个函数,打印10个‘*’</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_star</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'*'</span> * <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print_star()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 声明一个函数,求1+2+3+。。。+n</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum1</span><span class="params">(num1)</span>:</span></span><br><span class="line">    sum2 = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, num1 + <span class="number">1</span>):</span><br><span class="line">        sum2 += i</span><br><span class="line">    <span class="keyword">return</span> sum2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(sum1(<span class="number">10</span>))</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>函数的调用<br>（重点）函数在声明时不会执行函数体，只有在调用时才会执行<br>语法：<br>函数名（实参列表）<br>说明：<br>函数名 - 必须是已经声明好的函数<br>（） - 固定写法<br>实参列表 - 给形参赋值（需要传递给函数内部的数据）<pre><code>目前，形参有多少个，实参就需多少个。
+</code></pre></li>
+</ol>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+    
+    <div>
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+
+    
+    </div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/21/day9-作业/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/21/day11-文件操作/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </div></div></div></div></article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/tusun.png" alt="酱油壹号">
+            
+              <p class="site-author-name" itemprop="name">酱油壹号</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/yourname" title="GitHub &rarr; https://github.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:yourname@gmail.com" title="E-Mail &rarr; mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">酱油壹号</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+      
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>

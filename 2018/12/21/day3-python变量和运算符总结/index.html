@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="#1.变量 ##1.1声明变量（定义变量）  变量就是在程序中用来保存数据的容器 在python中是个假的声明，语法：变量名 = 值  说明：变量名 – 要求：标识符，不能是关键字 **规范：**   **a.**遵守PEP8命名规范（变量名名字的所有字母都小写，如果由多个单词组成，单词之间用_隔开），如：student_name   **b.**见名知义（看到名字就知道变量中存的是什么数据） “">
+<meta property="og:type" content="article">
+<meta property="og:title" content="四川小旋风">
+<meta property="og:url" content="http://yoursite.com/2018/12/21/day3-python变量和运算符总结/index.html">
+<meta property="og:site_name" content="四川小旋风">
+<meta property="og:description" content="#1.变量 ##1.1声明变量（定义变量）  变量就是在程序中用来保存数据的容器 在python中是个假的声明，语法：变量名 = 值  说明：变量名 – 要求：标识符，不能是关键字 **规范：**   **a.**遵守PEP8命名规范（变量名名字的所有字母都小写，如果由多个单词组成，单词之间用_隔开），如：student_name   **b.**见名知义（看到名字就知道变量中存的是什么数据） “">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-21T01:31:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="四川小旋风">
+<meta name="twitter:description" content="#1.变量 ##1.1声明变量（定义变量）  变量就是在程序中用来保存数据的容器 在python中是个假的声明，语法：变量名 = 值  说明：变量名 – 要求：标识符，不能是关键字 **规范：**   **a.**遵守PEP8命名规范（变量名名字的所有字母都小写，如果由多个单词组成，单词之间用_隔开），如：student_name   **b.**见名知义（看到名字就知道变量中存的是什么数据） “">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/21/day3-python变量和运算符总结/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title> | 四川小旋风</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">四川小旋风</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-首页">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-标签">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-分类">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-归档">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-日程表">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>日程表</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-关于">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/21/day3-python变量和运算符总结/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="酱油壹号">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tusun.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="四川小旋风">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-21 09:34:21 / 修改时间：09:31:35" itemprop="dateCreated datePublished" datetime="2018-12-21T09:34:21+08:00">2018-12-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div>  <div>
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+ </div>
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#1.变量</p>
+<p>##1.1声明变量（定义变量）</p>
+<ul>
+<li>变量就是在程序中用来保存数据的容器</li>
+<li><p>在python中是个假的声明，<br>语法：<br>变量名 = 值</p>
+</li>
+<li><p>说明：<br>变量名 – 要求：标识符，不能是关键字</p>
+<pre><code>**规范：**
+  **a.**遵守PEP8命名规范（变量名名字的所有字母都小写，如果由多个单词组成，单词之间用_隔开），如：student_name
+  **b.**见名知义（看到名字就知道变量中存的是什么数据）
+</code></pre><p><strong>“=”</strong> – 赋值符号，将=右边的值放入左边的变量中<br><strong>值</strong> – 可以是任何有结果的表达式，如：190 ， 变量 ， 调用函数表达式等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">age = 18</span><br><span class="line">name = &apos;小王&apos;</span><br><span class="line">number = 666</span><br><span class="line">print(age,name,number,sep=&apos;-----&gt;&apos;)   #使用变量，就是使用变量中保存的值</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#变量必须先声明（赋值）再使用</span><br><span class="line">#同时给多个变量赋同一个值</span><br><span class="line">num1 = num2 = num3 = 66</span><br><span class="line">print(num1,num2,num3)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#同时给多个变量赋不同的值。（注意：变量的个数和值的个数要保持一致）</span><br><span class="line">n1,n2,n3 = 1,2,3</span><br><span class="line">print(n1,n2,n3)</span><br><span class="line"></span><br><span class="line">num4 = 100</span><br><span class="line">num4 = 200</span><br><span class="line">print(num4)  #给同一个变量赋值，后附的值会覆盖掉先附的值</span><br><span class="line">num4 = &apos;abc&apos;</span><br><span class="line">print(num4)  #同一个变量可以存储不同类型的值！！！</span><br><span class="line">num4 = [1,2,3]</span><br><span class="line">print(num4)</span><br><span class="line">num4 = &#123;&apos;a&apos;:100,&apos;b&apos;:200&#125;</span><br><span class="line">print(num4)</span><br></pre></td></tr></table></figure>
+<p>##1.2python中声明变量和给变量赋值的本质</p>
+<blockquote>
+<p>C中声明变量：<br>int num = 10;</p>
+</blockquote>
+<blockquote>
+<p>Python中声明变量：<br>num = 10<br>num = ‘321ewqfwfdfwgtre’</p>
+</blockquote>
+<p><strong>结论：</strong></p>
+<ul>
+<li>python中所有的变量，存的都是数据在内存中的地址（即C中的指针）。内存地址的大小一样，修改变量也只是改变num对应的地址。</li>
+<li>用一个变量给另一个变量赋值，实质是将新变量地址赋给旧的变量。<br>使用变量的时候，是使用的变量中地址对应的值。<br>##1.3变量的三要素：值、地址和类型<br><strong>值：</strong>变量中存的地址对应的值<br><strong>地址：</strong>变量中存储的地址（id）<br><strong>类型：</strong>变量中存的地址对应的类型<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">name1 = <span class="string">'小明'</span></span><br><span class="line">name2 = name1</span><br><span class="line"></span><br><span class="line">print(name1)               <span class="comment">#使用变量拿到变量中地址对应的值</span></span><br><span class="line">print(id(name1))           <span class="comment">#id(变量) -- 获取变量中存储的地址</span></span><br><span class="line">print(id(name2))           <span class="comment">#两者地址相同，获取的是同一个地址。</span></span><br><span class="line">print(type(name1))         <span class="comment">#查看变量中地址对应的类型</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>#2.运算符</p>
+<ul>
+<li>python中的运算符：数学运算符，比较运算符，逻辑运算符，赋值运算符，位运算符。<br>##2.1数学运算符：+ - * / % // **<blockquote>
+<p>+：加法运算<br>-：减法运算<br>*：乘法运算<br>/：除法运算<br>%：求余运算<br>//：整除<br>**：幂运算</p>
+</blockquote>
+</li>
+</ul>
+<p>###2.1.1  %  应用：<br>1.获取一个整数的最低位的一位或几位的值    num % （10^n）<br>2。判断一个数是否能被另一个数整除     num1 % num2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print(10 % 3)     # % -- 取余</span><br><span class="line">#获取一个数的个位数</span><br><span class="line">num = 23232432</span><br><span class="line">print(num % 10)    #3</span><br><span class="line">print(num % 100)   #23</span><br><span class="line">#与2取余可判断奇偶性</span><br></pre></td></tr></table></figure></p>
+<p>###2.1.2 // – 求商，获取商的整数部分<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="number">5</span>//<span class="number">2</span>)     <span class="comment">#2</span></span><br><span class="line">print(<span class="number">3.9</span>//<span class="number">3</span>)   <span class="comment">#1.0</span></span><br><span class="line"></span><br><span class="line">num = <span class="number">289</span></span><br><span class="line">print(num // <span class="number">100</span>)    <span class="comment">#取一个3位数百位上的值</span></span><br></pre></td></tr></table></figure></p>
+<p>###2.1.3 ** – 幂运算<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#x**y --  求x的y次方</span><br><span class="line">print(2**10)     #2的10次方</span><br><span class="line">print(9**0.5)    #9开平方，结果为浮点数</span><br><span class="line">print(8**(1/3))  #8开3次方，结果为浮点数</span><br></pre></td></tr></table></figure></p>
+<p>##2.2比较运算符： &gt; &lt; == != &gt;= &lt;=<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#所有的比较运算符的结果都是布尔值。</span><br><span class="line">print(100 &gt; 10)     #True</span><br><span class="line">print(10 &gt; 100)     #False</span><br></pre></td></tr></table></figure></p>
+<p>##2.3逻辑运算符： and or not<br><strong>逻辑运算符的运算对象及结果都是布尔值。</strong></p>
+<p>###2.3.1 and – 逻辑‘与’运算</p>
+<ul>
+<li>值1 and 值2：判断是否为真，<pre><code>如果两者都为True，则结果为True；
+果两者有一个为False，则结果为False。
+</code></pre></li>
+<li>逻辑与运算相当于生活中的‘并且’；当需要多个条件同时满足，就使用and将多个条件连接在一起<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grade = 99</span><br><span class="line">score = 80</span><br><span class="line">print(&apos;是否获取奖学金：&apos;,grade &gt; 90 and score&gt;95)       #False</span><br><span class="line">#例子：要求成绩大于90，且表现分大于95，才能获得奖学金</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>###2.3.2 or – 逻辑‘或’运算</p>
+<ul>
+<li>值1 or 值2：<br>如果值1 和 值2 有一个True就为真，两个都为False才为False</li>
+<li>逻辑或运算，相当于生活中的‘或者’。当需要多个条件中至少有一个条件满足，就用or连接。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grade = 99</span><br><span class="line">score = 80</span><br><span class="line">print(&apos;是否获取奖学金：&apos;,grade &gt; 90 or score&gt;95)       #False</span><br><span class="line">#例子：要求成绩大于90，且表现分大于95，才能获得奖学金</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>###2.3.3 not – 逻辑‘非’运算</p>
+<ul>
+<li>not 值 ： 如果值是True，结果就是False；如果值是False，结果就是True。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">age = 21</span><br><span class="line">print(&apos;是否能进入网吧：&apos;,not age &lt; 18 )         #True</span><br><span class="line">#not用来对某个条件进行否定。</span><br><span class="line">print(&apos;是否能进入网吧：&apos;,age &gt; 18 )             #True</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>#3.赋值运算和位运算</p>
+<p>##3.1赋值运算符：= += -= /= *= %= //= **=</p>
+<blockquote>
+<p>所有赋值符的左边必须是变量；组合的赋值运算符的左边的变量必须已经赋值；<br>所有赋值运算符最终都会进行赋值操作</p>
+</blockquote>
+<p>###3.1.1 = – 直接将右边结果赋给左边的变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">num = 100</span><br></pre></td></tr></table></figure></p>
+<p>###3.1.2 += -= *= /= %= //= **=</p>
+<blockquote>
+<p>变量 += 值 –&gt; 相当于 变量 = 变量 + 值<br>变量 -= 值 –&gt; 相当于 变量 = 变量 - 值<br>变量 <em>= 值 –&gt; 相当于 变量 = 变量 </em> 值<br>变量 /= 值 –&gt; 相当于 变量 = 变量 / 值<br>变量 %= 值 –&gt; 相当于 变量 = 变量 % 值<br>变量 //= 值 –&gt; 相当于 变量 = 变量 // 值<br>变量 <strong>= 值 –&gt; 相当于 变量 = 变量 </strong> 值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">num1 = 1</span><br><span class="line">num1 += 10</span><br><span class="line">print(num1)</span><br><span class="line"></span><br><span class="line">num1 *= 3</span><br><span class="line">print(num1)</span><br><span class="line"></span><br><span class="line">num1 %= 2</span><br><span class="line">print(num1)</span><br><span class="line"></span><br><span class="line">num1 -= -100</span><br><span class="line">num1 //= 2</span><br><span class="line">print(num1)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>##3.2运算符的优先级</p>
+<ul>
+<li>数学运算符 &gt; 比较运算符 &gt; 逻辑运算符 &gt; 赋值运算符<br>优先级高的先算。如果有括号，先算括号里面的。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">num = 10 + 20 &gt; 25 and True &lt;2</span><br><span class="line">#num = 30 &gt; 25 and True &lt;2</span><br><span class="line">#num = True and True</span><br><span class="line">#num = True</span><br><span class="line">print(num)</span><br><span class="line"></span><br><span class="line">num = 10 + (20 &gt; 25 and True &lt;2)</span><br><span class="line">#num = 10 + (False and True &lt; 2)</span><br><span class="line">#num = 10 + False</span><br><span class="line">#num = 10</span><br><span class="line"></span><br><span class="line">num = 10 + 2*3**2         #  28 ** &gt; *</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##3.3位运算</p>
+<ul>
+<li>符号： &amp;（按位与） |（按位或） ^（按位异或） ~(按位取反) &lt;&lt;(左移) &gt;&gt;(右移)</li>
+<li>位运算是针对二进制中每一位进行的相关操作<br>###3.3.1 &amp;<blockquote>
+<p>数字1 &amp; 数字2 —&gt; 对二进制数的每一位进行‘与’运算，运算时如果都为1结果就是1，否则为0。<br>1 &amp; 1 = 1<br>1 &amp; 0 = 0<br>0 &amp; 1 = 0<br>0 &amp; 0 = 0<br>与的特点： 一位上的数如果和1与，就会保留这一位上的数。如果和0与，就会将这一位，置0。<br>11010 &amp; 00111 = 00010<br>3(原) =  0011 = 3（补）<br>2（原）= 0010 = 2（补）<br>-2（补）= 1110      0010<br>0010</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>与运算的应用：判断一个数是否是偶数（最优算法）<br>二进制数末尾为1则为奇数  1101 &amp; 1 —&gt;  1  奇数<br>二进制数末尾为0则为偶数  1100 &amp; 1 —&gt;  0  偶数<br>将数字和1与，如果结果为0，则为偶数。<br>将数字和1与，如果结果为1，则为奇数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(3 &amp; 2)</span><br><span class="line">print(3 &amp; -2)</span><br><span class="line"></span><br><span class="line">print(88 &amp; 1)    # 0</span><br><span class="line">print(99 &amp; 1)    # 1</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>###3.3.2 |</p>
+<blockquote>
+<p>数字1 | 数字2 —&gt; 对二进制数的每一位进行‘或’运算，运算时如果都为0结果就是0；如果有一个为1，则为1。<br>1 | 1 = 1<br>1 | 0 = 1<br>0 | 1 = 1<br>0 | 0 = 0<br>1101 | 1010 = 1111</p>
+</blockquote>
+<blockquote>
+<p>3 | 2<br>011 | 010 —&gt; 011<br>3 | 20<br>000011 | 010100 —&gt; 010111 补码<br>-3 | 20<br>111101 补码<br>010100 —&gt; 111101补码  111100反码–&gt;100011原码–&gt;-3<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(3 | 1)</span><br><span class="line">print(3 | 0)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>###3.3.3 按位取反</p>
+<blockquote>
+<p>~ 数字 ：将每一位取反（0–&gt;1,1–&gt;0），对补码取反<br>~2 010 101补码 100反码 111原码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(~2)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>###3.3.4 按位异或</p>
+<blockquote>
+<p>数字1 ^ 数字2 – 每一位相同为0，不同为1。<br>1 ^ 1 = 0<br>1 ^ 0 = 1<br>0 ^ 1 = 1<br>0 ^ 0 = 0</p>
+</blockquote>
+<blockquote>
+<p>11 ^ 2<br>0 1011 ^ 0 0010 = 0 1001(补码)<br>可用于判断两个值是否相等，相同为0，不同不为0。<br>print(11 ^ 2)        # 9</p>
+</blockquote>
+<p>###3.3.4 左移</p>
+<blockquote>
+<p>数字1 &lt;&lt; n（位数） - 将数字1的二进制数的每一位向左移n位，移出多少位后面加多少个0。即在数字后面加n个0。<br>10 &lt;&lt; 1<br>0000 1010（补码） —&gt; 0001 0100（补码）<br>0001 0100<br><strong>结论：数字1 &lt;&lt; n = 数字1 * 2^n</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print(10 &lt;&lt; 1)         # 20</span><br><span class="line">print(10 &lt;&lt; 2)        # 40</span><br><span class="line">print(10 &lt;&lt; 3)        # 80</span><br><span class="line">print(-10 &lt;&lt; 1)       # -20</span><br><span class="line">print(-10 &lt;&lt; 2)       # -40</span><br><span class="line">print(-10 &lt;&lt; 3)       # -80</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>###3.3.5 右移</p>
+<ul>
+<li>数字1 &gt;&gt; n（位数） - 将数字1的二进制数的每一位向右移n位，移出多少位将低位删除指定的位数。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">10 &gt;&gt; 1</span><br><span class="line">0000 1010（补码） ---&gt; 0 101（补码） </span><br><span class="line">5</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>结论：数字1 &gt;&gt; n = 数字1 // 2^n</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print(10 &gt;&gt; 1)      #5</span><br><span class="line">print(10 &gt;&gt; 2)      #2</span><br><span class="line">print(10 &gt;&gt; 3)      #1</span><br><span class="line">print(-10 &gt;&gt; 1)</span><br><span class="line">print(-10 &gt;&gt; 2)     # ？？</span><br><span class="line">print(-10 &gt;&gt; 3)</span><br></pre></td></tr></table></figure></p>
+<p>#4.字符串</p>
+<p>##4.1 什么是字符串</p>
+<ul>
+<li>字符串是python中一种常用的 有序 但是 不可变的 容器类的数据类型，可以同时存储多个字符。属于序列</li>
+<li>字面量：使用单引号或者双引号将任意字符括起来，就是字符串常量。<br>str1 = ‘都会死恢复到萨格fdsfdsfurui22’</li>
+<li>字符：指的是字符串中的每一个单元。注意，python中只有字符的概念，没有字符类型</li>
+</ul>
+<p>##4.2 字符串中的内容<br><strong>a.普通字符：</strong>包含数字字符、字母、普通符号：+ - () % # @ 中文 等</p>
+<blockquote>
+<p>‘123 ’ ‘味位’</p>
+</blockquote>
+<p><strong>b.转义字符：</strong>通过反斜杠将一些字符转换成有特殊功能或特殊意义的字符</p>
+<blockquote>
+<p>\n – 换行<br>\t –制表符<br>\ –\<br>\’ –’<br>\” –”</p>
+</blockquote>
+<p><strong>注意：一个转义字符代表一个字符</strong></p>
+<p><strong>c.阻止转义：</strong>在字符串最前面加r 或 R，可以阻止转义字符转义<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;\t abc\n123&apos;)                 #    abc</span><br><span class="line">                                          123</span><br><span class="line">print(&apos;abc\&apos;123&apos;)                      #abc&apos;123</span><br><span class="line">print(r&apos;abc\&apos;123&apos;)                    #abc\&apos;123</span><br><span class="line">print(R&apos;\t abc\n123&apos;)              #\t abc\n123</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+    
+    <div>
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+
+    
+    </div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/21/day2-python基础语法总结/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/21/day4-字符串总结/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </div></div></div></div></article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/tusun.png" alt="酱油壹号">
+            
+              <p class="site-author-name" itemprop="name">酱油壹号</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/yourname" title="GitHub &rarr; https://github.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:yourname@gmail.com" title="E-Mail &rarr; mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">酱油壹号</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+      
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>

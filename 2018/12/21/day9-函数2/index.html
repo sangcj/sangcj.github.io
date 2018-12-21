@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="#9.1 函数的调用函数在声明时不会执行函数体，只有在调用函数的时候才会执行函数体  函数的调用过程（重点！） a.物理过程1.回到函数声明位置2.用实参给形参赋值（传参），需要保证每个形参都有值。3.执行函数体4.获取返回值5.回到函数调用位置，接着往后执行     b.函数调用过程是一个压栈的过程当函数调用时，系统会自动地在内存中的栈区间开辟空间，存储函数调用过程中产生的数据（这里的数据包括参">
+<meta property="og:type" content="article">
+<meta property="og:title" content="四川小旋风">
+<meta property="og:url" content="http://yoursite.com/2018/12/21/day9-函数2/index.html">
+<meta property="og:site_name" content="四川小旋风">
+<meta property="og:description" content="#9.1 函数的调用函数在声明时不会执行函数体，只有在调用函数的时候才会执行函数体  函数的调用过程（重点！） a.物理过程1.回到函数声明位置2.用实参给形参赋值（传参），需要保证每个形参都有值。3.执行函数体4.获取返回值5.回到函数调用位置，接着往后执行     b.函数调用过程是一个压栈的过程当函数调用时，系统会自动地在内存中的栈区间开辟空间，存储函数调用过程中产生的数据（这里的数据包括参">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-21T01:31:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="四川小旋风">
+<meta name="twitter:description" content="#9.1 函数的调用函数在声明时不会执行函数体，只有在调用函数的时候才会执行函数体  函数的调用过程（重点！） a.物理过程1.回到函数声明位置2.用实参给形参赋值（传参），需要保证每个形参都有值。3.执行函数体4.获取返回值5.回到函数调用位置，接着往后执行     b.函数调用过程是一个压栈的过程当函数调用时，系统会自动地在内存中的栈区间开辟空间，存储函数调用过程中产生的数据（这里的数据包括参">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/21/day9-函数2/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title> | 四川小旋风</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">四川小旋风</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-首页">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-标签">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-分类">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-归档">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-日程表">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>日程表</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-关于">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/21/day9-函数2/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="酱油壹号">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tusun.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="四川小旋风">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-21 09:34:21 / 修改时间：09:31:35" itemprop="dateCreated datePublished" datetime="2018-12-21T09:34:21+08:00">2018-12-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div>  <div>
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+ </div>
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#9.1 函数的调用<br><strong>函数在声明时不会执行函数体，只有在调用函数的时候才会执行函数体</strong></p>
+<ul>
+<li>函数的调用过程（重点！）<blockquote>
+<p>a.物理过程<br>1.回到函数声明位置<br>2.用实参给形参赋值（传参），需要保证每个形参都有值。<br>3.执行函数体<br>4.获取返回值<br>5.回到函数调用位置，接着往后执行</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>b.函数调用过程是一个压栈的过程<br>当函数调用时，系统会自动地在内存中的栈区间开辟空间，存储函数调用过程中产生的数据（这里的数据包括参数和在函数中声明的变量）。当函数调用完成后，对应的内存空间会自动销毁。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">exchange</span><span class="params">(a1, b)</span>:</span>          <span class="comment"># 同名会有灰色波浪线</span></span><br><span class="line">    a1, b = b, a1</span><br><span class="line">    print(<span class="string">'函数中：'</span>, a1, b)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a, b = <span class="number">10</span>, <span class="number">20</span></span><br><span class="line">exchange(a, b)              <span class="comment"># 函数中： 20 10</span></span><br><span class="line">print(<span class="string">'函数外：'</span>, a, b)    <span class="comment"># 函数外： 10 20</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>#9.2 函数的参数</p>
+<ul>
+<li>1.根据实参分为位置参数和关键字参数<blockquote>
+<p>a.位置参数<br>让实参位置和形参位置一一对应</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun1</span><span class="params">(a, b, c)</span>:</span></span><br><span class="line">    print(<span class="string">'a:%d b:%d c:%d'</span> % (a, b, c))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fun1(<span class="number">10</span>, <span class="number">20</span>, <span class="number">66</span>)  <span class="comment"># a:10 b:20 c:66</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>b.关键字参数<br>实参以”形参名=值“的形式来传参<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun1(c=<span class="number">66</span>, a=<span class="number">10</span>, b=<span class="number">20</span>)  <span class="comment"># a:10 b:20 c:66</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>c.位置参数和关键字参数混合使用<br>前提：保证每个参数都有值且位置参数要放在关键字参数前。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun1(<span class="number">10</span>, c=<span class="number">66</span>, b=<span class="number">20</span>)  <span class="comment"># a:10 b:20 c:66</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li><ol start="2">
+<li>从函数声明角度又有：参数默认值，不定长参数，参数类型说明<blockquote>
+<p>a.参数默认值<br>声明函数时，可以给参数设置默认值，语法：参数名 = 默认值<br>设置默认值的参数需要放在未设置默认值参数的后面。<br><strong>注意：</strong><br>设置默认值可给参数赋一个默认值，也常用于说明需要传入参数的类型</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 声明函数，并给参数c赋默认值1</span></span><br><span class="line"><span class="comment"># 有的参数有默认值，有的参数没有；有默认值的参数一定要放在后面。</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun2</span><span class="params">(a, b, c=<span class="number">1</span>)</span>:</span></span><br><span class="line">    print(a, b, c)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果函数声明时参数有默认值，调用函数时，有默认值的参数可不赋值</span></span><br><span class="line">fun2(<span class="number">10</span>, <span class="number">20</span>)  <span class="comment"># 10 20 1</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>3.不定长参数<br><strong>不定长参数：声明函数时，函数的参数不确定。</strong></p>
+<blockquote>
+<p>a.在声明函数时，参数名前加一个*，会将这个参数变成元组，来获取多个参数的值。通过位置参数调用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 声明一个函数，功能是求多个数的和</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_sum</span><span class="params">(*num)</span>:</span></span><br><span class="line">    print(sum(num))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用参数是不定长参数的时候，不定长参数对应的位置，可以传任意个实参</span></span><br><span class="line">my_sum(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">40</span>)   <span class="comment"># 78 集合才是无序可变且不重复</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>b.在声明函数时，参数名前加两个*，会将这个参数变成字典，来获取多个实参的值。必须使用关键字参数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun4</span><span class="params">(**kwargs)</span>:</span></span><br><span class="line">    print(kwargs)           <span class="comment"># 字典</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># fun4(1, 2, 4)  位置参数调用，报错</span></span><br><span class="line"><span class="comment"># 如果是调用不定长参数，调用时关键字可以随便命名。</span></span><br><span class="line">fun4(a=<span class="number">1</span>, b=<span class="number">3</span>, c=<span class="number">8</span>, j=<span class="number">9</span>)          <span class="comment"># &#123;'a': 1, 'b': 3, 'c': 8, 'j': 9&#125;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>c.（<em>args, <strong>kwargs） - 用来表示不定长参数，调用时更灵活，可用位置参数也可用关键字参数或两者一起传参数。
+</strong>注意：</em><br>*args 必须放在 **kwargs之前，应为前者为位置参数，后者为关键字参数。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func5</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    print(args, kwargs)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func5()                                <span class="comment"># () &#123;&#125;</span></span><br><span class="line">func5(<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>)                         <span class="comment"># (6, 7, 8) &#123;&#125;</span></span><br><span class="line">func5(a=<span class="number">6</span>, b=<span class="number">7</span>, c=<span class="number">8</span>)                   <span class="comment"># () &#123;'a': 6, 'b': 7, 'c': 8&#125;</span></span><br><span class="line">func5(<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, a=<span class="number">6</span>, b=<span class="number">7</span>, c=<span class="number">8</span>)          <span class="comment"># (6, 7, 8) &#123;'a': 6, 'b': 7, 'c': 8&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 练习：求多个数的和，要求调用函数时可以多样性（位置，关键字）</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_sum</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    sum1 = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> kwargs:</span><br><span class="line">        sum1 += kwargs[key]</span><br><span class="line">    print(sum(args)+sum1)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">my_sum()                               <span class="comment"># 0</span></span><br><span class="line">my_sum(<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>)                        <span class="comment"># 21</span></span><br><span class="line">my_sum(a=<span class="number">6</span>, b=<span class="number">7</span>, c=<span class="number">8</span>)                  <span class="comment"># 21</span></span><br><span class="line">my_sum(<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, a=<span class="number">6</span>, b=<span class="number">7</span>, c=<span class="number">8</span>)         <span class="comment"># 42</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>4.参数类型说明<br><strong>参数类型说明只是对参数类型进行提示，并不能限制参数类型。可弹出语法提示。</strong><blockquote>
+<p>a.设置默认值</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>b.参数名：类型名<br>注意：类型说明除了说明类型外，还可以做相应类型对应的语法提示。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func7</span><span class="params">(a: str, b=<span class="string">''</span>)</span>:</span>   <span class="comment"># 都能给类型说明</span></span><br><span class="line">    print(a, b)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func7(<span class="number">1</span>, <span class="string">'2'</span>)          <span class="comment"># 只能提示，不能限制。</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>#9.3 函数的返回值</p>
+<ul>
+<li>1.返回值<blockquote>
+<p>a.函数的返回值就是return关键字后面表达式的值，就是函数调用表达式的值。</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>b.python中所有函数都有返回值，默认为None。<br><strong>return</strong> - 关键字；用来返回返回值；结束函数（当函数在执行过程中遇到了return就会结束函数），如果函数体中没有return，函数会在函数体执行完成后将None作为返回值。<br><strong>函数调用表达式</strong> - 就是调用函数的语句（如：func1(1, 2)）；当函数调用完成后，函数调用表达式的结果就是函数返回值。<br>看一个函数返回值，就是看return后面的值，没有return则为None。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func1</span><span class="params">(m, n)</span>:</span></span><br><span class="line">    print(m, n)</span><br><span class="line">    <span class="comment"># 将100作为函数func1的返回值</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">100</span>        <span class="comment"># return - 关键字    100 - 返回值</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func2</span><span class="params">(m, n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> m + n</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func3</span><span class="params">(m, n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span>              <span class="comment"># 相当于return None；将None作为返回值</span></span><br><span class="line">    print()             <span class="comment"># 执行不到</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func2(<span class="number">1</span>, <span class="number">2</span>)          <span class="comment"># 3,需要被接收或直接使用</span></span><br><span class="line"></span><br><span class="line">print(func1(<span class="number">1</span>, <span class="number">2</span>))    <span class="comment"># None 即返回值</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p><strong>返回值作用：</strong>就是将函数内产生的数据传递出来，防止在函数调用完成后被销毁。<br><strong>什么时候使用返回值：</strong>如果实现函数功能后需要获取产生的数据则需要返回。</p>
+</blockquote>
+<ul>
+<li>2.同时返回多个值<blockquote>
+<p>python中支持返回多个值，实质是以元组形式返回。元组的功能它都有。<br>return 返回值1，返回值2，返回值3…</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 求多个数的和以及平均值</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func7</span><span class="params">(*args)</span>:</span></span><br><span class="line">    <span class="comment"># sum1 = 0</span></span><br><span class="line">    <span class="comment"># for item in args:</span></span><br><span class="line">    <span class="comment">#     sum1 += item</span></span><br><span class="line">    sum1 = sum(args)</span><br><span class="line">    aver = sum1/len(args)</span><br><span class="line">    <span class="keyword">return</span> sum1, aver</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sum1, aver = func7(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)             <span class="comment"># 常用</span></span><br><span class="line">print(<span class="string">'和为%d，平均值为%.2f'</span> % (sum1, aver))   <span class="comment"># 和为15，平均值为3.00</span></span><br><span class="line">print(<span class="string">'和为%d，平均值为%.2f'</span> % func7(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>))  <span class="comment"># 和为15，平均值为3.00</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p>#9.4 返回值的应用<br><strong>返回值能做的事情，函数调用表达式都可以做。</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1.用函数调用表达式给变量赋值</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func1</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'hello'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">str1 = func1()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.通过函数调用表达式使用相应的方法。</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func2</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">item1 = func2()[<span class="number">0</span>]         <span class="comment"># 1</span></span><br><span class="line">item2 = func1()[<span class="number">0</span>]         <span class="comment"># h</span></span><br><span class="line">item3 = func2().append(<span class="number">3</span>)  <span class="comment"># None，获取的是append函数的返回值</span></span><br><span class="line"></span><br><span class="line">list1 = func2()</span><br><span class="line">list1.append(<span class="number">3</span>)</span><br><span class="line">print(list1)                 <span class="comment"># [1, 2, 3]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.将函数调用表达式作为容器的元素，函数的参数，函数的返回值</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func3</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">100</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func4</span><span class="params">(x)</span>:</span></span><br><span class="line">    print(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 作为函数实参</span></span><br><span class="line">func4(func3())       <span class="comment"># 100</span></span><br><span class="line">re = func4(func3())  <span class="comment"># 返回None之前要打印一次func3()</span></span><br><span class="line">print(re)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 作为列表元素</span></span><br><span class="line"><span class="comment"># 作为字典的key和value</span></span><br><span class="line"><span class="comment"># 作为函数返回值</span></span><br></pre></td></tr></table></figure></p>
+<p>#9.5 匿名函数<br><strong>匿名函数还是函数，除了声明语法以外，函数其他语法匿名函数都支持。</strong></p>
+<ul>
+<li>匿名函数声明<blockquote>
+<p>语法：<br>函数名（变量名） = lambda 参数列表：返回值</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>说明：<br>函数名 - 变量名<br>lambda - 关键字<br>参数列表 - 和普通函数参数列表作用和要求是一样的，但此处至少要1个参数<br>返回值 - 相当于普通函数return关键字后面的表达式。<br>注意：匿名函数中冒号后的语句属于函数体。在声明时不会执行<br>匿名函数调用和普通函数一模一样。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匿名函数求两数和</span></span><br><span class="line"></span><br><span class="line">my_sum = <span class="keyword">lambda</span> x, y: x + y</span><br><span class="line"></span><br><span class="line">print(my_sum(<span class="number">1</span>, <span class="number">2</span>))</span><br><span class="line">print(my_sum(y=<span class="number">2</span>, x=<span class="number">3</span>))  <span class="comment"># 5 关键字参数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># sort()函数定制</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 写一个函数，求两数中最大值</span></span><br><span class="line">my_max = <span class="keyword">lambda</span> x, y: max(x, y)</span><br><span class="line">print(my_max(<span class="number">1</span>, <span class="number">2</span>))                <span class="comment"># 2</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>补充：python中的3目运算符<blockquote>
+<p>c语言： 条件语句？值1：值2 - 条件语句为True则整个表达式结果为值1，反之。</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>python中三目： 值1 if 条件语句 else 值2 - 条件语句为True则整个表达式结果为值1，反之。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">x, y = <span class="number">10</span>, <span class="number">20</span></span><br><span class="line">max1 = <span class="number">10</span> <span class="keyword">if</span> x &gt; y <span class="keyword">else</span> y</span><br><span class="line">print(max1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写一个匿名函数，获取字典中指定key对应的值</span></span><br><span class="line">dict1 = &#123;<span class="string">'a'</span>: <span class="number">1</span>&#125;</span><br><span class="line">my_get_value = <span class="keyword">lambda</span> key, dict2: dict2.get(key)</span><br><span class="line"></span><br><span class="line">print(my_get_value(<span class="string">'a'</span>, dict1))</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+    
+    <div>
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+
+    
+    </div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/21/day5-提升作业/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/21/day6-列表/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </div></div></div></div></article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/tusun.png" alt="酱油壹号">
+            
+              <p class="site-author-name" itemprop="name">酱油壹号</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/yourname" title="GitHub &rarr; https://github.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:yourname@gmail.com" title="E-Mail &rarr; mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">酱油壹号</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+      
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>

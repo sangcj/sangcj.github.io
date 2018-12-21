@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="#17.1 正则基本符号  1.什么是正则表达式  正则表达式就是字符匹配的工具，用来做正则匹配；是由正则符号和普通字符组成，来匹配不同规律的字符串。   2.python对正则表达式的支持  python中提供了一个re模块，用来支持正则表达式。     fullmatch(正则表达式，字符串) - 用正则表达式去完全匹配字符串，如果匹配成功返回一个结果，失败返回None。   python中的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="四川小旋风">
+<meta property="og:url" content="http://yoursite.com/2018/12/21/day17-正则表达式/index.html">
+<meta property="og:site_name" content="四川小旋风">
+<meta property="og:description" content="#17.1 正则基本符号  1.什么是正则表达式  正则表达式就是字符匹配的工具，用来做正则匹配；是由正则符号和普通字符组成，来匹配不同规律的字符串。   2.python对正则表达式的支持  python中提供了一个re模块，用来支持正则表达式。     fullmatch(正则表达式，字符串) - 用正则表达式去完全匹配字符串，如果匹配成功返回一个结果，失败返回None。   python中的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-21T01:31:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="四川小旋风">
+<meta name="twitter:description" content="#17.1 正则基本符号  1.什么是正则表达式  正则表达式就是字符匹配的工具，用来做正则匹配；是由正则符号和普通字符组成，来匹配不同规律的字符串。   2.python对正则表达式的支持  python中提供了一个re模块，用来支持正则表达式。     fullmatch(正则表达式，字符串) - 用正则表达式去完全匹配字符串，如果匹配成功返回一个结果，失败返回None。   python中的">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/21/day17-正则表达式/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title> | 四川小旋风</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">四川小旋风</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-首页">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-标签">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-分类">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-归档">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-日程表">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>日程表</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-关于">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/21/day17-正则表达式/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="酱油壹号">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tusun.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="四川小旋风">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-21 09:34:21 / 修改时间：09:31:35" itemprop="dateCreated datePublished" datetime="2018-12-21T09:34:21+08:00">2018-12-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div>  <div>
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+ </div>
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#17.1 正则基本符号</p>
+<ul>
+<li><p>1.什么是正则表达式</p>
+<blockquote>
+<p>正则表达式就是字符匹配的工具，用来做正则匹配；是由正则符号和普通字符组成，来匹配不同规律的字符串。</p>
+</blockquote>
+</li>
+<li><p>2.python对正则表达式的支持</p>
+<blockquote>
+<p>python中提供了一个re模块，用来支持正则表达式。</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>fullmatch(正则表达式，字符串) - 用正则表达式去完全匹配字符串，如果匹配成功返回一个结果，失败返回None。</p>
+</blockquote>
+<blockquote>
+<p>python中的正则表达式的写法：将正则内容写在字符串中，一般这个字符串的最前面会加r或R用来阻止转义。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line"></span><br><span class="line">str1 = &apos;dhsuwqy82r21r372cuefy12fgy1983r1y283781382g1f382321382r3g21&apos;</span><br><span class="line">str2 = &apos;18408266183&apos;</span><br><span class="line">str3 = &apos;zh@qq.com&apos;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>1.普通字符<br>普通字符在正则表达式中，代表字符本身。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配一个字符串，第一个字符是a，第二个字符是b，第三个字符也是最后一个字符是c。</span></span><br><span class="line">re_str = <span class="string">r'abc'</span></span><br><span class="line">result = re.fullmatch(re_str, <span class="string">'abc'</span>)</span><br><span class="line">print(result)            <span class="comment"># &lt;_sre.SRE_Match object; span=(0, 3), match='abc'&gt;</span></span><br><span class="line"></span><br><span class="line">result1 = re.fullmatch(re_str, <span class="string">'abcd'</span>)</span><br><span class="line">print(result1)           <span class="comment"># None</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>. 匹配任意字符<br>在正则表达式中，. 出现的位置可以匹配一个任意字符（char）<br>注意：一个.只能匹配一个字符<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配一个长度为3的字符串。且第一个字符是a，最后一个字符是c，中间一个字符是任意一个字符。</span></span><br><span class="line">re_str = <span class="string">r'a.c'</span></span><br><span class="line">result = re.fullmatch(re_str, <span class="string">'a$c'</span>)</span><br><span class="line">print(result)           <span class="comment"># &lt;_sre.SRE_Match object; span=(0, 3), match='a%c'&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>\w 匹配字母数字或下划线的符号<br>在正则表达式中，\w出现的位置，可以匹配一个任意的字母数字或下划线的符号（其实也可以匹配Unicode编码中除了Ascii码剩下的部分。）<br><strong>中文也能匹配</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配一个长度是5的字符串，并且字符串前两位是任意的字母数字或下划线符号,后3位是任意字符</span></span><br><span class="line">re_str = <span class="string">r'\w\w...'</span></span><br><span class="line">result = re.fullmatch(re_str, <span class="string">'小白a$c'</span>)</span><br><span class="line">print(result)          <span class="comment"># &lt;_sre.SRE_Match object; span=(0, 5), match='小白a$c'&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li>\s 匹配一个空白字符<br>空白字符：包括空格、制表符、换行符（空格，\t,\r,\n）<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配一个长度是4的字符串，并且前两位是字母数字下划线或中文，中间一个空白符，最后</span></span><br><span class="line"><span class="comment"># 以一个字母数字下划线或中文结尾。</span></span><br><span class="line">re_str = <span class="string">r'\w\w\s\w'</span></span><br><span class="line">result = re.fullmatch(re_str, <span class="string">'小白\ne'</span>)</span><br><span class="line">print(result)         <span class="comment"># &lt;_sre.SRE_Match object; span=(0, 4), match='小白\ne'&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="5">
+<li>\d 匹配数字字符<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配一个长度是5的字符串，字符串的前三位是数字字符，后两位是任意字符</span></span><br><span class="line">re_str = <span class="string">r'\d\d\d..'</span></span><br><span class="line">result = re.fullmatch(re_str, <span class="string">'123小白'</span>)</span><br><span class="line">print(result)            <span class="comment"># &lt;_sre.SRE_Match object; span=(0, 5), match='123小白'&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="6">
+<li>\b 检测单词边界<br>注意：\b位置不会被用于匹配，只是检测该位置是否是单词边界，不会对字符进行匹配，不会记入字符串长度。当正则表达式中出现了\b，匹配时去掉\b匹配成功后再看\b出现的位置是否是单词边界。</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>单词边界：字符串开头、字符串结尾、标点符号、空白符号等只要能将单词区分开的符号都属于单词边界。<br>匹配前先把\b去掉，再去匹配，匹配时再找满足条件的。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下句既要求helloworld又要求两单词分开</span></span><br><span class="line">re_str = <span class="string">r'hello\bworld'</span>  <span class="comment"># 没有任何一个字符串能和它匹配</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">re_str1 = <span class="string">r'\bhello,\bworld'</span>  <span class="comment"># 没有任何一个字符串能和它匹配</span></span><br><span class="line">result = re.fullmatch(re_str1, <span class="string">'hello,world'</span>)</span><br><span class="line">print(result)    <span class="comment"># &lt;_sre.SRE_Match object; span=(0, 11), match='hello,world'&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<ol start="7">
+<li>^ 检测字符串开头<br>在math和fullmatch中没有意义，在search、findall等中有意义。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配一个字符串前3个是The，后面俩个是任意字符</span></span><br><span class="line">re_str = <span class="string">r'^The..'</span></span><br><span class="line">result = re.fullmatch(re_str, <span class="string">'The'</span>)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="8">
+<li>$ 检测字符串结尾<br>在math和fullmatch中没有意义，在search、findall等中有意义。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配一个字符串只要3位，分别是The，并且e后结尾。所以在这无意义</span></span><br><span class="line">re_str = <span class="string">r'^The$'</span></span><br><span class="line">result = re.fullmatch(re_str, <span class="string">'The'</span>)</span><br><span class="line">print(result)         <span class="comment"># &lt;_sre.SRE_Match object; span=(0, 3), match='The'&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="9">
+<li>\W 匹配一个非字母数字下划线中文的字符<br>\大写字母 对应的功能是 \小写字母 功能取反<br>\W 匹配一个非字母数字下划线中文的字符<br>\D 匹配一个非数字字符<br>\S 匹配一个非空白字符<br>\B 检测非单词边界<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配一个字符串，第一个是数字，第二个非数字，第三个是空白，第四个是数字字母下划线，最后</span></span><br><span class="line"><span class="comment"># 一个是a，并且要求最后一个a前不是单词边界。</span></span><br><span class="line">re_str = <span class="string">r'\d\D\s\w\Ba'</span></span><br><span class="line">result = re.fullmatch(re_str, <span class="string">'9H\tAa'</span>)</span><br><span class="line">print(result)     <span class="comment"># &lt;_sre.SRE_Match object; span=(0, 5), match='9H\tAa'&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="10">
+<li>[字符集] 匹配中括号中出现的任意一个字符</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol>
+<li>[普通字符集] 匹配中括号中出现的任意一个字符<br>[abc] - 匹配一个字符是a或b或c</li>
+</ol>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>注意：<br>a.一个中括号只能匹配一个字符<br>b.正则中有特殊功能的单个符号例如：. $ ^ + * ? | 等。<br>c.匹配字符的组合符号在中括号中保持原来的功能：如\w \d \s \W \D \S<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配一个长度是2的字符串，第一个字符是数字，第二个字符是b或c或d</span></span><br><span class="line">re_str = <span class="string">r'\d[bcd\d]'</span></span><br><span class="line">result = re.fullmatch(re_str, <span class="string">'22'</span>)</span><br><span class="line">print(result)      <span class="comment"># &lt;_sre.SRE_Match object; span=(0, 2), match='22'&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>2.[字符1-字符2] - 表示字符1到字符2（注意：要求字符1的编码值要小于字符2）</p>
+</blockquote>
+<blockquote>
+<p>[a-z] - 表示匹配所有的小写字母<br>[A-Z] - 表示匹配所有的大写字母<br>[a-zA-Z] - 表示匹配所有的字母</p>
+</blockquote>
+<blockquote>
+<p>[1-7] - 表示数字字符1到7<br>[\u4e00-\u9fa5] - 匹配所有的中文</p>
+</blockquote>
+<blockquote>
+<p>[字符1字符2-] - 这儿的-表示减号本身<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配一个长度是3的字符串，第一个字符是数字字符1到7的一个，第二个字符是a、b、c、-</span></span><br><span class="line"><span class="comment"># 中的一个，第三个是小写字母</span></span><br><span class="line">re_str = <span class="string">r'[1-7][abc-][a-z]'</span></span><br><span class="line">result = re.fullmatch(re_str, <span class="string">'3-z'</span>)</span><br><span class="line">print(result)      <span class="comment"># &lt;_sre.SRE_Match object; span=(0, 3), match='3-z'&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<ol start="11">
+<li>[^字符集] 匹配不在字符集中的任何一个字符，^ 要放在字符集前</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>[^abc] - 匹配除了abc以外的任意一个字符<br>[^\d] - 匹配除了数字字符以外的任意一个字符<br>[^a-z] - 匹配除了小写字母以外的任意一个字符</p>
+</blockquote>
+<blockquote>
+<p>[abc^d] - 匹配abcd或^中的任意一个字符。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">re_str = <span class="string">r'[^abc]'</span></span><br><span class="line">result = re.fullmatch(re_str, <span class="string">'3'</span>)</span><br><span class="line">print(result)      <span class="comment"># &lt;_sre.SRE_Match object; span=(0, 1), match='3'&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>#17.2 正则控制匹配次数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<ol>
+<li>* 匹配0次或多次<br>a<em> - a连续出现0次或多次；’’,’a’,’aaa’, ‘ ‘<br>\d</em> - 任意数字连续出现0次或多次。’’,’1’,’12’,’245432542354’都可以匹配<br>[abc]<em> - a或b或c连续出现0次或多次。<br>[A-F]</em> - A到F中任意字符出现0次或多次。</li>
+</ol>
+</blockquote>
+<p><strong>注意：在[]外面的*的前面需要一个字符或者一个匹配字符的符号</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># &lt;_sre.SRE_Match object; span=(0, 10), match='aaaaaaaaab'&gt;</span></span><br><span class="line">print(re.fullmatch(<span class="string">r'a*b'</span>, <span class="string">'aaaaaaaaab'</span>))</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<ol start="2">
+<li>+ 至少匹配1次</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>a+ - a至少匹配一次<br>\d+ - 数字至少1次<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(re.fullmatch(<span class="string">r'a+b'</span>, <span class="string">'aaab'</span>))</span><br><span class="line"><span class="comment"># &lt;_sre.SRE_Match object; span=(0, 4), match='aaab'&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>? 出现0次或1次</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>a? - a出现0次或1次，’’和’a’可以匹配<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 写一个正则匹配一个整数（正负整数都行）， 123 10 +100 -100</span></span><br><span class="line">re_str = <span class="string">r'[+-]?[1-9]\d*'</span></span><br><span class="line">print(re.fullmatch(re_str, <span class="string">'-100'</span>))</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li>{}</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>{N} - 匹配N次，如a{3} - 匹配3个’a‘<br>{M，N} - 匹配M到N次，如a{3，5} - ‘aaa’  ‘aaaa’  ‘aaaaa’<br>{,N} - 最多匹配N次，即0到N次。如a{,3} - ‘’,’a’,’aa’,’aaa’<br>{M,} - 至少匹配M次，如a{3,} - ‘aaa’,’aaaa’…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">print(re.fullmatch(r&apos;a&#123;,3&#125;&apos;, &apos; &apos;))</span><br><span class="line"></span><br><span class="line"># 密码由字母数字组成数字不开头，6-12位，给出提示</span><br><span class="line">password = input(&apos;密码：&apos;)</span><br><span class="line">re_str = r&apos;[a-zA-Z]&#123;1&#125;[a-zA-Z0-9]&#123;5, 11&#125;&apos;</span><br><span class="line">re_str = r&apos;[a-zA-Z][a-zA-Z0-9]&#123;5, 11&#125;&apos;</span><br><span class="line">if not re.fullmatch(re_str, password):</span><br><span class="line">    print(&apos;错误。&apos;)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>#17.3 分支、捕获和贪婪<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>1.分支<br>条件1 | 条件2 - 匹配条件1或者条件2<br>\d{2} | [a-z] - 匹配俩个数字字符，或者一个小写字母<br>a\d{2}|\w{2} - 匹配1个a后面2个数字，或者两个数字字母下划线。</p>
+</blockquote>
+<p><strong>注意：正则中分支也会短路，当条件1可以匹配，就不会再使用条件2匹配</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># &lt;_sre.SRE_Match object; span=(0, 2), match='33'&gt;</span></span><br><span class="line">print(re.fullmatch(<span class="string">r'\d&#123;2&#125;|[a-z]'</span>, <span class="string">'33'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># &lt;_sre.SRE_Match object; span=(0, 1), match='a'&gt;</span></span><br><span class="line">print(re.fullmatch(<span class="string">r'\d&#123;2&#125;|[a-z]'</span>, <span class="string">'a'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># &lt;_sre.SRE_Match object; span=(0, 3), match='a33'&gt;</span></span><br><span class="line">print(re.fullmatch(<span class="string">r'a\d&#123;2&#125;|\w&#123;2&#125;'</span>, <span class="string">'a33'</span>))</span><br><span class="line"><span class="comment"># &lt;_sre.SRE_Match object; span=(0, 2), match='a3'&gt;</span></span><br><span class="line">print(re.fullmatch(<span class="string">r'a\d&#123;2&#125;|\w&#123;2&#125;'</span>, <span class="string">'a3'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 匹配所有的数字 100 -100 12.5 -12.5 0 0.012</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">12,12.34</span></span><br><span class="line"><span class="string">0.123</span></span><br><span class="line"><span class="string">0</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">re_str = <span class="string">r'[+-]?[1-9][0-9]*|[+-]?[0-9]*[.][0-9]*|0'</span></span><br><span class="line"><span class="comment"># re_str = r'[+-]?[1-9][0-9]*[.]?\d*|[+-]?0[.]?[0-9]+|0'  老师</span></span><br><span class="line">print(re.fullmatch(re_str, <span class="string">'-12.5'</span>))</span><br><span class="line">print(re.fullmatch(re_str, <span class="string">'-0.5989'</span>))</span><br><span class="line">print(re.fullmatch(re_str, <span class="string">'0123'</span>))</span><br><span class="line">print(re.fullmatch(re_str, <span class="string">'123'</span>))</span><br><span class="line">print(re.fullmatch(re_str, <span class="string">'+123'</span>))</span><br><span class="line">print(re.fullmatch(re_str, <span class="string">'0.012'</span>))</span><br><span class="line">print(re.fullmatch(re_str, <span class="string">'+0.012'</span>))</span><br><span class="line">print(re.fullmatch(re_str, <span class="string">'-0.012'</span>))</span><br><span class="line">print(re.fullmatch(re_str, <span class="string">'0'</span>))</span><br><span class="line">print(re.fullmatch(re_str, <span class="string">'-0.3'</span>))</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>2.捕获和分组</p>
+</blockquote>
+<blockquote>
+<p>a.分组 - 将括号中的内容作为一个整体<br>r’abc\d{3}|abc[A-Z]{3}’ = r’abc(\d{3}|[A-Z]{3})’<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配一个字符串，前3位是abc，后3位是数字或者大写字母</span></span><br><span class="line"><span class="comment"># r'abc\d&#123;3&#125;|abc[A-Z]&#123;3&#125;' = r'abc(\d&#123;3&#125;|[A-Z]&#123;3&#125;)'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 匹配一个字符串，以‘数字小写字母’的形式出现3次</span></span><br><span class="line">re_str = <span class="string">r'(\d[a-z])&#123;3&#125;'</span></span><br><span class="line"><span class="comment"># &lt;_sre.SRE_Match object; span=(0, 6), match='1a2s3d'&gt;</span></span><br><span class="line">print(re.fullmatch(re_str, <span class="string">'1a2s3d'</span>))</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>b.捕获<br>通过正则获取符合条件的子串时，可以在正则表达式中加括号，匹配后只获取括号里面匹配到的内容。例1：<br>re.findall(正则表达式，字符串) - 在字符串中去获取符合正则表达式条件的所有子串，返回一个列表。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">'32e23i1hr32hru392r3hu21re3u21hre32h1iufe3h2r'</span></span><br><span class="line"><span class="comment"># ['32', '23', '1', '32', '392', '3', '21', '3', '21', '32', '1', '3', '2']</span></span><br><span class="line">print(re.findall(<span class="string">r'\d+'</span>, str1))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例1：</span></span><br><span class="line"><span class="comment"># ['e23', 'e3', 'e32', 'e3']</span></span><br><span class="line">print(re.findall(<span class="string">r'e\d+'</span>, str1))</span><br><span class="line"><span class="comment"># ['23', '3', '32', '3']</span></span><br><span class="line">print(re.findall(<span class="string">r'e(\d+)'</span>, str1))</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>c.重复匹配<br>写一个带多个分组的正则表达式，可以在分组后面通过添加 \数字 来重复前面第几个分组中匹配到的内容。</p>
+</blockquote>
+<p><strong>说明：\数字 - 这里的数字代表前面第几个分组；\1代表第一个分组，\2代表第2个组</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">re_str = <span class="string">r'\d&#123;3&#125;([a-z]&#123;2&#125;)a\1'</span></span><br><span class="line"><span class="comment"># &lt;_sre.SRE_Match object; span=(0, 8), match='222sdasd'&gt;</span></span><br><span class="line">print(re.fullmatch(re_str, <span class="string">'222sdasd'</span>))</span><br><span class="line"></span><br><span class="line">re_str = <span class="string">r'(\d&#123;3&#125;)([a-z]&#123;2&#125;)a\1\2'</span></span><br><span class="line">print(re.fullmatch(re_str, <span class="string">'222sda222sd'</span>))</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>3.贪婪<br>匹配次数后加？就是贪婪匹配：*? +? ?? {M,N}? {M,}? 表示尽可能少的重复<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">re_str = <span class="string">r'a.+b'</span></span><br><span class="line">str1 = <span class="string">'xxxahdjbnnkbsssammmb'</span></span><br><span class="line">print(re.findall(re_str, str1))  <span class="comment"># ['ahdjbnnkbsssammmb']</span></span><br><span class="line"></span><br><span class="line">re_str = <span class="string">r'a.+?b'</span></span><br><span class="line">print(re.findall(re_str, str1))  <span class="comment"># ['ahdjb', 'ammmb']</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li>转义字符<br>在正则表达式中可以在有特殊意义或者特殊功能的符号前加\来取消其特殊功能<br>\w - 代表两个字符分别为反斜杠和w<br>+ - 代表加号字符<br>* - 代表*<br>\? - 代表?<br>() - 表示（），类推[]及{}</li>
+</ol>
+</blockquote>
+<p><strong>注意：<br>在中括号中，\必须加\表示反斜杠本身。<br>\^在最前面时，必须加\表示^本身<br>-在两个字符之间并在中括号里面时，必须加\表示-本身</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">re_str = <span class="string">r'\w-\d&#123;3&#125;'</span></span><br></pre></td></tr></table></figure></p>
+<p>#17.4 re模块<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>1.compile<br>compile(正则表达式) - 将正则表达式转换成正则表达式对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">re_str = r&apos;\d&#123;3&#125;&apos;</span><br><span class="line">re_obj = re.compile(re_str)</span><br><span class="line"></span><br><span class="line"># 调用模块中函数</span><br><span class="line">print(re.fullmatch(re_str, &apos;338&apos;))</span><br><span class="line"></span><br><span class="line"># 调用对象方法</span><br><span class="line">print(re_obj.fullmatch(&apos;338&apos;))</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>2.match和fullmatch</p>
+</blockquote>
+<blockquote>
+<p>a.fullmattch(正则表达式，字符串) - 完全匹配，从字符串开头一直到结尾<br>b.mattch(正则表达式，字符串) - 不完全匹配，只匹配字符串开头。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">re_str = <span class="string">r'\d[A-Z]&#123;2&#125;'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 完全匹配 &lt;_sre.SRE_Match object; span=(0, 3), match='6AD'&gt;</span></span><br><span class="line">print(re.fullmatch(re_str, <span class="string">'6AD'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 不完全匹配 &lt;_sre.SRE_Match object; span=(0, 3), match='6AD'&gt;</span></span><br><span class="line">print(re.match(re_str, <span class="string">'6AD2签位尔特3ytuytjytj'</span>))</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>匹配对象<br>1.获取span - 匹配到内容在字符串中的范围（开始下标，结束下标），结束下标取不到<br>匹配对象.span() - 获取整个正则表达式匹配到的范围<br>匹配对象.span(n) - 获取正则表达式中第n个分组匹配到的范围，前提是有分组。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># (0, 3)</span></span><br><span class="line">print(re.match(re_str, <span class="string">'6AD2签位尔特3ytuytjytj'</span>).span())</span><br><span class="line"></span><br><span class="line"><span class="comment"># (0, 1)</span></span><br><span class="line">print(re.match(<span class="string">r'(\d)[A-Z]&#123;2&#125;'</span>, <span class="string">'6AD2签位尔特3ytuytjytj'</span>).span(<span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># (1,3)</span></span><br><span class="line">print(re.match(<span class="string">r'(\d)([A-Z]&#123;2&#125;)'</span>, <span class="string">'6AD2签位尔特3ytuytjytj'</span>).span(<span class="number">2</span>))</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>2.start和end - 获取匹配结果的开始下标和结束下标。<br>匹配对象.start()/匹配对象.end() - 获取整个正则表达式匹配到的的开始下标和结束下标。<br>匹配对象.start(n)/匹配对象.end(n) - 获取整个正则表达式第n个分组，匹配到的的开始下标和结束下标。</p>
+</blockquote>
+<blockquote>
+<p>3.group - 获取匹配到的内容<br>匹配对象.group() - 获取整个正则表达式匹配到的内容<br>匹配对象.group(n) - 获取正则表达式第n个分组匹配到的内容</p>
+</blockquote>
+<blockquote>
+<p>4.string - 获取用来匹配的原字符串<br>匹配对象.string()</p>
+</blockquote>
+<blockquote>
+<p>3.search<br>search(正则表达式，字符串) - 匹配字符串中第一个满足正则表达式的子串，如果匹配成功，返回匹配对象，否则返回None<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">r'abc123hkcajsa121df'</span></span><br><span class="line">result = re.search(<span class="string">r'\d&#123;3&#125;[a-z]&#123;2&#125;'</span>, str1)</span><br><span class="line">print(result)  <span class="comment"># &lt;_sre.SRE_Match object; span=(3, 8), match='123hk'&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>4.spilt<br>split(正则表达式，字符串) - 在字符串中按照满足正则表达式条件的子串对字符串进行切割。返回一个列表<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">'ab+c7wewfwefewff79wfqe9fwq9qw0e*f'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ['ab+c', 'wewfwefewff', 'wfqe', 'fwq', 'qw', 'e*f']</span></span><br><span class="line">print(re.split(<span class="string">r'\d+'</span>, str1))</span><br><span class="line"></span><br><span class="line"><span class="comment"># ['ab', 'c', 'wewfwefewff', 'wfqe', 'fwq', 'qw', 'e', 'f']</span></span><br><span class="line">print(re.split(<span class="string">r'\d+|[+*-]+'</span>, str1))</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>5.sub<br>sub(正则表达式，新子串，字符串) - 用新子串替换字符串中满足正则表达式的子串，返回一个替换后的字符串<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">'i32h1e32jirh32iu1ej321eji'</span></span><br><span class="line">print(re.sub(<span class="string">r'\d+'</span>, <span class="string">'$'</span>, str1))  <span class="comment"># i$h$e$jirh$iu$ej$eji</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>6.findall<br>findall(正则表达式，字符串) - 在字符串中获取满足正则表达式的所有的字符，返回一个列表，列表元素就是字符串。</p>
+</blockquote>
+<p>注意：如果此处正则表达式中有一个分组，结果是列表中只取括号中匹配到的字符串，如果分组大于1，结果是一个列表，列表元素是元组，元组中元素为每个括号中匹配到的字符串。（先匹配整个再取括号中内容！）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">'sdad434w2rsdvsvds34==='</span></span><br><span class="line">print(re.findall(<span class="string">r'\d+'</span>, str1))  <span class="comment"># ['434', '2', '34']</span></span><br><span class="line"></span><br><span class="line">str1 = <span class="string">'sdad434w2rsdvsvds34==='</span></span><br><span class="line">print(re.findall(<span class="string">r'(\d+)(\w)'</span>, str1))  </span><br><span class="line"><span class="comment"># [('434', 'w'), ('2', 'r'), ('3', '4')]</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>7.finditer<br>finditer(正则表达式，字符串) - 在字符串中获取满足正则表达式的内容，返回一个迭代器，迭代器元素是匹配对象。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">'sdad434w2rsdvsvds34==='</span></span><br><span class="line">print(re.finditer(<span class="string">r'\d+'</span>, str1))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写一个自己的finditer</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_finditer</span><span class="params">(pattern, string)</span>:</span></span><br><span class="line">    re1 = re.search(pattern, string)</span><br><span class="line">    <span class="keyword">while</span> re1:</span><br><span class="line">        <span class="keyword">yield</span> re1</span><br><span class="line">        string = string[re1.end():]</span><br><span class="line">        <span class="comment"># 考虑对正则取反（think）</span></span><br><span class="line">        re1 = re.search(pattern, string)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+    
+    <div>
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+
+    
+    </div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/21/day14-作业/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/21/学生管理系统2-0/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </div></div></div></div></article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/tusun.png" alt="酱油壹号">
+            
+              <p class="site-author-name" itemprop="name">酱油壹号</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/yourname" title="GitHub &rarr; https://github.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:yourname@gmail.com" title="E-Mail &rarr; mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">酱油壹号</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+      
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>

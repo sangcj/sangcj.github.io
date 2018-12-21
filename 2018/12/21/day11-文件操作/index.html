@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="#11.1 生成式迭代器：是一个容器，类型为iter；可以同时存取多个数据，取的时候只能一个一个取，并且取过的数据在容器中就不存在了。 生成器：就是迭代器，数据是通过调用函数获取yield后面的值产生的。数据只会在获取的时候产生。调用一个带yield关键字的函数，就是创建一个生成器。调用时不会执行，只有当获取生成器中数据时才会执行函数。  1.什么是生成式 格式1： 结果是一个生成器（迭代器）（值">
+<meta property="og:type" content="article">
+<meta property="og:title" content="四川小旋风">
+<meta property="og:url" content="http://yoursite.com/2018/12/21/day11-文件操作/index.html">
+<meta property="og:site_name" content="四川小旋风">
+<meta property="og:description" content="#11.1 生成式迭代器：是一个容器，类型为iter；可以同时存取多个数据，取的时候只能一个一个取，并且取过的数据在容器中就不存在了。 生成器：就是迭代器，数据是通过调用函数获取yield后面的值产生的。数据只会在获取的时候产生。调用一个带yield关键字的函数，就是创建一个生成器。调用时不会执行，只有当获取生成器中数据时才会执行函数。  1.什么是生成式 格式1： 结果是一个生成器（迭代器）（值">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-21T01:31:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="四川小旋风">
+<meta name="twitter:description" content="#11.1 生成式迭代器：是一个容器，类型为iter；可以同时存取多个数据，取的时候只能一个一个取，并且取过的数据在容器中就不存在了。 生成器：就是迭代器，数据是通过调用函数获取yield后面的值产生的。数据只会在获取的时候产生。调用一个带yield关键字的函数，就是创建一个生成器。调用时不会执行，只有当获取生成器中数据时才会执行函数。  1.什么是生成式 格式1： 结果是一个生成器（迭代器）（值">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/21/day11-文件操作/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title> | 四川小旋风</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">四川小旋风</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-首页">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-标签">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-分类">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-归档">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-日程表">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>日程表</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-关于">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/21/day11-文件操作/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="酱油壹号">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tusun.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="四川小旋风">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-21 09:34:21 / 修改时间：09:31:35" itemprop="dateCreated datePublished" datetime="2018-12-21T09:34:21+08:00">2018-12-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div>  <div>
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+ </div>
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#11.1 生成式<br><strong>迭代器：</strong>是一个容器，类型为iter；可以同时存取多个数据，取的时候只能一个一个取，并且取过的数据在容器中就不存在了。</p>
+<p><strong>生成器：</strong>就是迭代器，数据是通过调用函数获取yield后面的值产生的。数据只会在获取的时候产生。<br><strong>调用一个带yield关键字的函数，就是创建一个生成器。调用时不会执行，只有当获取生成器中数据时才会执行函数。</strong></p>
+<ul>
+<li>1.什么是生成式<blockquote>
+<p>格式1： 结果是一个生成器（迭代器）<br>（值1（表达式） for 变量 in 序列）<br>展开：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">     <span class="keyword">for</span> 变量 <span class="keyword">in</span> 序列：</span><br><span class="line">          <span class="keyword">yield</span> 值<span class="number">1</span>（表达式）</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p><strong>注意：表达式结果就是每次循环生成器产生的数据<br>      这儿的for循环可以控制生成器产生的个数和值</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#1.格式1</span><br><span class="line">gen1 = (10 for x in range(10))     # 一个生成器，装有10个元素，每个元素都是10</span><br><span class="line"></span><br><span class="line">gen2 = (10*x for x in range(10))     # 一个生成器，装有10个元素，0，10，20.。。</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>格式2：<br>(表达式 for 变量 in 序列 if 条件语句)<br>展开：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">for</span> 变量 <span class="keyword">in</span> 序列：</span><br><span class="line">                <span class="keyword">if</span> 条件语句：</span><br><span class="line">                        yeild 表达式</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#2.格式2</span></span><br><span class="line">gen3 = (x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>) <span class="keyword">if</span> x % <span class="number">2</span>)   <span class="comment"># 元素为1，3，5，7，9</span></span><br><span class="line"></span><br><span class="line">re = list(x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>) <span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>) <span class="comment"># 列表，元素为0，2，4，6，8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 交换字典的键值对：dict1 = &#123;'a': 1, 'b':2&#125;</span></span><br><span class="line">dict1 = &#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>:<span class="number">2</span>&#125;</span><br><span class="line"></span><br><span class="line">dict2 = dict((dict1[key], key) <span class="keyword">for</span> key <span class="keyword">in</span> dict1)</span><br><span class="line">dict3 = dict((value, key) <span class="keyword">for</span> key, value <span class="keyword">in</span> dict1.items())</span><br><span class="line">print(dict2)   <span class="comment"># 交换后&#123;1: 'a', 2: 'b'&#125;</span></span><br></pre></td></tr></table></figure>
+<p>#11.2 模块使用</p>
+<ul>
+<li><p>1.什么是模块<br>python中一个py文件就是一个模块</p>
+</li>
+<li><p>2.怎麽关联多个模块</p>
+<blockquote>
+<p>方法1：<br>import 模块名 - 将指定的模块导入到当前模块中（模块名就是py文件的文件名）</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>说明：<br>a.执行import的时候，实质会进入到指定的模块对应的py文件中，去执行里面的代码<br>b.import导入模块时会检查当前模块是否已经导入过，如果已经导入过则不会再导入（执行）<br>c.通过import去导入一个模块后，可以通过 模块名.全局变量 去使用被导入的模块中的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import test1           # text1 我是模块1;当导入时会执行test1，要加__name__=来判断</span><br><span class="line"></span><br><span class="line">a = test1.test1_a</span><br><span class="line">print(a)               # 100；调用test1中的全局变量</span><br><span class="line">test1.test1_func1()    # 我是模块1;调用test1中的全局函数</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>方法2：<br>from 模块名 import 变量名/函数名   - 导入指定变量和函数</p>
+</blockquote>
+<blockquote>
+<p>说明：<br>a.执行到导入模块语句时，还是会执行指定模块中的所有语句<br>b.通过from-import导入时，还是会查重<br>c.使用时只能使用import后面的变量或函数，用时不用在前面加模块名<br>d.import后面可以使用逗号将多个变量/函数隔开。也可以使用*将模块中所有的全局变量一起导入。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># from test2 import *                      # 将模块2中所有的全局变量一起导入。</span><br><span class="line">from test2 import test2_a, test2_func1      # test2</span><br><span class="line">                                            # 我是模块2</span><br><span class="line">a = test2_a</span><br><span class="line">print(a)                                    # 100</span><br><span class="line">test2_func1()                               # 我是模块2</span><br><span class="line"></span><br><span class="line">from random import randint</span><br><span class="line">randint(10, 30)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong>函数</strong> - 对功能进行封装 - 获取当前时间对应的代码封装到函数中<br><strong>模块</strong> - 对多个功能和多个数据进行封装；对函数和变量封装 - 将所有和时间相关的函数或变量放到一个py文件中 例：math模块装得都是和数学相关的函数和变量<br><strong>包</strong> - 对多个模块进行封装 - 将所有和时间相关的py文件放到一个文件夹中<br><strong>什么是包：</strong>含有__init__.py文件的文件夹</p>
+<ul>
+<li><p>3.重命名</p>
+<blockquote>
+<p>import 模块名 as 新的模块名<br>from 模块名 import 变量名 as 新的变量名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import test1 as test1_1</span><br><span class="line">from test import test1</span><br><span class="line"></span><br><span class="line">a = test1_1.test1_a   # 100</span><br><span class="line">b = test1.test1_a     # 2000</span><br><span class="line">print(a, b)</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>4.包的导入</p>
+<blockquote>
+<p>import 包名  - 会直接执行包中的__init__.py文件中的代码<br>import 包名.模块名 - 导入指定包中指定的模块，使用方式：包名.模块名.变量名<br>from 包名 import 模块名 - 使用方式：模块名.变量名<br>from 包名.模块名 import 变量名 - 使用方式：变量名</p>
+</blockquote>
+<p>#11.3 选择性导入</p>
+<blockquote>
+<p>在模块中将不需要其他模块导入和执行的代码写到if  __name__ == ‘__main__’:语句中，就可防止被直接使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if  __name__ == &apos;__main__&apos;:</span><br><span class="line">    # 不想导入或执行的代码或变量</span><br><span class="line">    # 声明在这的变量也不会被其它模块使用</span><br><span class="line">    a = 100</span><br><span class="line">    print(&apos;&apos;)</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p><strong>原理：</strong></p>
+<blockquote>
+<p>每个py文件（模块）都有一个属性__name__,默认值为模块名；只有当直接使用模块文件时__name__值才为__main__。可以用print（__name__）来证明。</p>
+</blockquote>
+<p>#11.4 文件操作</p>
+<ul>
+<li>1.数据本地化<blockquote>
+<p>将数据以文件形式，存储到本地磁盘中。（程序中变量保存的数据都是存在内存中的，当程序运行结束之后内存中的数据会销毁。）</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>常见的数据本地化方式：二进制文件（包含音频、视频、压缩包等），普通文本文件，json和xml文件，数据库文件等。</p>
+<ul>
+<li>2.文件操作（读、写）<br>文件操作的固定步骤：<br>打开文件（新建文件） - 文件操作（读、写） - 关闭文件</li>
+<li>3.打开文件<br>open(file, mode=’r’,… ,encoding=None) - 返回的是被打开的文件对象（文件句柄）<br>文件对象（文件句柄）需要调用相关方法才能操作文件</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>说明：</strong><br>file - 字符串；需要打开的文件的路径（可以是绝对路径，也可以是相对路径）</p>
+<blockquote>
+<p>绝对路径：完整的路径（一般不使用）。<br>        例：open(‘F:\桌面\汇总\cj.txt’)   缺点是不能跟着项目走<br>        相对路径：（相对当前py文件对应的目录）<br>        aaa.txt 或者 ./aaa.txt   <strong>注：如果文件不带扩展名则不用加扩展名</strong><br>        ./ – 当前目录（可以省略）<br>        ../ – 当前目录的上层目录（不可省）<br>        …/ –当前目录的上上层目录（不可省）</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>mode - 打开方式；打开文件后不同的操作，对应的打开方式不一样</p>
+<blockquote>
+<p>‘r’ - 默认值，以读的方式打开文件，只读，读出来的是字符串<br>         ‘w’- 以写的方式打开文件<br>         ‘rb、br’-以读的方式打开，读出来的是2进制，可用于读音频、视频文件等。<br>         ‘wb、bw’-以写的方式打开，写的是2进制，写进2进制文件中。<br>         ‘a’ - 以写的方式打开，追加<br>         ‘+’ - 以读写方式打开</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>encoding - 文本文件编码方式，一般赋值为‘utf-8’</p>
+<blockquote>
+<p>utf-8 - 能对中文编码，显示<br>            gbk - 不支持中文编码，能存，不能显示<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># re = open('F:\桌面\汇总\cj.txt')   # 局限性在于不能跟着项目走</span></span><br><span class="line"><span class="comment"># print(re.read())    # 读取全部</span></span><br><span class="line"><span class="comment"># re.close()          # 打开后需要关闭，重置下标位置</span></span><br><span class="line"><span class="comment"># print('='*88)</span></span><br><span class="line"><span class="comment"># re = open('F:\桌面\汇总\cj.txt')  # 关闭后需要再次打开</span></span><br><span class="line"><span class="comment"># print(re.read())    # 读取全部</span></span><br><span class="line"><span class="comment"># re.close()</span></span><br><span class="line"></span><br><span class="line">re1 = open(<span class="string">'aaa'</span>)</span><br><span class="line">re3 = open(<span class="string">'aaa.txt'</span>)     <span class="comment"># open('./aaa.txt')省略</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 以读的形式打开一个文本文件，保存到变量re2中。对re2进行操作</span></span><br><span class="line"><span class="comment"># ，就是对被打开的文件进行操作。</span></span><br><span class="line"><span class="comment"># re2 = open('files/cj', 'r', encoding='utf-8')    # open('./files/cj')省略</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+<ul>
+<li>4.文件的读操作<blockquote>
+<p>文件句柄（文件对象）.read() - 从文件读写位置开始获取到文件结尾（默认就是获取文件中所有的内容）</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>文件句柄（文件对象）.readline() - 读一行内容**<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># content = re2.read()</span></span><br><span class="line"><span class="comment"># print(content)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># content = re2.readline()       # 第一行</span></span><br><span class="line"><span class="comment"># print(content)</span></span><br><span class="line"><span class="comment"># content = re2.readline()       # 第二行</span></span><br><span class="line"><span class="comment"># print(content)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将文件中内容读完，要求一行一行的读</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 法1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">content</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">yield</span> re2.readline()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">re2 = open(<span class="string">'files/cj'</span>, <span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">print(content().__next__())         <span class="comment"># 第一行</span></span><br><span class="line">print(content().__next__())         <span class="comment"># 第二行</span></span><br><span class="line">print(next(content()))              <span class="comment"># 第三行</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 法2</span></span><br><span class="line">content = (re2.readline() <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">10</span>))   <span class="comment"># 只能for循环</span></span><br><span class="line">print(content.__next__())           <span class="comment"># 第四行</span></span><br><span class="line">print(content.__next__())           <span class="comment"># 第五行</span></span><br><span class="line">print(next(content))                <span class="comment"># 第六行</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li><p>5.文件写操作</p>
+<blockquote>
+<p>文件对象.write(字符串) - 将字符串中的内容写入到文件中（会完全覆盖原文件内容）</p>
+<blockquote>
+<p>‘w’ - 完全覆盖，常用<br>‘a’ - 在原文件后添加</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'aaa.txt'</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">f.write(<span class="string">'第一次写！'</span>)         <span class="comment"># 第一次写！</span></span><br><span class="line">f.write(<span class="string">'第二次写！'</span>)         <span class="comment"># 第一次写！第二次写！</span></span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'aaa.txt'</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">f.write(<span class="string">'第三次写！'</span>)         <span class="comment"># 第三次写！</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</blockquote>
+</li>
+<li><p>6.关闭文件</p>
+<blockquote>
+<p>文件句柄（文件对象）.close() - 关闭指定的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p>#11.5 二进制文件读取</p>
+<blockquote>
+<p>open方法的另外一种写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">with open(文件路径，读写方式，encoding=编码方式) as 文件对象：</span><br><span class="line">    文件操作</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>功能：<br>打开文件，将文件存在文件对象中。当文件操作完成会自动关闭，所以经常用此写法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">with open(&apos;files/cj&apos;, encoding=&apos;utf-8&apos;) as f:</span><br><span class="line">    print(f.read())</span><br><span class="line">print(f.closed)        # True,已关闭</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>普通的文本文件也可以以二进制形式读和写。</p>
+</blockquote>
+<ul>
+<li>2.二进制文件的读<blockquote>
+<p>只要将读写方式设置为‘rb/br’就可以了。读出来的就是二进制数据。<br>注意：<br>二进制操作不能设置编码方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">with open(&apos;files/cj&apos;, &apos;rb&apos;) as f:     # 不能设置编码方式</span><br><span class="line">    content = f.read()</span><br><span class="line">    print(content, type(content))       # bytes,二进制类</span><br><span class="line"></span><br><span class="line">with open(&apos;files/小狐狸.png&apos;, &apos;rb&apos;) as f:  # 打开图片</span><br><span class="line">    content = f.read()</span><br><span class="line">    print(content)</span><br><span class="line"></span><br><span class="line">with open(&apos;小狐狸new.jpg&apos;, &apos;wb&apos;) as f:  </span><br><span class="line"># 在当前目录写入图片，要先获取到图片2进制数据</span><br><span class="line">    f.write(content)</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 图片下载</span><br><span class="line">import requests   # 需下载</span><br><span class="line"></span><br><span class="line">response = requests.get(&apos;图片网络地址&apos;)</span><br><span class="line">with open(&apos;下载.jpg&apos;, &apos;wb&apos;) as f:</span><br><span class="line">     f.write(response.content())</span><br></pre></td></tr></table></figure>
+<ul>
+<li>3.文件不存在<blockquote>
+<p>当以读方式打开一个不存在的文件，会报错。<br>当以写的方式打开一个不存在的文件，不会报错，会在当前目录下创建它。</p>
+</blockquote>
+#11.6 文件操作的运用<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 写一个程序统计当前程序执行的次数。第一次运行控制台打印1，第二次打印2.。</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'记数本.txt'</span>, <span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    count = int(f.read())               <span class="comment"># 存的是字符串</span></span><br><span class="line">    print(<span class="string">'第%d次进入程序。'</span> % count)</span><br><span class="line">print(<span class="string">'运行程序！'</span>)</span><br><span class="line">count += <span class="number">1</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'记数本.txt'</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(str(count))                 <span class="comment"># 写的是字符串</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>指导思想：</strong></p>
+<ul>
+<li>1.使用数据的时候去本地文件中取数据</li>
+<li>2.数据修改后，将新的数据更新到本地文件中</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+    
+    <div>
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">
+
+    
+    </div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/21/day8-函数基础知识总结/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/21/day10-函数3/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </div></div></div></div></article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/tusun.png" alt="酱油壹号">
+            
+              <p class="site-author-name" itemprop="name">酱油壹号</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/yourname" title="GitHub &rarr; https://github.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:yourname@gmail.com" title="E-Mail &rarr; mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">酱油壹号</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v6.6.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+      
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
