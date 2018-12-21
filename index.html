@@ -422,7 +422,7 @@
                 
               
 
-              <time title="创建时间：2018-12-21 11:04:30" itemprop="dateCreated datePublished" datetime="2018-12-21T11:04:30+08:00">2018-12-21</time>
+              <time title="创建时间：2018-12-21 11:16:25" itemprop="dateCreated datePublished" datetime="2018-12-21T11:16:25+08:00">2018-12-21</time>
             
 
             
@@ -458,8 +458,7 @@
       
         
           
-            <p>#1.标题</p>
-<p>可以在行首通过改变添加#号的数目来控制标题的级别，从1~6级标题，<br>如#H1、##H2、###H3等。<br>可使用—作分割线，前后应空行，否则会出错，例：<br>-–</p>
+            <h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h1><p>可以在行首通过改变添加#号的数目来控制标题的级别，从1~6级标题，<br>如#H1、##H2、###H3等。<br>可使用—作分割线，前后应空行，否则会出错，例：<br>-–</p>
 <p>#2.斜体和粗体<br>使用 <em> 和 ** 来表示 斜体 和 粗体 字。<br>例如：（标识符前后需加上空格，否则会按整句读取）<br>这是 \</em>斜体<em> 这是 **粗体<strong>这是\</strong></em>加粗斜体<strong><em><br>这是 </em>斜体* 这是 </strong>粗体<strong>这是*</strong>加粗斜体***</p>
 <p>#3.添加外部链接<br>使用 [描述](链接地址) 为文字添加外部链接，示例：<br> [詹洪简书](<a href="https://www.jianshu.com/u/5bb8c539a12d" target="_blank" rel="noopener">https://www.jianshu.com/u/5bb8c539a12d</a>)<br>这是去往 <a href="https://www.jianshu.com/u/5bb8c539a12d" target="_blank" rel="noopener">詹洪简书</a> 的链接</p>
 <p>#4.无序列表<br>使用 * + - 来表示无序列表，示例：<br>- 无序列表1<br>- 无序列表2<br>- 无序列表3</p>
@@ -695,6 +694,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/21/day4-Python-的字符串内建函数/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="酱油壹号">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tusun.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="四川小旋风">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/12/21/day4-Python-的字符串内建函数/" class="post-title-link" itemprop="http://yoursite.com/index.html">未命名</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-21 09:34:21 / 修改时间：09:31:35" itemprop="dateCreated datePublished" datetime="2018-12-21T09:34:21+08:00">2018-12-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Python 的字符串常用内建函数如下：<br>|序号|方法|描述|<br>|—|—|—|<br>1    |capitalize()|将字符串的第一个字符转换为大写<br>2|    center(width, fillchar)|返回一个指定的宽度 width 居中的字符串，fillchar 为填充的字符，默认为空格。<br>3|    count(str)|返回 str 在 string 里面出现的次数<br>4|    bytes.decode(encoding=”utf-8”, errors=”strict”)|Python3 中没有 decode 方法，但我们可以使用 bytes 对象的 decode() 方法来解码给定的 bytes 对象，这个 bytes 对象可以由 str.encode() 来编码返回。<br>5|    encode(encoding=’UTF-8’,errors=’strict’)|以 encoding 指定的编码格式编码字符串，如果出错默认报一个ValueError 的异常，除非 errors 指定的是’ignore’或者’replace’<br>6|    endswith(suffix)|检查字符串是否以 obj 结束，如果beg 或者 end 指定则检查指定的范围内是否以 obj 结束，如果是，返回 True,否则返回 False.<br>7|    expandtabs(tabsize=8)|把字符串 string 中的 tab 符号转为空格，tab 符号默认的空格数是 8 。<br>8|    find(str, beg=0 end=len(string))|检测 str 是否包含在字符串中，如果指定范围 beg 和 end ，则检查是否包含在指定范围内，如果包含返回开始的索引值，否则返回-1<br>9|    index(str, beg=0, end=len(string))|跟find()方法一样，只不过如果str不在字符串中会报一个异常.<br>10|    isalnum()|如果字符串至少有一个字符并且所有字符都是字母或数字则返 回 True,否则返回 False<br>11|    isalpha()|如果字符串至少有一个字符并且所有字符都是字母则返回 True, 否则返回 False<br>12    |isdigit()|如果字符串只包含数字则返回 True 否则返回 False..<br>13    |islower()|如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是小写，则返回 True，否则返回 False<br>14    |isnumeric()|如果字符串中只包含数字字符，则返回 True，否则返回 False（中文数字也可以）<br>15    |isspace()|如果字符串中只包含空白，则返回 True，否则返回 False.<br>16|    istitle()|如果字符串是标题化的(见 title())则返回 True，否则返回 False<br>17|isupper()|如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是大写，则返回 True，否则返回 False<br>18|    join(seq)|以指定字符串作为分隔符，将 seq 中所有的元素(的字符串表示)合并为一个新的字符串<br>19|    len(string)|返回字符串长度<br>20|    ljust(width[, fillchar])|返回一个原字符串左对齐,并使用 fillchar 填充至长度 width 的新字符串，fillchar 默认为空格。<br>21    |lower()|转换字符串中所有大写字符为小写.<br>22    |lstrip()|截掉字符串左边的空格或指定字符。<br>23|    maketrans()|创建字符映射的转换表，对于接受两个参数的最简单的调用方式，第一个参数是字符串，表示需要转换的字符，第二个参数也是字符串表示转换的目标。<br>24    |max(str)|返回字符串 str 中最大的字母。<br>25|    min(str)|返回字符串 str 中最小的字母。<br>26    |replace(old, new [, max])|把 将字符串中的 str1 替换成 str2,如果 max 指定，则替换不超过 max 次。<br>27    |rfind(str, beg=0,end=len(string))|类似于 find()函数，不过是从右边开始查找.<br>28    |rindex( str, beg=0, end=len(string))|类似于 index()，不过是从右边开始.<br>29|     rjust(width,[, fillchar])|返回一个原字符串右对齐,并使用fillchar(默认空格）填充至长度 width 的新字符串<br>30    |rstrip()|删除字符串字符串末尾的空格.<br>31    |split(str=””, num=string.count(str))|num=string.count(str)) 以 str 为分隔符截取字符串，如果 num 有指定值，则仅截取 num 个子字符串<br>32    |splitlines([keepends])|按照行(‘\r’, ‘\r\n’, \n’)分隔，返回一个包含各行作为元素的列表，如果参数 keepends 为 False，不包含换行符，如果为 True，则保留换行符。<br>33    |startswith(str, beg=0,end=len(string))|检查字符串是否是以 obj 开头，是则返回 True，否则返回 False。如果beg 和 end 指定值，则在指定范围内检查。<br>34    |strip([chars])|在字符串上执行 lstrip()和 rstrip()<br>35    |swapcase()|将字符串中大写转换为小写，小写转换为大写<br>36    |title()|返回”标题化”的字符串,就是说所有单词都是以大写开始，其余字母均为小写(见 istitle())<br>37    |translate(table, deletechars=””)|根据 str 给出的表(包含 256 个字符)转换 string 的字符, 要过滤掉的字符放到 deletechars 参数中<br>38    |upper()|转换字符串中的小写字母为大写<br>39    |zfill (width)|返回长度为 width 的字符串，原字符串右对齐，前面填充0<br>40    |isdecimal()|检查字符串是否只包含十进制字符，如果是返回 true，否则返回 false。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+    
+    </div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/21/day3-作业/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -826,150 +969,6 @@
 </li>
 </ol>
 <p><img src="https://upload-images.jianshu.io/upload_images/14827706-4cb5505115860e84.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="结果1"><br><img src="https://upload-images.jianshu.io/upload_images/14827706-91745955bceba5ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="结果2"></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-    <div>
-    
-    </div>
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/21/day4-Python-的字符串内建函数/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="酱油壹号">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/tusun.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="四川小旋风">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/21/day4-Python-的字符串内建函数/" class="post-title-link" itemprop="http://yoursite.com/index.html">未命名</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-21 09:34:21 / 修改时间：09:31:35" itemprop="dateCreated datePublished" datetime="2018-12-21T09:34:21+08:00">2018-12-21</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Python 的字符串常用内建函数如下：<br>|序号|方法|描述|<br>|—|—|—|<br>1    |capitalize()|将字符串的第一个字符转换为大写<br>2|    center(width, fillchar)|返回一个指定的宽度 width 居中的字符串，fillchar 为填充的字符，默认为空格。<br>3|    count(str)|返回 str 在 string 里面出现的次数<br>4|    bytes.decode(encoding=”utf-8”, errors=”strict”)|Python3 中没有 decode 方法，但我们可以使用 bytes 对象的 decode() 方法来解码给定的 bytes 对象，这个 bytes 对象可以由 str.encode() 来编码返回。<br>5|    encode(encoding=’UTF-8’,errors=’strict’)|以 encoding 指定的编码格式编码字符串，如果出错默认报一个ValueError 的异常，除非 errors 指定的是’ignore’或者’replace’<br>6|    endswith(suffix)|检查字符串是否以 obj 结束，如果beg 或者 end 指定则检查指定的范围内是否以 obj 结束，如果是，返回 True,否则返回 False.<br>7|    expandtabs(tabsize=8)|把字符串 string 中的 tab 符号转为空格，tab 符号默认的空格数是 8 。<br>8|    find(str, beg=0 end=len(string))|检测 str 是否包含在字符串中，如果指定范围 beg 和 end ，则检查是否包含在指定范围内，如果包含返回开始的索引值，否则返回-1<br>9|    index(str, beg=0, end=len(string))|跟find()方法一样，只不过如果str不在字符串中会报一个异常.<br>10|    isalnum()|如果字符串至少有一个字符并且所有字符都是字母或数字则返 回 True,否则返回 False<br>11|    isalpha()|如果字符串至少有一个字符并且所有字符都是字母则返回 True, 否则返回 False<br>12    |isdigit()|如果字符串只包含数字则返回 True 否则返回 False..<br>13    |islower()|如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是小写，则返回 True，否则返回 False<br>14    |isnumeric()|如果字符串中只包含数字字符，则返回 True，否则返回 False（中文数字也可以）<br>15    |isspace()|如果字符串中只包含空白，则返回 True，否则返回 False.<br>16|    istitle()|如果字符串是标题化的(见 title())则返回 True，否则返回 False<br>17|isupper()|如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是大写，则返回 True，否则返回 False<br>18|    join(seq)|以指定字符串作为分隔符，将 seq 中所有的元素(的字符串表示)合并为一个新的字符串<br>19|    len(string)|返回字符串长度<br>20|    ljust(width[, fillchar])|返回一个原字符串左对齐,并使用 fillchar 填充至长度 width 的新字符串，fillchar 默认为空格。<br>21    |lower()|转换字符串中所有大写字符为小写.<br>22    |lstrip()|截掉字符串左边的空格或指定字符。<br>23|    maketrans()|创建字符映射的转换表，对于接受两个参数的最简单的调用方式，第一个参数是字符串，表示需要转换的字符，第二个参数也是字符串表示转换的目标。<br>24    |max(str)|返回字符串 str 中最大的字母。<br>25|    min(str)|返回字符串 str 中最小的字母。<br>26    |replace(old, new [, max])|把 将字符串中的 str1 替换成 str2,如果 max 指定，则替换不超过 max 次。<br>27    |rfind(str, beg=0,end=len(string))|类似于 find()函数，不过是从右边开始查找.<br>28    |rindex( str, beg=0, end=len(string))|类似于 index()，不过是从右边开始.<br>29|     rjust(width,[, fillchar])|返回一个原字符串右对齐,并使用fillchar(默认空格）填充至长度 width 的新字符串<br>30    |rstrip()|删除字符串字符串末尾的空格.<br>31    |split(str=””, num=string.count(str))|num=string.count(str)) 以 str 为分隔符截取字符串，如果 num 有指定值，则仅截取 num 个子字符串<br>32    |splitlines([keepends])|按照行(‘\r’, ‘\r\n’, \n’)分隔，返回一个包含各行作为元素的列表，如果参数 keepends 为 False，不包含换行符，如果为 True，则保留换行符。<br>33    |startswith(str, beg=0,end=len(string))|检查字符串是否是以 obj 开头，是则返回 True，否则返回 False。如果beg 和 end 指定值，则在指定范围内检查。<br>34    |strip([chars])|在字符串上执行 lstrip()和 rstrip()<br>35    |swapcase()|将字符串中大写转换为小写，小写转换为大写<br>36    |title()|返回”标题化”的字符串,就是说所有单词都是以大写开始，其余字母均为小写(见 istitle())<br>37    |translate(table, deletechars=””)|根据 str 给出的表(包含 256 个字符)转换 string 的字符, 要过滤掉的字符放到 deletechars 参数中<br>38    |upper()|转换字符串中的小写字母为大写<br>39    |zfill (width)|返回长度为 width 的字符串，原字符串右对齐，前面填充0<br>40    |isdecimal()|检查字符串是否只包含十进制字符，如果是返回 true，否则返回 false。</p>
 
           
         
@@ -1470,6 +1469,343 @@
 </blockquote>
 </li>
 </ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+    <div>
+    
+    </div>
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/21/day2-python基础语法总结/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="酱油壹号">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tusun.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="四川小旋风">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/12/21/day2-python基础语法总结/" class="post-title-link" itemprop="http://yoursite.com/index.html">未命名</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-21 09:34:21 / 修改时间：09:31:35" itemprop="dateCreated datePublished" datetime="2018-12-21T09:34:21+08:00">2018-12-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#1、常用快捷键</p>
+<ul>
+<li>添加或取消一行注释：ctrl+/（通用）</li>
+<li>ctrl+s 保存</li>
+<li>ctrl+n 新建</li>
+<li>ctrl+f 搜索</li>
+<li>ctrl+r 搜索替换</li>
+<li>ctrl+z 撤销</li>
+<li>ctrl+shift+z 反撤销</li>
+<li>ctrl+a  ctrl+c   trl+v</li>
+<li>ctrl+d 复制上一行代码到下一行</li>
+<li>tab  补充代码<br>程序中涉及到的所有的和语法相关的符号，都是英文输入法下对应的符号<br>print是python内置函数，在控制台打印括号中的内容<br>引号是字符串的标志<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"Hello world!"</span>)</span><br><span class="line">print(<span class="string">'Hello Hello Hello'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>运行结果：<br><img src="https://upload-images.jianshu.io/upload_images/14827706-c1ffc6a0ac936a8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="控制台输出"></p>
+<p>#2、python基础语法</p>
+<p>##2.1注释</p>
+<ul>
+<li>注释是程序中说明文字，不会参与程序的编译和执行，对程序和功能没有任何影响。</li>
+<li>单行注释：在说明性文字前加#</li>
+<li>多行注释，3’或3”括起来，来设置多行注释，<br>  一般使用3个”</li>
+</ul>
+<p>##2.2标识符</p>
+<ul>
+<li><p>标识符是专门用来给变量、函数、类等命名的。<br><strong>要求</strong>：<br>python中的标识符要求是由数字、字母和下划线组成，并且数字不能开头<br><strong>注意</strong>：<br>1.在python3.x，标识符中可以包含非ASCII码字符，如汉字、日语、韩语、拉丁等。<br>2.开发时不要使用非ASCII码字符。例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num = 100</span><br><span class="line">_num = 200</span><br><span class="line">__ = 300</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>1num = 400    错误，不能以数字开头</p>
+</li>
+<li>n - num = 500  错误，减号也不行，只能是数字、字母和下划线</li>
+</ul>
+<p>##2.3行与缩进</p>
+<ul>
+<li>python中对代码里面的缩进有严格要求。同一级代码前面的缩进（空格/tab）的个数必须一致，否则报错。</li>
+<li>用空格或tab都行，一般用tab</li>
+<li>行的规范：要求声明函数和类的前后需要有两个空行。</li>
+</ul>
+<p>#2.4分段（行）显示</p>
+<ul>
+<li><p>一句代码很长，需要多行显示的时候，可以在需要换行的位置加\，表示前后是一行，后面的行无缩进要求，建议对齐<br><strong>注意：</strong>加\时，不能将一个数据，一个变量名给拆开。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num = 28 + 3333333333333333333\</span><br><span class="line">      + 23333</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果代码是列表、元组、字典、集合的字面量，可以直接换行，不用加\</p>
+</li>
+</ul>
+<p>##2.5一行显示多条语句</p>
+<ul>
+<li>一般要求一条语句写一行，如果一行写多条语句它们之间需要加 ;例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(1);print(2);print(3)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>#2.6关键字（保留字）</p>
+<ul>
+<li>python中已经定义好有特殊功能和意义的一些标识符，就是python的关键字，命名时不能使用。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import keyword                   #导入模块</span><br><span class="line">print(keyword.kwlist)          #打印python中关键字列表</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>输出结果：</strong><br>[‘False’, ‘None’, ‘True’, ‘and’, ‘as’,<br> ‘assert’, ‘break’, ‘class’, ‘continue’,<br>‘def’, ‘del’, ‘elif’, ‘else’, ‘except’,<br>‘finally’, ‘for’, ‘from’, ‘global’,<br>‘if’, ‘import’, ‘in’, ‘is’, ‘lambda’匿名,<br> ‘nonlocal’, ‘not’, ‘or’, ‘pass’, ‘raise’,<br> ‘return’, ‘try’, ‘while’, ‘with’, ‘yield’]</p>
+<p>#2.7print函数和input函数</p>
+<ul>
+<li>print(内容)–在控制台中打印内容，内容必须是python数据</li>
+<li>print(内容1，内容2)–在一行打印多个内容，显示时它们之间用空格隔开</li>
+<li>默认情况下，一个print中的内容占一行（以换行结束）。一个print中的多个内容用空格隔开<br><strong>print(内容1，内容2，…,end=’换行标志’)</strong><br><strong>print(内容1，内容2，…,seq=’分割标志’)</strong><br>例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_num = 200</span><br><span class="line">print(&apos;a&apos;,&apos;b&apos;,_num,end=&apos;------&gt;&apos;)</span><br><span class="line">print(1)</span><br><span class="line">print(2)</span><br><span class="line">print(&apos;a&apos;,&apos;b&apos;,_num,sep=&apos;-----&gt;&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>输出结果：<br><img src="https://upload-images.jianshu.io/upload_images/14827706-08a92cafce2e26d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出结果"></p>
+<ul>
+<li>input()–从控制台输入一串内容，以回车结束。并将内容以字符串形式返回<br><strong>注意：</strong><br>程序执行到input的时候，程序会停下来，直到输入完成位置。<br>input(‘提示信息’)–先打印提示信息，后执行input。<br><strong>例：</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def f(x,y):</span><br><span class="line">    sum = x + y</span><br><span class="line">    return(sum)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">l=[]</span><br><span class="line">a = int(input(&quot;请输入第一个数字：&quot;))</span><br><span class="line">b = int(input(&quot;请输入第二个数字：&quot;))</span><br><span class="line">n = 0</span><br><span class="line">while n &lt; 100:</span><br><span class="line">    c = f(a,b)</span><br><span class="line">    l.append(c)</span><br><span class="line">    a,b = b,c</span><br><span class="line">    n = n+1</span><br><span class="line">print(l)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>输出：</strong><br><img src="https://upload-images.jianshu.io/upload_images/14827706-1899da02716cd181.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="结果"></p>
+<p>#3.常用数据类型</p>
+<p>##3.1常见数据类型及其字面量（常量）</p>
+<ul>
+<li>python中常用数据类型有：<br>整型：100，23，-122，333等，所有的整数<br>浮点型：12.3，45.0，-0.123456 所有的小数<br>布尔：  True，False   首字母需大写<br>字符串：’任’,”意”,’字’,”符”   由双引号或单引号括起来的内容<br>列表： [12，’abc’,True]<br>字典:  {key1:value1,key2:value2,key3:value3}   {‘a’:120,’b’:110,’c’:100}<br>元组:  (12，’abc’,True)<br>集合:<br>函数;等<br>##3.2数字相关类型</li>
+<li>python中和数字相关的类型：整型、浮点型、布尔、复数（虚数5j+1）<br><strong>1.整型（int）</strong>：整数对应的类型，包含所有整数。python3中整数对应的类名只有int，<pre><code>python2中除了int还有long型
+</code></pre>python中的整数，可用十进制、二进制、八进制、十六进制来表示<br><strong>2.浮点型（float）</strong>：小数对应的类型，包含了所有的小数。支持科学计数法。<br><strong>3.布尔（bool）</strong>：只有两个值True和False，都是关键字，首字母大写，分别表示“真”和“假”。<br>True实质是数字1，False实质是数字0。<br><strong>4.复数（complex）</strong>：表示所有的虚数对应的类型，用“数字+j”表示虚部，实部就是普通数字。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(2e4)  # 2*10^4 = 20000</span><br><span class="line">print(3e-2) # 3*10^-2 = 0.03</span><br><span class="line"></span><br><span class="line">print(1+True,1+False)    # 2 和 1</span><br><span class="line">print((1+2j)+(2-1j))     # 3-1j</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##3.3type函数</p>
+<ul>
+<li>type(数据)–获取数据的类型<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(type(666))    # int</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##3.4isinstance函数</p>
+<ul>
+<li>isinstance(数据，类型)–判断指定的数据是否是指定的类型，结果为bool值。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(isinstance(100,float))  #判断100是否为浮点型，False</span><br><span class="line">print(isinstance(100,int))    #判断100是否为浮点型，True</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>#3.5类型的强制转换</p>
+<ul>
+<li>目标类型名（需要转换的数据）–将指定的数据转换成目标类型,所有的类型都可以。</li>
+<li>浮点型转换成整型：直接去掉小数部分</li>
+<li>整型转换成浮点型：在整数后加.0</li>
+<li>其他类型转布尔：bool(),所有的数据都能转成bool值。除了0转换成False，其他全为True。<br><strong>注意：</strong>复数不能转换成整型或浮点型，但能转换成布尔型。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">b = int(12.5)</span><br><span class="line">print(b)               # 12</span><br><span class="line">print(float(b))        # 12.0</span><br><span class="line">print(bool(b))         # True</span><br><span class="line">print(bool(-b))        # True</span><br><span class="line">print(float(True))     # 1.0</span><br><span class="line">print(complex(10))      # 10+0j</span><br><span class="line">print(complex(-10))     # -10+0j</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>#4.进制</p>
+<p>##4.1十进制</p>
+<ul>
+<li><strong>基数：</strong>0，1，2，3，4，5，6，7，8，9</li>
+<li><strong>进位：</strong>满10进1</li>
+<li><strong>位权：</strong>123 = 1<em>10^2 + 2</em>10^1 + 3*10^0       第n位的位权为 (10^(n-1))</li>
+<li><strong>表示方式：</strong>所有的数字都是10进制（数字直接写）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">20</span><br><span class="line">33</span><br><span class="line">12</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##4.2二进制</p>
+<ul>
+<li><strong>基数：</strong>0，1</li>
+<li><strong>进位：</strong>满2进1</li>
+<li><strong>位权：</strong>1101 = 1<em>2^3 + 1</em>2^2 + 0<em>2^1 + 1</em>2^0  = 13     第n位的位权为 (2^(n-1))从1开始记位</li>
+<li><strong>表示方式：</strong>在二进制数前加前缀—-&gt;  0b或0B<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0B110 + 0B011    #   1001</span><br><span class="line">0B1 + 0B1        #   10</span><br><span class="line">0B110 - 0B011    #   011</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##4.3八进制</p>
+<ul>
+<li><strong>基数：</strong>0，1，2，3，4，5，6，7</li>
+<li><strong>进位：</strong>满8进1</li>
+<li><strong>位权：</strong>123 = 1<em>8^2 + 2</em>8^1 + 3*8^0       第n位的位权为 (8^(n-1))从1开始记位</li>
+<li><strong>表示方式：</strong>在八进制前加前缀—-&gt;     0o或0O 大小写都可以<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0o12 + 0o26     #0o40</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##4.4十六进制</p>
+<ul>
+<li><strong>基数：</strong>0，1，2，3，4，5，6，7，8，9，a(10),b(11),c(12),d(13),e(14),f(15)(A-F)  大小写都可以<br>进位：满16进1</li>
+<li><strong>位权：</strong>123 = 1<em>16^2 + 2</em>16^1 + 3*16^0       第n位的位权为 (16^(n-1))从1开始记位</li>
+<li><strong>表示方式：</strong>在十六进制前加前缀—-&gt;     0x或0X 大小写都可以<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(0x12a)            #结果为10进制数</span><br><span class="line">print(0xabc12)</span><br><span class="line">print(0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##4.5其他进制和十进制之间的转换</p>
+<p><strong>1.</strong>其他进制转十进制：每一位数*权值，再求和<br><strong>2.</strong>十进制转其他进制：累除</p>
+<p>##4.6二进制和八进制、十六进制互转<br><strong>1.</strong>二进制转八进制：每3位2进制转成1位八进制。<br>  八进制转2进制：每1位八进制转成3位二进制<br>|0b|001 |100 |100 |110 |010 |011 |100 |= |0o1446234|<br>|–: |–:|–:|–:|–:|–:|–:|–:|–:|–:|<br>  |表示|1   |4   |4   |6   |2   |3  | 4</p>
+<blockquote>
+<p>二进制小数—————&gt;&gt;&gt;&gt;十进制小数<br>“按权展开求和法”：<br>例1：将101.111(2)转换成十进制数<br>          1*(2^2) + 0*(2^1) + 1*(2^0) + 1*(2^(-1)) + 1*(2^(-2)) + 1*(2^(-3))=5.875<br>          只要记住个位数是2的0次方，往右一次增加，往左一次减少，写出关系式之后各式相加就是所求</p>
+</blockquote>
+<blockquote>
+<p>十进制小数————–&gt;&gt;&gt;&gt;二进制小数<br>（十进制数的整数位是二进制数的整数位，十进制数的小数位是二进制数的小数位）<br>“乘二取整法”（顺序排列）：<br>假如我们有小数111.4（10），我们对他进行一下计算：<br>首先取小数位0.4，对其进行“乘二取整法”<br>0.4<em>2=0.8     取结果的的整数位置上的数是0          |  按                                     （取整法就是取整数位上的数字）<br>0.8</em>2=1.6                                                     取1      |  顺<br>0.6<em>2=1.2                                                     取1      |  序<br>0.2</em>2=0.4                                                     取0      |  写<br>0.4<em>2=0.8                                                     取0      |  出<br>0.8</em>2=1.6                                                     取1      |<br>0.6<em>2=1.2                                                     取1      |<br>0.2</em>2=0.4                                                     取0      |<br>来到这了，我们发现出现了循环，因此可以推知小数点后的二进制是<br>0.01100110……（循环0110）<br>接下来是整数111<br>我们这里用“除以2取余法，逆序排列”<br><img src="https://upload-images.jianshu.io/upload_images/14827706-01da3d7fbe600fef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="累除法"><br>所以整数位是1101111<br>最终结果是整数位和小数位合并1101111.01100110……（2）<br>当我们对小数0.1（10）        0.2（10）       0.3（10）      0.4（10）       0.5（10）        0.6（10）        0.7（10）      0.8（10）        0.9（10）<br>发现只有0.5(10)不会出现循环小数,他转换成二进制是0.1(2)<br>其余的出现循环的小数</p>
+</blockquote>
+<p><strong>2.</strong>二进制转十六进制：每4位2进制转成1位十六进制。<br>  十六进制转2进制：每1位十六进制转成4位二进制<br>|0b |0110 |0100 |1100 |1001 |1100   |= |0x64c9c |<br>|–: |–:|–:|–:|–:|–:|–:|–:|<br> |表示|6  |  4   | c    |9    |c |</p>
+<blockquote>
+<p>0x6745 = 0b0110 0111 0100 0101<br>0xa12  = 0b1010 0001 0010</p>
+</blockquote>
+<p><strong>3.</strong>八进制转十六进制：先转为二进制。</p>
+<p>##4.7进制转换相应的函数–返回值是字符串</p>
+<ul>
+<li><strong>bin(数字)</strong>– 将其他进制的数转为二进制数</li>
+<li><strong>oct(数字)</strong>–将其他进制的数转为八进制数</li>
+<li><strong>hex(数字)</strong>–将其他进制的数转为十六进制<br><strong>所有进制计算时均会自动转换成十进制</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(bin(0x6745))            #0b110011101000101</span><br><span class="line">print(bin(0o1446234))         #0b1100100110010011100</span><br><span class="line">print(oct(0x6745))            #0o63505</span><br><span class="line">print(hex(0o1446234))         #0x64c9c</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>#5.原码、反码和补码</p>
+<p>##5.1计算机数据的存储</p>
+<ul>
+<li><strong>以下值均为二进制</strong></li>
+<li><strong>计算机能直接存储的是数字，并且存的是数字的补码</strong></li>
+</ul>
+<p>##5.2计算机内存大小单位</p>
+<blockquote>
+<p>位（bit）<br>1字节 = 8位<br>1kb = 1024字节<br>1mb = 1024kb<br>1GB = 1024mb<br>1TB = 1024Gb</p>
+</blockquote>
+<p>##5.3原码</p>
+<ul>
+<li>符号位+真值   （用最高位表示符号位，后面的即为数字的二进制）<pre><code>符号位： 0 ---&gt; 正，1---&gt; 负
+真值： 数字对应的二进制值
+</code></pre><blockquote>
+<p>10(原码) = 0 000 1010<br>-10（原码）= 1 000 1010</p>
+</blockquote>
+</li>
+</ul>
+<p>##5.4反码</p>
+<ul>
+<li>正数的反码和原码一样。负数的反码是符号位不变，其他位上的数取反（0变1，1变0）<blockquote>
+<p>10(反码) = 0 000 1010<br>-10（反码）= 1 111 0101</p>
+</blockquote>
+</li>
+</ul>
+<p>##5.5补码：</p>
+<ul>
+<li>正数的补码和原码一样。负数的补码是它的反码加1。<blockquote>
+<p>10(补码) = 0 000 1010<br>-10（补码）= 1 111 0110</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>注意：数据存储和运算的时候采用的是补码。看结果看的是原码。<br>单片机 只有加法和乘法器</strong><br><strong>案例：</strong></p>
+<blockquote>
+<p>如果计算机存储的是原码：<br>3：0011<br>2：0010<br>3+2 = 0101 = 5</p>
+</blockquote>
+<blockquote>
+<p>原码：<br>3-2 = 3+(-2) = 1101 = -5<br>3: 0011<br>-2:1010</p>
+</blockquote>
+<blockquote>
+<p>补码：<br>3(补) = 0011<br>-2(补) = 1101(反) = 1110(补)<br>0011(补)+1110(补) = 0001(补) = 0001(原) = 1</p>
+</blockquote>
+<blockquote>
+<p>2-3<br>2：0010（原）= 0010（补）<br>-3：1011（原） = 1100（反）= 1101（补码）<br>0010（补）+ 1101（补码） = 1111（补码）= 1110（反） = 1001 = -1</p>
+</blockquote>
 
           
         
@@ -2039,343 +2375,6 @@
 </blockquote>
 <p><strong>注意：一个转义字符代表一个字符</strong></p>
 <p><strong>c.阻止转义：</strong>在字符串最前面加r 或 R，可以阻止转义字符转义<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;\t abc\n123&apos;)                 #    abc</span><br><span class="line">                                          123</span><br><span class="line">print(&apos;abc\&apos;123&apos;)                      #abc&apos;123</span><br><span class="line">print(r&apos;abc\&apos;123&apos;)                    #abc\&apos;123</span><br><span class="line">print(R&apos;\t abc\n123&apos;)              #\t abc\n123</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-    <div>
-    
-    </div>
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/21/day2-python基础语法总结/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="酱油壹号">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/tusun.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="四川小旋风">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/21/day2-python基础语法总结/" class="post-title-link" itemprop="http://yoursite.com/index.html">未命名</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-21 09:34:21 / 修改时间：09:31:35" itemprop="dateCreated datePublished" datetime="2018-12-21T09:34:21+08:00">2018-12-21</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>#1、常用快捷键</p>
-<ul>
-<li>添加或取消一行注释：ctrl+/（通用）</li>
-<li>ctrl+s 保存</li>
-<li>ctrl+n 新建</li>
-<li>ctrl+f 搜索</li>
-<li>ctrl+r 搜索替换</li>
-<li>ctrl+z 撤销</li>
-<li>ctrl+shift+z 反撤销</li>
-<li>ctrl+a  ctrl+c   trl+v</li>
-<li>ctrl+d 复制上一行代码到下一行</li>
-<li>tab  补充代码<br>程序中涉及到的所有的和语法相关的符号，都是英文输入法下对应的符号<br>print是python内置函数，在控制台打印括号中的内容<br>引号是字符串的标志<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"Hello world!"</span>)</span><br><span class="line">print(<span class="string">'Hello Hello Hello'</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>运行结果：<br><img src="https://upload-images.jianshu.io/upload_images/14827706-c1ffc6a0ac936a8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="控制台输出"></p>
-<p>#2、python基础语法</p>
-<p>##2.1注释</p>
-<ul>
-<li>注释是程序中说明文字，不会参与程序的编译和执行，对程序和功能没有任何影响。</li>
-<li>单行注释：在说明性文字前加#</li>
-<li>多行注释，3’或3”括起来，来设置多行注释，<br>  一般使用3个”</li>
-</ul>
-<p>##2.2标识符</p>
-<ul>
-<li><p>标识符是专门用来给变量、函数、类等命名的。<br><strong>要求</strong>：<br>python中的标识符要求是由数字、字母和下划线组成，并且数字不能开头<br><strong>注意</strong>：<br>1.在python3.x，标识符中可以包含非ASCII码字符，如汉字、日语、韩语、拉丁等。<br>2.开发时不要使用非ASCII码字符。例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num = 100</span><br><span class="line">_num = 200</span><br><span class="line">__ = 300</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>1num = 400    错误，不能以数字开头</p>
-</li>
-<li>n - num = 500  错误，减号也不行，只能是数字、字母和下划线</li>
-</ul>
-<p>##2.3行与缩进</p>
-<ul>
-<li>python中对代码里面的缩进有严格要求。同一级代码前面的缩进（空格/tab）的个数必须一致，否则报错。</li>
-<li>用空格或tab都行，一般用tab</li>
-<li>行的规范：要求声明函数和类的前后需要有两个空行。</li>
-</ul>
-<p>#2.4分段（行）显示</p>
-<ul>
-<li><p>一句代码很长，需要多行显示的时候，可以在需要换行的位置加\，表示前后是一行，后面的行无缩进要求，建议对齐<br><strong>注意：</strong>加\时，不能将一个数据，一个变量名给拆开。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num = 28 + 3333333333333333333\</span><br><span class="line">      + 23333</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果代码是列表、元组、字典、集合的字面量，可以直接换行，不用加\</p>
-</li>
-</ul>
-<p>##2.5一行显示多条语句</p>
-<ul>
-<li>一般要求一条语句写一行，如果一行写多条语句它们之间需要加 ;例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(1);print(2);print(3)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>#2.6关键字（保留字）</p>
-<ul>
-<li>python中已经定义好有特殊功能和意义的一些标识符，就是python的关键字，命名时不能使用。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import keyword                   #导入模块</span><br><span class="line">print(keyword.kwlist)          #打印python中关键字列表</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>输出结果：</strong><br>[‘False’, ‘None’, ‘True’, ‘and’, ‘as’,<br> ‘assert’, ‘break’, ‘class’, ‘continue’,<br>‘def’, ‘del’, ‘elif’, ‘else’, ‘except’,<br>‘finally’, ‘for’, ‘from’, ‘global’,<br>‘if’, ‘import’, ‘in’, ‘is’, ‘lambda’匿名,<br> ‘nonlocal’, ‘not’, ‘or’, ‘pass’, ‘raise’,<br> ‘return’, ‘try’, ‘while’, ‘with’, ‘yield’]</p>
-<p>#2.7print函数和input函数</p>
-<ul>
-<li>print(内容)–在控制台中打印内容，内容必须是python数据</li>
-<li>print(内容1，内容2)–在一行打印多个内容，显示时它们之间用空格隔开</li>
-<li>默认情况下，一个print中的内容占一行（以换行结束）。一个print中的多个内容用空格隔开<br><strong>print(内容1，内容2，…,end=’换行标志’)</strong><br><strong>print(内容1，内容2，…,seq=’分割标志’)</strong><br>例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_num = 200</span><br><span class="line">print(&apos;a&apos;,&apos;b&apos;,_num,end=&apos;------&gt;&apos;)</span><br><span class="line">print(1)</span><br><span class="line">print(2)</span><br><span class="line">print(&apos;a&apos;,&apos;b&apos;,_num,sep=&apos;-----&gt;&apos;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>输出结果：<br><img src="https://upload-images.jianshu.io/upload_images/14827706-08a92cafce2e26d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出结果"></p>
-<ul>
-<li>input()–从控制台输入一串内容，以回车结束。并将内容以字符串形式返回<br><strong>注意：</strong><br>程序执行到input的时候，程序会停下来，直到输入完成位置。<br>input(‘提示信息’)–先打印提示信息，后执行input。<br><strong>例：</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def f(x,y):</span><br><span class="line">    sum = x + y</span><br><span class="line">    return(sum)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">l=[]</span><br><span class="line">a = int(input(&quot;请输入第一个数字：&quot;))</span><br><span class="line">b = int(input(&quot;请输入第二个数字：&quot;))</span><br><span class="line">n = 0</span><br><span class="line">while n &lt; 100:</span><br><span class="line">    c = f(a,b)</span><br><span class="line">    l.append(c)</span><br><span class="line">    a,b = b,c</span><br><span class="line">    n = n+1</span><br><span class="line">print(l)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>输出：</strong><br><img src="https://upload-images.jianshu.io/upload_images/14827706-1899da02716cd181.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="结果"></p>
-<p>#3.常用数据类型</p>
-<p>##3.1常见数据类型及其字面量（常量）</p>
-<ul>
-<li>python中常用数据类型有：<br>整型：100，23，-122，333等，所有的整数<br>浮点型：12.3，45.0，-0.123456 所有的小数<br>布尔：  True，False   首字母需大写<br>字符串：’任’,”意”,’字’,”符”   由双引号或单引号括起来的内容<br>列表： [12，’abc’,True]<br>字典:  {key1:value1,key2:value2,key3:value3}   {‘a’:120,’b’:110,’c’:100}<br>元组:  (12，’abc’,True)<br>集合:<br>函数;等<br>##3.2数字相关类型</li>
-<li>python中和数字相关的类型：整型、浮点型、布尔、复数（虚数5j+1）<br><strong>1.整型（int）</strong>：整数对应的类型，包含所有整数。python3中整数对应的类名只有int，<pre><code>python2中除了int还有long型
-</code></pre>python中的整数，可用十进制、二进制、八进制、十六进制来表示<br><strong>2.浮点型（float）</strong>：小数对应的类型，包含了所有的小数。支持科学计数法。<br><strong>3.布尔（bool）</strong>：只有两个值True和False，都是关键字，首字母大写，分别表示“真”和“假”。<br>True实质是数字1，False实质是数字0。<br><strong>4.复数（complex）</strong>：表示所有的虚数对应的类型，用“数字+j”表示虚部，实部就是普通数字。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(2e4)  # 2*10^4 = 20000</span><br><span class="line">print(3e-2) # 3*10^-2 = 0.03</span><br><span class="line"></span><br><span class="line">print(1+True,1+False)    # 2 和 1</span><br><span class="line">print((1+2j)+(2-1j))     # 3-1j</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>##3.3type函数</p>
-<ul>
-<li>type(数据)–获取数据的类型<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(type(666))    # int</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>##3.4isinstance函数</p>
-<ul>
-<li>isinstance(数据，类型)–判断指定的数据是否是指定的类型，结果为bool值。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(isinstance(100,float))  #判断100是否为浮点型，False</span><br><span class="line">print(isinstance(100,int))    #判断100是否为浮点型，True</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>#3.5类型的强制转换</p>
-<ul>
-<li>目标类型名（需要转换的数据）–将指定的数据转换成目标类型,所有的类型都可以。</li>
-<li>浮点型转换成整型：直接去掉小数部分</li>
-<li>整型转换成浮点型：在整数后加.0</li>
-<li>其他类型转布尔：bool(),所有的数据都能转成bool值。除了0转换成False，其他全为True。<br><strong>注意：</strong>复数不能转换成整型或浮点型，但能转换成布尔型。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">b = int(12.5)</span><br><span class="line">print(b)               # 12</span><br><span class="line">print(float(b))        # 12.0</span><br><span class="line">print(bool(b))         # True</span><br><span class="line">print(bool(-b))        # True</span><br><span class="line">print(float(True))     # 1.0</span><br><span class="line">print(complex(10))      # 10+0j</span><br><span class="line">print(complex(-10))     # -10+0j</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>#4.进制</p>
-<p>##4.1十进制</p>
-<ul>
-<li><strong>基数：</strong>0，1，2，3，4，5，6，7，8，9</li>
-<li><strong>进位：</strong>满10进1</li>
-<li><strong>位权：</strong>123 = 1<em>10^2 + 2</em>10^1 + 3*10^0       第n位的位权为 (10^(n-1))</li>
-<li><strong>表示方式：</strong>所有的数字都是10进制（数字直接写）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">20</span><br><span class="line">33</span><br><span class="line">12</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>##4.2二进制</p>
-<ul>
-<li><strong>基数：</strong>0，1</li>
-<li><strong>进位：</strong>满2进1</li>
-<li><strong>位权：</strong>1101 = 1<em>2^3 + 1</em>2^2 + 0<em>2^1 + 1</em>2^0  = 13     第n位的位权为 (2^(n-1))从1开始记位</li>
-<li><strong>表示方式：</strong>在二进制数前加前缀—-&gt;  0b或0B<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0B110 + 0B011    #   1001</span><br><span class="line">0B1 + 0B1        #   10</span><br><span class="line">0B110 - 0B011    #   011</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>##4.3八进制</p>
-<ul>
-<li><strong>基数：</strong>0，1，2，3，4，5，6，7</li>
-<li><strong>进位：</strong>满8进1</li>
-<li><strong>位权：</strong>123 = 1<em>8^2 + 2</em>8^1 + 3*8^0       第n位的位权为 (8^(n-1))从1开始记位</li>
-<li><strong>表示方式：</strong>在八进制前加前缀—-&gt;     0o或0O 大小写都可以<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0o12 + 0o26     #0o40</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>##4.4十六进制</p>
-<ul>
-<li><strong>基数：</strong>0，1，2，3，4，5，6，7，8，9，a(10),b(11),c(12),d(13),e(14),f(15)(A-F)  大小写都可以<br>进位：满16进1</li>
-<li><strong>位权：</strong>123 = 1<em>16^2 + 2</em>16^1 + 3*16^0       第n位的位权为 (16^(n-1))从1开始记位</li>
-<li><strong>表示方式：</strong>在十六进制前加前缀—-&gt;     0x或0X 大小写都可以<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(0x12a)            #结果为10进制数</span><br><span class="line">print(0xabc12)</span><br><span class="line">print(0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>##4.5其他进制和十进制之间的转换</p>
-<p><strong>1.</strong>其他进制转十进制：每一位数*权值，再求和<br><strong>2.</strong>十进制转其他进制：累除</p>
-<p>##4.6二进制和八进制、十六进制互转<br><strong>1.</strong>二进制转八进制：每3位2进制转成1位八进制。<br>  八进制转2进制：每1位八进制转成3位二进制<br>|0b|001 |100 |100 |110 |010 |011 |100 |= |0o1446234|<br>|–: |–:|–:|–:|–:|–:|–:|–:|–:|–:|<br>  |表示|1   |4   |4   |6   |2   |3  | 4</p>
-<blockquote>
-<p>二进制小数—————&gt;&gt;&gt;&gt;十进制小数<br>“按权展开求和法”：<br>例1：将101.111(2)转换成十进制数<br>          1*(2^2) + 0*(2^1) + 1*(2^0) + 1*(2^(-1)) + 1*(2^(-2)) + 1*(2^(-3))=5.875<br>          只要记住个位数是2的0次方，往右一次增加，往左一次减少，写出关系式之后各式相加就是所求</p>
-</blockquote>
-<blockquote>
-<p>十进制小数————–&gt;&gt;&gt;&gt;二进制小数<br>（十进制数的整数位是二进制数的整数位，十进制数的小数位是二进制数的小数位）<br>“乘二取整法”（顺序排列）：<br>假如我们有小数111.4（10），我们对他进行一下计算：<br>首先取小数位0.4，对其进行“乘二取整法”<br>0.4<em>2=0.8     取结果的的整数位置上的数是0          |  按                                     （取整法就是取整数位上的数字）<br>0.8</em>2=1.6                                                     取1      |  顺<br>0.6<em>2=1.2                                                     取1      |  序<br>0.2</em>2=0.4                                                     取0      |  写<br>0.4<em>2=0.8                                                     取0      |  出<br>0.8</em>2=1.6                                                     取1      |<br>0.6<em>2=1.2                                                     取1      |<br>0.2</em>2=0.4                                                     取0      |<br>来到这了，我们发现出现了循环，因此可以推知小数点后的二进制是<br>0.01100110……（循环0110）<br>接下来是整数111<br>我们这里用“除以2取余法，逆序排列”<br><img src="https://upload-images.jianshu.io/upload_images/14827706-01da3d7fbe600fef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="累除法"><br>所以整数位是1101111<br>最终结果是整数位和小数位合并1101111.01100110……（2）<br>当我们对小数0.1（10）        0.2（10）       0.3（10）      0.4（10）       0.5（10）        0.6（10）        0.7（10）      0.8（10）        0.9（10）<br>发现只有0.5(10)不会出现循环小数,他转换成二进制是0.1(2)<br>其余的出现循环的小数</p>
-</blockquote>
-<p><strong>2.</strong>二进制转十六进制：每4位2进制转成1位十六进制。<br>  十六进制转2进制：每1位十六进制转成4位二进制<br>|0b |0110 |0100 |1100 |1001 |1100   |= |0x64c9c |<br>|–: |–:|–:|–:|–:|–:|–:|–:|<br> |表示|6  |  4   | c    |9    |c |</p>
-<blockquote>
-<p>0x6745 = 0b0110 0111 0100 0101<br>0xa12  = 0b1010 0001 0010</p>
-</blockquote>
-<p><strong>3.</strong>八进制转十六进制：先转为二进制。</p>
-<p>##4.7进制转换相应的函数–返回值是字符串</p>
-<ul>
-<li><strong>bin(数字)</strong>– 将其他进制的数转为二进制数</li>
-<li><strong>oct(数字)</strong>–将其他进制的数转为八进制数</li>
-<li><strong>hex(数字)</strong>–将其他进制的数转为十六进制<br><strong>所有进制计算时均会自动转换成十进制</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(bin(0x6745))            #0b110011101000101</span><br><span class="line">print(bin(0o1446234))         #0b1100100110010011100</span><br><span class="line">print(oct(0x6745))            #0o63505</span><br><span class="line">print(hex(0o1446234))         #0x64c9c</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>#5.原码、反码和补码</p>
-<p>##5.1计算机数据的存储</p>
-<ul>
-<li><strong>以下值均为二进制</strong></li>
-<li><strong>计算机能直接存储的是数字，并且存的是数字的补码</strong></li>
-</ul>
-<p>##5.2计算机内存大小单位</p>
-<blockquote>
-<p>位（bit）<br>1字节 = 8位<br>1kb = 1024字节<br>1mb = 1024kb<br>1GB = 1024mb<br>1TB = 1024Gb</p>
-</blockquote>
-<p>##5.3原码</p>
-<ul>
-<li>符号位+真值   （用最高位表示符号位，后面的即为数字的二进制）<pre><code>符号位： 0 ---&gt; 正，1---&gt; 负
-真值： 数字对应的二进制值
-</code></pre><blockquote>
-<p>10(原码) = 0 000 1010<br>-10（原码）= 1 000 1010</p>
-</blockquote>
-</li>
-</ul>
-<p>##5.4反码</p>
-<ul>
-<li>正数的反码和原码一样。负数的反码是符号位不变，其他位上的数取反（0变1，1变0）<blockquote>
-<p>10(反码) = 0 000 1010<br>-10（反码）= 1 111 0101</p>
-</blockquote>
-</li>
-</ul>
-<p>##5.5补码：</p>
-<ul>
-<li>正数的补码和原码一样。负数的补码是它的反码加1。<blockquote>
-<p>10(补码) = 0 000 1010<br>-10（补码）= 1 111 0110</p>
-</blockquote>
-</li>
-</ul>
-<p><strong>注意：数据存储和运算的时候采用的是补码。看结果看的是原码。<br>单片机 只有加法和乘法器</strong><br><strong>案例：</strong></p>
-<blockquote>
-<p>如果计算机存储的是原码：<br>3：0011<br>2：0010<br>3+2 = 0101 = 5</p>
-</blockquote>
-<blockquote>
-<p>原码：<br>3-2 = 3+(-2) = 1101 = -5<br>3: 0011<br>-2:1010</p>
-</blockquote>
-<blockquote>
-<p>补码：<br>3(补) = 0011<br>-2(补) = 1101(反) = 1110(补)<br>0011(补)+1110(补) = 0001(补) = 0001(原) = 1</p>
-</blockquote>
-<blockquote>
-<p>2-3<br>2：0010（原）= 0010（补）<br>-3：1011（原） = 1100（反）= 1101（补码）<br>0010（补）+ 1101（补码） = 1111（补码）= 1110（反） = 1001 = -1</p>
-</blockquote>
 
           
         
