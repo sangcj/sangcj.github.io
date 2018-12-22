@@ -359,12 +359,12 @@ height:33vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/学生管理系统1-0/">
+        <a class="abstract-title" href="/2018/12/21/登录注册/">
             
                 <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135...
+            1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192def login_page():    print("""********************************************************************************************...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -418,28 +418,20 @@ a.声明在函数或类的内部的变量都是局部变量（形参是局部变
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day13-类和对象/">
+        <a class="abstract-title" href="/2018/12/21/day12-json和异常捕获/">
             
                 <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            #13.1 编程思想
+            #12.1 json数据
 
-1.编程思想：
+1.什么是json数据json是一种数据格式，满足json格式的数据就是json数据。文件后缀是‘.json’，且文件中内容满足json格式。
 
-
-1.面向过程编程 - 逻辑、算法遇到问题考虑直接把逻辑思维转换成代码，解决问题2.函数式编程 - 函数遇到问题想到用函数解决。考虑是否有这种功能的函数。3.面向对象编程 - 类和对象遇到问题，就考虑是否有一个对象能帮我解决这个问题
-
-2.类和对象1.定义类：就是拥有相同属性和功能的对象的集合(类是抽象的)对象：类的实例（对象是具体的）2.从生活的角度考虑类的对象如果‘人’是一个类，余婷是一个对象，骆老师也是一个对象。
-
-
-#13.2 类的声明
-
-1.类的声明123语法：class 类名（父类列表）：    类的内容
+2.json格式一个json中只有一个数据；并且这个数据是json支持的数据类型的数据
 
 
 
-说明：class - ...
+json支持的数据类型数字类型 - 包含所有的数字，包括整数和小数，如：100，20，12.5，-20字符串 - 使用双引号括起来的字符集，例如：“abc123”，“123”布尔 - true和false数组 - 相当于python中的列表，使用[]括起来，括号里面是json支持的任意类型的数据。例如：[“ab”, 12, ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -457,20 +449,21 @@ a.声明在函数或类的内部的变量都是局部变量（形参是局部变
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day12-json和异常捕获/">
+        <a class="abstract-title" href="/2018/12/21/day11-文件操作/">
             
                 <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            #12.1 json数据
+            #11.1 生成式迭代器：是一个容器，类型为iter；可以同时存取多个数据，取的时候只能一个一个取，并且取过的数据在容器中就不存在了。
+生成器：就是迭代器，数据是通过调用函数获取yield后面的值产生的。数据只会在获取的时候产生。调用一个带yield关键字的函数，就是创建一个生成器。调用时不会执行，只有当获取生成器中数据时才会执行函数。
 
-1.什么是json数据json是一种数据格式，满足json格式的数据就是json数据。文件后缀是‘.json’，且文件中内容满足json格式。
+1.什么是生成式
+格式1： 结果是一个生成器（迭代器）（值1（表达式） for 变量 in 序列）展开：
+123def func():     for 变量 in 序列：          yield 值1（表达式）
 
-2.json格式一个json中只有一个数据；并且这个数据是json支持的数据类型的数据
 
 
-
-json支持的数据类型数字类型 - 包含所有的数字，包括整数和小数，如：100，20，12.5，-20字符串 - 使用双引号括起来的字符集，例如：“abc123”，“123”布尔 - true和false数组 - 相当于python中的列表，使用[]括起来，括号里面是json支持的任意类型的数据。例如：[“ab”, 12, ...
+注意：表达式结果就是每次循环...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -570,21 +563,28 @@ json支持的数据类型数字类型 - 包含所有的数字，包括整数和�
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day11-文件操作/">
+        <a class="abstract-title" href="/2018/12/21/day13-类和对象/">
             
                 <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            #11.1 生成式迭代器：是一个容器，类型为iter；可以同时存取多个数据，取的时候只能一个一个取，并且取过的数据在容器中就不存在了。
-生成器：就是迭代器，数据是通过调用函数获取yield后面的值产生的。数据只会在获取的时候产生。调用一个带yield关键字的函数，就是创建一个生成器。调用时不会执行，只有当获取生成器中数据时才会执行函数。
+            #13.1 编程思想
 
-1.什么是生成式
-格式1： 结果是一个生成器（迭代器）（值1（表达式） for 变量 in 序列）展开：
-123def func():     for 变量 in 序列：          yield 值1（表达式）
+1.编程思想：
 
 
+1.面向过程编程 - 逻辑、算法遇到问题考虑直接把逻辑思维转换成代码，解决问题2.函数式编程 - 函数遇到问题想到用函数解决。考虑是否有这种功能的函数。3.面向对象编程 - 类和对象遇到问题，就考虑是否有一个对象能帮我解决这个问题
 
-注意：表达式结果就是每次循环...
+2.类和对象1.定义类：就是拥有相同属性和功能的对象的集合(类是抽象的)对象：类的实例（对象是具体的）2.从生活的角度考虑类的对象如果‘人’是一个类，余婷是一个对象，骆老师也是一个对象。
+
+
+#13.2 类的声明
+
+1.类的声明123语法：class 类名（父类列表）：    类的内容
+
+
+
+说明：class - ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1482,12 +1482,12 @@ b.函数调用过程是一个压栈的过程当函数调用时，系统会自动
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day3-python变量和运算符总结/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day4-Python字符串常用内建函数/">[Untitled Post]</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day4-Python字符串常用内建函数/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day3-python变量和运算符总结/">[Untitled Post]</a>
         </li>
     
     
@@ -1502,7 +1502,7 @@ b.函数调用过程是一个压栈的过程当函数调用时，系统会自动
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/学生管理系统1-0/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/登录注册/">[Untitled Post]</a>
         </li>
     
     
@@ -1512,7 +1512,7 @@ b.函数调用过程是一个压栈的过程当函数调用时，系统会自动
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-类和对象/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day15-面向对象和pygame/">[Untitled Post]</a>
         </li>
     
     
@@ -1540,17 +1540,7 @@ b.函数调用过程是一个压栈的过程当函数调用时，系统会自动
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-正则表达式/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day15-面向对象和pygame/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day19-多线程/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-类和对象2/">[Untitled Post]</a>
         </li>
     
     
@@ -1565,12 +1555,17 @@ b.函数调用过程是一个压栈的过程当函数调用时，系统会自动
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day19-多线程/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-作业/">[Untitled Post]</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/登录注册/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/学生管理系统1-0/">[Untitled Post]</a>
         </li>
     
     
@@ -1585,7 +1580,7 @@ b.函数调用过程是一个压栈的过程当函数调用时，系统会自动
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-类和对象2/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-正则表达式/">[Untitled Post]</a>
         </li>
     
     
@@ -1600,7 +1595,7 @@ b.函数调用过程是一个压栈的过程当函数调用时，系统会自动
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-作业/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表/">[Untitled Post]</a>
         </li>
     
     
@@ -1625,12 +1620,7 @@ b.函数调用过程是一个压栈的过程当函数调用时，系统会自动
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day12-json和异常捕获/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-作业/">[Untitled Post]</a>
         </li>
     
     
@@ -1640,7 +1630,17 @@ b.函数调用过程是一个压栈的过程当函数调用时，系统会自动
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day12-json和异常捕获/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day10-函数3/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-类和对象/">[Untitled Post]</a>
         </li>
     
     

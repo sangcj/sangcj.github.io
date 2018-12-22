@@ -346,6 +346,31 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2018/12/21/day19-多线程/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            #19.1 耗时操作
+
+一个进程默认有一个线程，这个线程叫主线程。默认情况下，所有的代码都是在主线程中执行的。1234567891011121314import time,datetimedef download(file_name):    print('开始下载：%s' % file_name, datetime.datetime.now())    time.sleep(5)          # 程序执行到这会停5秒，再执行后面的代码    print('%s下载结束' % file_name, datetime.datetime.now())# 在主线程中下载俩个电影downl...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2018/12/21/day18-作业/">
             
                 <span>[Untitled Post]</span>
@@ -387,31 +412,6 @@ python中提供了socket模块来支持socket编程。1import socket
 1.服务器套接字
 
 1.创建套接字对象socket(family,type)family - 设置ip类型  AF_INET(默认值) - ipv4  AF_INET6 - ipv6type - 设置传输类型 SOCK_STREAM - tcp123# server = socket.socket(socket.AF_INET, socket.SOCK_STRE...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day19-多线程/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            #19.1 耗时操作
-
-一个进程默认有一个线程，这个线程叫主线程。默认情况下，所有的代码都是在主线程中执行的。1234567891011121314import time,datetimedef download(file_name):    print('开始下载：%s' % file_name, datetime.datetime.now())    time.sleep(5)          # 程序执行到这会停5秒，再执行后面的代码    print('%s下载结束' % file_name, datetime.datetime.now())# 在主线程中下载俩个电影downl...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -475,29 +475,20 @@ python中提供了socket模块来支持socket编程。1import socket
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day17-正则表达式/">
+        <a class="abstract-title" href="/2018/12/21/day14-类和对象2/">
             
                 <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            #17.1 正则基本符号
+            #14.1 类方法和静态方法类中方法分为：对象方法，类方法和静态方法
 
-1.什么是正则表达式
+1.对象方法a.直接声明在类中b.有默认参数selfc.通过对象调用
 
-正则表达式就是字符匹配的工具，用来做正则匹配；是由正则符号和普通字符组成，来匹配不同规律的字符串。
+2.类方法a.在声明前添加@classmethodb.有默认参数cls,调用时不需要给cls传参，系统会自动将调用当前类方法的类传给clscls最终指向的是一个类，类可以做的，cls都可以做。c.通过类去调用：类.类方法（）
 
+3.静态方法a.在声明前添加@staticmethodb.没有默认参数,c.通过类去调用：类.类方法（）
 
-2.python对正则表达式的支持
-
-python中提供了一个re模块，用来支持正则表达式。
-
-
-
-
-fullmatch(正则表达式，字符串) - 用正则表达式去完全匹配字符串，如果匹配成功返回一个结果，失败返回None。
-
-
-python中的正则表达式的写法：将正则内容写在字符串中，一般这个字符串的最前面会加r或R用来阻止转义。12345import restr1 = &apos;dhsuwqy82r21r372cuefy12fgy...
+4.对对象方法、类方法和静态方法的选择a.什么时候使用对象方法：当实现函数功能需要用到对象属性时，就使用对象方法。...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -515,12 +506,12 @@ python中的正则表达式的写法：将正则内容写在字符串中，一�
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/登录注册/">
+        <a class="abstract-title" href="/2018/12/21/学生管理系统1-0/">
             
                 <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192def login_page():    print("""********************************************************************************************...
+            123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -561,20 +552,29 @@ python中的正则表达式的写法：将正则内容写在字符串中，一�
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day14-类和对象2/">
+        <a class="abstract-title" href="/2018/12/21/day17-正则表达式/">
             
                 <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            #14.1 类方法和静态方法类中方法分为：对象方法，类方法和静态方法
+            #17.1 正则基本符号
 
-1.对象方法a.直接声明在类中b.有默认参数selfc.通过对象调用
+1.什么是正则表达式
 
-2.类方法a.在声明前添加@classmethodb.有默认参数cls,调用时不需要给cls传参，系统会自动将调用当前类方法的类传给clscls最终指向的是一个类，类可以做的，cls都可以做。c.通过类去调用：类.类方法（）
+正则表达式就是字符匹配的工具，用来做正则匹配；是由正则符号和普通字符组成，来匹配不同规律的字符串。
 
-3.静态方法a.在声明前添加@staticmethodb.没有默认参数,c.通过类去调用：类.类方法（）
 
-4.对对象方法、类方法和静态方法的选择a.什么时候使用对象方法：当实现函数功能需要用到对象属性时，就使用对象方法。...
+2.python对正则表达式的支持
+
+python中提供了一个re模块，用来支持正则表达式。
+
+
+
+
+fullmatch(正则表达式，字符串) - 用正则表达式去完全匹配字符串，如果匹配成功返回一个结果，失败返回None。
+
+
+python中的正则表达式的写法：将正则内容写在字符串中，一般这个字符串的最前面会加r或R用来阻止转义。12345import restr1 = &apos;dhsuwqy82r21r372cuefy12fgy...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1332,12 +1332,12 @@ python中的正则表达式的写法：将正则内容写在字符串中，一�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day3-python变量和运算符总结/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day4-Python字符串常用内建函数/">[Untitled Post]</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day4-Python字符串常用内建函数/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day3-python变量和运算符总结/">[Untitled Post]</a>
         </li>
     
     
@@ -1352,7 +1352,7 @@ python中的正则表达式的写法：将正则内容写在字符串中，一�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/学生管理系统1-0/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/登录注册/">[Untitled Post]</a>
         </li>
     
     
@@ -1362,7 +1362,7 @@ python中的正则表达式的写法：将正则内容写在字符串中，一�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-类和对象/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day15-面向对象和pygame/">[Untitled Post]</a>
         </li>
     
     
@@ -1390,17 +1390,7 @@ python中的正则表达式的写法：将正则内容写在字符串中，一�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-正则表达式/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day15-面向对象和pygame/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day19-多线程/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-类和对象2/">[Untitled Post]</a>
         </li>
     
     
@@ -1415,12 +1405,17 @@ python中的正则表达式的写法：将正则内容写在字符串中，一�
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day19-多线程/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-作业/">[Untitled Post]</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/登录注册/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/学生管理系统1-0/">[Untitled Post]</a>
         </li>
     
     
@@ -1435,7 +1430,7 @@ python中的正则表达式的写法：将正则内容写在字符串中，一�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-类和对象2/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-正则表达式/">[Untitled Post]</a>
         </li>
     
     
@@ -1450,7 +1445,7 @@ python中的正则表达式的写法：将正则内容写在字符串中，一�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-作业/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表/">[Untitled Post]</a>
         </li>
     
     
@@ -1475,12 +1470,7 @@ python中的正则表达式的写法：将正则内容写在字符串中，一�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day12-json和异常捕获/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-作业/">[Untitled Post]</a>
         </li>
     
     
@@ -1490,7 +1480,17 @@ python中的正则表达式的写法：将正则内容写在字符串中，一�
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day12-json和异常捕获/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day10-函数3/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-类和对象/">[Untitled Post]</a>
         </li>
     
     
