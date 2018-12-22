@@ -346,12 +346,80 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/登录注册/">
+        <a class="abstract-title" href="/2018/12/21/day14-类和对象2/">
             
                 <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192def login_page():    print("""********************************************************************************************...
+            #14.1 类方法和静态方法类中方法分为：对象方法，类方法和静态方法
+
+1.对象方法a.直接声明在类中b.有默认参数selfc.通过对象调用
+
+2.类方法a.在声明前添加@classmethodb.有默认参数cls,调用时不需要给cls传参，系统会自动将调用当前类方法的类传给clscls最终指向的是一个类，类可以做的，cls都可以做。c.通过类去调用：类.类方法（）
+
+3.静态方法a.在声明前添加@staticmethodb.没有默认参数,c.通过类去调用：类.类方法（）
+
+4.对对象方法、类方法和静态方法的选择a.什么时候使用对象方法：当实现函数功能需要用到对象属性时，就使用对象方法。...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/21/day8-作业/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            
+编写⼀个函数，求1+2+3+…+N程序：1234567891011# 1. 编写⼀个函数，求1+2+3+...+Ndef sum1(N):"""求1+2+3+...+N"""    sum2 = 0    for i in range(1, N + 1):        sum2 += i    print(sum2)sum1(10)sum1(11)
+
+
+结果：
+
+编写⼀个函数，求多个数中的最⼤值程序：12345678910111213141516#2. 编写⼀个函数，求多个数中的最⼤值def my_max(list1):"""求多个数中的最⼤值"""    print('需要比较的数...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/21/day12-json和异常捕获/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            #12.1 json数据
+
+1.什么是json数据json是一种数据格式，满足json格式的数据就是json数据。文件后缀是‘.json’，且文件中内容满足json格式。
+
+2.json格式一个json中只有一个数据；并且这个数据是json支持的数据类型的数据
+
+
+
+json支持的数据类型数字类型 - 包含所有的数字，包括整数和小数，如：100，20，12.5，-20字符串 - 使用双引号括起来的字符集，例如：“abc123”，“123”布尔 - true和false数组 - 相当于python中的列表，使用[]括起来，括号里面是json支持的任意类型的数据。例如：[“ab”, 12, ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -388,37 +456,6 @@ a.声明在函数或类的外部的变量都是全局变量（python中）b.全�
 
 a.声明在函数或类的内部的变量都是局部变量（形参是局部变量）b.局部变量的作用域从声明开始到函数结束函数内任何位置都可使用（作用域：从声明开始到函数结束）
 1234567891011121314151617# 全局变量a = 10       # 全局变量for x in range(10):    # 全局变量   ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day12-json和异常捕获/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            #12.1 json数据
-
-1.什么是json数据json是一种数据格式，满足json格式的数据就是json数据。文件后缀是‘.json’，且文件中内容满足json格式。
-
-2.json格式一个json中只有一个数据；并且这个数据是json支持的数据类型的数据
-
-
-
-json支持的数据类型数字类型 - 包含所有的数字，包括整数和小数，如：100，20，12.5，-20字符串 - 使用双引号括起来的字符集，例如：“abc123”，“123”布尔 - true和false数组 - 相当于python中的列表，使用[]括起来，括号里面是json支持的任意类型的数据。例如：[“ab”, 12, ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -521,35 +558,6 @@ json支持的数据类型数字类型 - 包含所有的数字，包括整数和�
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day8-作业/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            
-编写⼀个函数，求1+2+3+…+N程序：1234567891011# 1. 编写⼀个函数，求1+2+3+...+Ndef sum1(N):"""求1+2+3+...+N"""    sum2 = 0    for i in range(1, N + 1):        sum2 += i    print(sum2)sum1(10)sum1(11)
-
-
-结果：
-
-编写⼀个函数，求多个数中的最⼤值程序：12345678910111213141516#2. 编写⼀个函数，求多个数中的最⼤值def my_max(list1):"""求多个数中的最⼤值"""    print('需要比较的数...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href="/2018/12/21/day13-类和对象/">
             
                 <span>[Untitled Post]</span>
@@ -589,20 +597,12 @@ json支持的数据类型数字类型 - 包含所有的数字，包括整数和�
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day6-列表/">
+        <a class="abstract-title" href="/2018/12/21/day6-列表作业/">
             
                 <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            #6.1 认识列表
-##6.1.1 列表（list）1.列表是python内置的可变并且有序的容器类数据类型（序列）
-
-有序：说明可以通过下标获取元素
-可变：指的是列表中元素的个数，元素的值以及元素的位置可变(列表支持增、删、改)。
-
-2.列表字面量：中括号括起来，里面有多个元素，元素之间用逗号隔开[元素1，元素2，元素3。。。]
-
-元素：可以是任何类型的数据；同一个列表，不同元素的类型可以不一样。123456789score = 90list1 = [10, 'a', 97, [1, 2, 3]]print(list1[3][1])         # 2# 空列表list2 = []...
+            1.已知一个列表，求列表中心元素。12345678#1.已知一个列表，求列表中心元素。  ]l1 = [1, 2, 'abc', 4, 5]#l2 = [213, 'a', 'b', 321]if len(l1) &amp; 1:    print('l1的中心元素为：', l1[len(l1)//2])else:    print('l1的中心元素有两个，它们为：', l1[len(l1)//2 - 1], l1[len(l1)//2])    print('l1的中心元素有两个，它们为：', l1[len(l1) &gt;&gt; 1 - 1], l1[len(l1) &gt;&gt...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -620,20 +620,12 @@ json支持的数据类型数字类型 - 包含所有的数字，包括整数和�
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day9-函数2/">
+        <a class="abstract-title" href="/2018/12/21/day5-提升作业/">
             
                 <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            #9.1 函数的调用函数在声明时不会执行函数体，只有在调用函数的时候才会执行函数体
-
-函数的调用过程（重点！）
-a.物理过程1.回到函数声明位置2.用实参给形参赋值（传参），需要保证每个形参都有值。3.执行函数体4.获取返回值5.回到函数调用位置，接着往后执行
-
-
-
-
-b.函数调用过程是一个压栈的过程当函数调用时，系统会自动地在内存中的栈区间开辟空间，存储函数调用过程中产生的数据（这里的数据包括参数和在函数中声明的变量）。当函数调用完成后，对应的内存空间会自动销毁。12345678def exchange(a1, b):          # 同名会有灰色波浪线    a1, b = b...
+            1.控制台输入年龄，根据年龄输出不同的提示(例如:老年人，青壮年，成年人，未成年，儿童)年龄段程序：123456789101112131415161718192021222324#1.控制台输入年龄，根据年龄输出不同的提示(例如:老年人，青壮年，成年人，未成年，儿童)"""1、童年。0岁-6岁(周岁，下同) (1)婴儿期0-3周月;(2)小儿期4周月-2、5岁; (3)幼儿期2、5岁后-6岁;2、少年。7岁-17岁。(1)启蒙期7岁-10岁; (2)逆反期11岁-14岁; (3)成长期15岁-17岁。3、青年。18岁-40岁。(1)青春期18-28岁; (2)成熟期29-40岁;4、中年...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1289,44 +1281,6 @@ b.函数调用过程是一个压栈的过程当函数调用时，系统会自动
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 34
@@ -1355,12 +1309,7 @@ b.函数调用过程是一个压栈的过程当函数调用时，系统会自动
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-python基础语法总结/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-分支和循环总结/">[Untitled Post]</a>
         </li>
     
     
@@ -1375,17 +1324,32 @@ b.函数调用过程是一个压栈的过程当函数调用时，系统会自动
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-python基础语法总结/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day4-字符串总结/">[Untitled Post]</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-分支和循环总结/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-类和对象2/">[Untitled Post]</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/登录注册/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-网络编程/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/学生管理系统1-0/">[Untitled Post]</a>
         </li>
     
     
@@ -1396,6 +1360,51 @@ b.函数调用过程是一个压栈的过程当函数调用时，系统会自动
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day15-面向对象和pygame/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-正则表达式/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/登录注册/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day19-多线程/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-函数2/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-作业/">[Untitled Post]</a>
         </li>
     
     
@@ -1423,92 +1432,7 @@ b.函数调用过程是一个压栈的过程当函数调用时，系统会自动
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-类和对象2/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-网络编程/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day19-多线程/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/学生管理系统1-0/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-正则表达式/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-函数基础知识总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-函数2/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day7-容器类型/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-提升作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day11-文件操作/">[Untitled Post]</a>
         </li>
     
     
@@ -1523,7 +1447,37 @@ b.函数调用过程是一个压栈的过程当函数调用时，系统会自动
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day7-容器类型/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-提升作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day11-文件操作/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-类和对象/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-函数基础知识总结/">[Untitled Post]</a>
         </li>
     
     
@@ -1604,7 +1558,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+    </body>
 </html>
 
 

@@ -456,6 +456,35 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2018/12/21/day4-字符串总结/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            
+1.什么是字符串序列 有序 不可变。用单引号或双引号括起来的任意字符集。2.字符串中的字符a.普通字符： ‘23’  ‘wefsfewfewq’  ‘😍 🧔🐕’b.转义字符： \n  \t \’ \”  \阻止转义：r或R加在代码前
+
+##4.1字符编码python中的字符采用的是Unicode编码
+
+a.什么是编码就是数字和字符的对应关系，其中字符对应的数字就是字符的编码。‘a’ - 97‘b’ - 98‘余’ - 20313
+b.编码方式ASCII码：针对数字、字母字符、一些英文中常用的符号进行编码，采用一个字节（0~127 2 ^ 7 - 1 = 127）对字符进行编码（1...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2018/12/21/day5-分支和循环总结/">
             
                 <span>[Untitled Post]</span>
@@ -484,18 +513,19 @@ c.执行过程：先判断条件结果是否是True，如果是True就执行冒�
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day4-字符串总结/">
+        <a class="abstract-title" href="/2018/12/21/day4-Python字符串常用内建函数/">
             
                 <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            
-1.什么是字符串序列 有序 不可变。用单引号或双引号括起来的任意字符集。2.字符串中的字符a.普通字符： ‘23’  ‘wefsfewfewq’  ‘😍 🧔🐕’b.转义字符： \n  \t \’ \”  \阻止转义：r或R加在代码前
+            #Python字符串常用内建函数
+#1. capitalize()
 
-##4.1字符编码python中的字符采用的是Unicode编码
+str1.capitalize() – 将字符串str1第一个字符转换为大写，若不为字母则无效果123str1 = 'cjzh'new_str1 = str1.capitalize()print(new_str1)                     # Cjzh
 
-a.什么是编码就是数字和字符的对应关系，其中字符对应的数字就是字符的编码。‘a’ - 97‘b’ - 98‘余’ - 20313
-b.编码方式ASCII码：针对数字、字母字符、一些英文中常用的符号进行编码，采用一个字节（0~127 2 ^ 7 - 1 = 127）对字符进行编码（1...
+#2. center()
+
+字符串.center(width,fillchar) – 居中字符串.ljust(width,fillchar) – 左对齐字符串.rjust(width,fillchar) – 右对齐width – 正整数，表示新的字符串...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -530,36 +560,6 @@ b.编码方式ASCII码：针对数字、字母字符、一些英文中常用的�
   **b.**见名知义（看到名字就知道变量中存的是什么数据）
 “=” – 赋值符号，将=右边的值放入左边的变量中值 – 可以是任何有结果的表达式，如：190 ， 变量 ， 调用函数表达式等
 1234age = 18name = &apos;小王&apos;n...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day4-Python字符串常用内建函数/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            #Python字符串常用内建函数
-#1. capitalize()
-
-str1.capitalize() – 将字符串str1第一个字符转换为大写，若不为字母则无效果123str1 = 'cjzh'new_str1 = str1.capitalize()print(new_str1)                     # Cjzh
-
-#2. center()
-
-字符串.center(width,fillchar) – 居中字符串.ljust(width,fillchar) – 左对齐字符串.rjust(width,fillchar) – 右对齐width – 正整数，表示新的字符串...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -616,13 +616,22 @@ tab  补充代码程序中涉及到的所有的和语法相关的符号，都是
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day17-作业/">
+        <a class="abstract-title" href="/2018/12/21/day18-网络编程/">
             
                 <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            
-写一个正则表达式判断一个字符串是否是ip地址规则：一个ip地址由4个数字组成，每个数字之间用.连接。每个数字的大小是0-255255.189.10.37   正确256.189.89.9    错误  12345678910111213import re"""3位数：1\d&#123;2&#125;|2[1-5]&#123;2&#125;2位数和1位数：[1-9]?\d"""# re_str = r'(1\d&#123;2&#125;[.]|2[1-5]&#123;2&#125;[.]|[1-9]?\d[.])&#123;3&#125;(1\d&#123;2&#125;[.]|2[1-...
+            #18.1 socket编程
+
+socket又叫套接字，指的就是实现通信过程的两个端。等待请求的叫服务端套接字，发送请求的叫客户端
+
+
+python中提供了socket模块来支持socket编程。1import socket
+
+
+1.服务器套接字
+
+1.创建套接字对象socket(family,type)family - 设置ip类型  AF_INET(默认值) - ipv4  AF_INET6 - ipv6type - 设置传输类型 SOCK_STREAM - tcp123# server = socket.socket(socket.AF_INET, socket.SOCK_STRE...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1278,44 +1287,6 @@ tab  补充代码程序中涉及到的所有的和语法相关的符号，都是
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 34
@@ -1344,12 +1315,7 @@ tab  补充代码程序中涉及到的所有的和语法相关的符号，都是
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-python基础语法总结/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-分支和循环总结/">[Untitled Post]</a>
         </li>
     
     
@@ -1364,17 +1330,32 @@ tab  补充代码程序中涉及到的所有的和语法相关的符号，都是
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-python基础语法总结/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day4-字符串总结/">[Untitled Post]</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-分支和循环总结/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-类和对象2/">[Untitled Post]</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/登录注册/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-网络编程/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/学生管理系统1-0/">[Untitled Post]</a>
         </li>
     
     
@@ -1385,6 +1366,51 @@ tab  补充代码程序中涉及到的所有的和语法相关的符号，都是
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day15-面向对象和pygame/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-正则表达式/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/登录注册/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day19-多线程/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-函数2/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-作业/">[Untitled Post]</a>
         </li>
     
     
@@ -1412,92 +1438,7 @@ tab  补充代码程序中涉及到的所有的和语法相关的符号，都是
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-类和对象2/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-网络编程/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day19-多线程/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/学生管理系统1-0/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-正则表达式/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-函数基础知识总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-函数2/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day7-容器类型/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-提升作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day11-文件操作/">[Untitled Post]</a>
         </li>
     
     
@@ -1512,7 +1453,37 @@ tab  补充代码程序中涉及到的所有的和语法相关的符号，都是
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day7-容器类型/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-提升作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day11-文件操作/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-类和对象/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-函数基础知识总结/">[Untitled Post]</a>
         </li>
     
     
@@ -1593,7 +1564,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+    </body>
 </html>
 
 

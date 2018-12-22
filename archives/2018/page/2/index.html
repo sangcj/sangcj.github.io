@@ -346,14 +346,59 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day19-多线程/">
+        <a class="abstract-title" href="/2018/12/21/学生管理系统2-0/">
             
                 <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            #19.1 耗时操作
-
-一个进程默认有一个线程，这个线程叫主线程。默认情况下，所有的代码都是在主线程中执行的。1234567891011121314import time,datetimedef download(file_name):    print('开始下载：%s' % file_name, datetime.datetime.now())    time.sleep(5)          # 程序执行到这会停5秒，再执行后面的代码    print('%s下载结束' % file_name, datetime.datetime.now())# 在主线程中下载俩个电影downl...
+            #mymodule：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210310410510610710810911011111211311411511611711811912012112212312412512612712812913013113...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/21/学生管理系统1-0/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/21/day17-作业/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            
+写一个正则表达式判断一个字符串是否是ip地址规则：一个ip地址由4个数字组成，每个数字之间用.连接。每个数字的大小是0-255255.189.10.37   正确256.189.89.9    错误  12345678910111213import re"""3位数：1\d&#123;2&#125;|2[1-5]&#123;2&#125;2位数和1位数：[1-9]?\d"""# re_str = r'(1\d&#123;2&#125;[.]|2[1-5]&#123;2&#125;[.]|[1-9]?\d[.])&#123;3&#125;(1\d&#123;2&#125;[.]|2[1-...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -396,45 +441,14 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day18-网络编程/">
+        <a class="abstract-title" href="/2018/12/21/day19-多线程/">
             
                 <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            #18.1 socket编程
+            #19.1 耗时操作
 
-socket又叫套接字，指的就是实现通信过程的两个端。等待请求的叫服务端套接字，发送请求的叫客户端
-
-
-python中提供了socket模块来支持socket编程。1import socket
-
-
-1.服务器套接字
-
-1.创建套接字对象socket(family,type)family - 设置ip类型  AF_INET(默认值) - ipv4  AF_INET6 - ipv6type - 设置传输类型 SOCK_STREAM - tcp123# server = socket.socket(socket.AF_INET, socket.SOCK_STRE...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/学生管理系统2-0/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            #mymodule：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210310410510610710810911011111211311411511611711811912012112212312412512612712812913013113...
+一个进程默认有一个线程，这个线程叫主线程。默认情况下，所有的代码都是在主线程中执行的。1234567891011121314import time,datetimedef download(file_name):    print('开始下载：%s' % file_name, datetime.datetime.now())    time.sleep(5)          # 程序执行到这会停5秒，再执行后面的代码    print('%s下载结束' % file_name, datetime.datetime.now())# 在主线程中下载俩个电影downl...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -475,43 +489,12 @@ python中提供了socket模块来支持socket编程。1import socket
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day14-类和对象2/">
+        <a class="abstract-title" href="/2018/12/21/登录注册/">
             
                 <span>[Untitled Post]</span>
         </a>
         <div class="abstract-content">
-            #14.1 类方法和静态方法类中方法分为：对象方法，类方法和静态方法
-
-1.对象方法a.直接声明在类中b.有默认参数selfc.通过对象调用
-
-2.类方法a.在声明前添加@classmethodb.有默认参数cls,调用时不需要给cls传参，系统会自动将调用当前类方法的类传给clscls最终指向的是一个类，类可以做的，cls都可以做。c.通过类去调用：类.类方法（）
-
-3.静态方法a.在声明前添加@staticmethodb.没有默认参数,c.通过类去调用：类.类方法（）
-
-4.对对象方法、类方法和静态方法的选择a.什么时候使用对象方法：当实现函数功能需要用到对象属性时，就使用对象方法。...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/学生管理系统1-0/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135...
+            1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192def login_page():    print("""********************************************************************************************...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1256,44 +1239,6 @@ python中的正则表达式的写法：将正则内容写在字符串中，一�
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 34
@@ -1322,12 +1267,7 @@ python中的正则表达式的写法：将正则内容写在字符串中，一�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-python基础语法总结/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-分支和循环总结/">[Untitled Post]</a>
         </li>
     
     
@@ -1342,17 +1282,32 @@ python中的正则表达式的写法：将正则内容写在字符串中，一�
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-python基础语法总结/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day4-字符串总结/">[Untitled Post]</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-分支和循环总结/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-类和对象2/">[Untitled Post]</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/登录注册/">[Untitled Post]</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-网络编程/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/学生管理系统1-0/">[Untitled Post]</a>
         </li>
     
     
@@ -1363,6 +1318,51 @@ python中的正则表达式的写法：将正则内容写在字符串中，一�
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day15-面向对象和pygame/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-正则表达式/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/登录注册/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day19-多线程/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-函数2/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-作业/">[Untitled Post]</a>
         </li>
     
     
@@ -1390,92 +1390,7 @@ python中的正则表达式的写法：将正则内容写在字符串中，一�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-类和对象2/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-网络编程/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day19-多线程/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/学生管理系统1-0/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-正则表达式/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-函数基础知识总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-函数2/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day7-容器类型/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-提升作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day11-文件操作/">[Untitled Post]</a>
         </li>
     
     
@@ -1490,7 +1405,37 @@ python中的正则表达式的写法：将正则内容写在字符串中，一�
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day7-容器类型/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-提升作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day11-文件操作/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-类和对象/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-作业/">[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-函数基础知识总结/">[Untitled Post]</a>
         </li>
     
     
@@ -1571,7 +1516,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+    </body>
 </html>
 
 
