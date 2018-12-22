@@ -346,9 +346,91 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2018/12/22/Linux文档整理/vim编辑器之神/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            vim编辑器之神配置vimrc配置在shell中可以通过 vim ~/.vimrc 或者 vim /etc/vimrc 打开vimrc文件对vim进行配置。在这个文件中可以进行很多和vim相关的配置，常用的如下（如果对其他配置感兴趣的可以自己百度）：
+ 
+常用操作1.模式切换我们可以将vim分为命令模式、编辑模式和末行模式三种命令模式：进入vim的时候vim是处于命令模式状态下的，这个时候输入内容不会出现在编辑区  (最末什么都没有)
+末行模式：在命令模式下输入冒号，让vim进入末行模式。在末行模式的冒号后面可以输入相关的一些指令进行相关操作  (最后有一个冒号)
+编辑模式：在命令模式下...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/22</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            Nginx服务器1.阿里云添加80端口阿里云上默认只有一个22端口用来做远程登录，如果希望在阿里云上安装支持http请求的nginx服务器，需要给阿里云添加80端口
+
+2. 安装nginxa) 添加nginx存储库  
+1yum install epel-release
+b) 安装nginx
+1234	yum install nginx```  c) 运行nginx  Nginx不会自行启动。要运行Nginx
+systemctl start nginx
+12nginx的运行命令:
+systemctl status nginx 查看nginx的状态  
+systemctl start/st...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/22</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/22/Linux文档整理/git常用指令/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            git常用指令1.基本指令git init &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ——  新建git仓库git add 文件/文件夹 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ——  将文件添加到缓存区中git add -A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; — 添加所有内容到缓存区中git stutas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;———    查看git状态git commit -m  ‘提交信息’  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——  将缓存区中的...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/22</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2018/12/21/day1-markdwon常用操作/">
             
-                <span>day1-markdwon常用操作</span>
+                <span>markdwon常用操作</span>
         </a>
         <div class="abstract-content">
             1.标题可以在行首通过改变添加#号的数目来控制标题的级别，从1~6级标题，如#H1、##H2、###H3等。可使用—作分割线，前后应空行，否则会出错，例：-–
@@ -372,282 +454,7 @@
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day2-作业/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            1.下列四组数，依次为二进制、八进制和十六进制，符合要求的是（d）a. 12,  77,  10b. 12,  80,  10c. 11,  78,  19d. 11,  77,  19
-2.二进制数加法运算的基本特点是“逢二进一”，即0+0=0，0+1=1，1+0=1，1+1=0并进位。运用这一基本法则和十进制运算的类似规律，得出二进制数加法运算1001+101的结果为(c)a. 1001b. 1010c. 1110d. 1101  
-3.八进制754中的数码7对应的位权是(c)a.  10^2   b. 16^1   c. 8^2  d. 2^2  
-4.十进制数53转换成二进制数是...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day3-作业/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            1.使用位运算判断一个数是否是奇数注：奇数的二进制的最后一位是1，偶数是01234567#用 &amp; 判断一个数奇偶性#&amp; ：按位与，比较每一位上的数字，都是1，则为1，其余为0。num = 33if (num &amp; 1) == 0 :    print('%d为偶数'%num)else:    print('%d为奇数' % num)
-
-2.表达式0x13&amp;0x17的值是（19 ）
-
-0x13 = 0b0001 00110x17 = 0b0001 0111——–&gt;0b0001 0011—–&gt;2^4 + 2 + 1 = 19
-
-3.若x=2,y=3则...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day4-Python-的字符串内建函数/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            Python 的字符串常用内建函数如下：|序号|方法|描述||—|—|—|1    |capitalize()|将字符串的第一个字符转换为大写2|    center(width, fillchar)|返回一个指定的宽度 width 居中的字符串，fillchar 为填充的字符，默认为空格。3|    count(str)|返回 str 在 string 里面出现的次数4|    bytes.decode(encoding=”utf-8”, errors=”strict”)|Python3 中没有 decode 方法，但我们可以使用 bytes 对象的 decode() 方法来解码给定的...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day4-字符串总结/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            
-1.什么是字符串序列 有序 不可变。用单引号或双引号括起来的任意字符集。2.字符串中的字符a.普通字符： ‘23’  ‘wefsfewfewq’  ‘😍 🧔🐕’b.转义字符： \n  \t \’ \”  \阻止转义：r或R加在代码前
-
-##4.1字符编码python中的字符采用的是Unicode编码
-
-a.什么是编码就是数字和字符的对应关系，其中字符对应的数字就是字符的编码。‘a’ - 97‘b’ - 98‘余’ - 20313
-b.编码方式ASCII码：针对数字、字母字符、一些英文中常用的符号进行编码，采用一个字节（0~127 2 ^ 7 - 1 = 127）对字符进行编码（1...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day5-分支和循环总结/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            #5.1 分支结构python中分支结构只有if语句，没有switch语句
-##5.1.1 if语句
-
-a.语法：if 条件语句 ：  代码段
-b.说明：if – 关键字条件语句 – 任何有结果的表达式，不管结果类型。： – 固定写法，有冒号下以下必定有缩进代码段 – 和if保持一个缩进的一条或多条语句。
-c.执行过程：先判断条件结果是否是True，如果是True就执行冒号后面的代码段。否则就不执行。注意：如果条件语句结果不是布尔，会先将结果转换成布尔，再判断。除了0，空值以外的值转为布尔都为True。if后面可以写哪些语句注意：赋值语句不能写在if后面，其他都可以。1234567891...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day4-Python字符串常用内建函数/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            #Python字符串常用内建函数
-#1. capitalize()
-
-str1.capitalize() – 将字符串str1第一个字符转换为大写，若不为字母则无效果123str1 = 'cjzh'new_str1 = str1.capitalize()print(new_str1)                     # Cjzh
-
-#2. center()
-
-字符串.center(width,fillchar) – 居中字符串.ljust(width,fillchar) – 左对齐字符串.rjust(width,fillchar) – 右对齐width – 正整数，表示新的字符串...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day3-python变量和运算符总结/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            #1.变量
-##1.1声明变量（定义变量）
-
-变量就是在程序中用来保存数据的容器
-在python中是个假的声明，语法：变量名 = 值
-
-说明：变量名 – 要求：标识符，不能是关键字
-**规范：**
-  **a.**遵守PEP8命名规范（变量名名字的所有字母都小写，如果由多个单词组成，单词之间用_隔开），如：student_name
-  **b.**见名知义（看到名字就知道变量中存的是什么数据）
-“=” – 赋值符号，将=右边的值放入左边的变量中值 – 可以是任何有结果的表达式，如：190 ， 变量 ， 调用函数表达式等
-1234age = 18name = &apos;小王&apos;n...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day2-python基础语法总结/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            #1、常用快捷键
-
-添加或取消一行注释：ctrl+/（通用）
-ctrl+s 保存
-ctrl+n 新建
-ctrl+f 搜索
-ctrl+r 搜索替换
-ctrl+z 撤销
-ctrl+shift+z 反撤销
-ctrl+a  ctrl+c   trl+v
-ctrl+d 复制上一行代码到下一行
-tab  补充代码程序中涉及到的所有的和语法相关的符号，都是英文输入法下对应的符号print是python内置函数，在控制台打印括号中的内容引号是字符串的标志12print("Hello world!")print('Hello Hello Hello')
-
-
-运行结果：
-#2、python基础语法
-##2....
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/21/day18-网络编程/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            #18.1 socket编程
-
-socket又叫套接字，指的就是实现通信过程的两个端。等待请求的叫服务端套接字，发送请求的叫客户端
-
-
-python中提供了socket模块来支持socket编程。1import socket
-
-
-1.服务器套接字
-
-1.创建套接字对象socket(family,type)family - 设置ip类型  AF_INET(默认值) - ipv4  AF_INET6 - ipv6type - 设置传输类型 SOCK_STREAM - tcp123# server = socket.socket(socket.AF_INET, socket.SOCK_STRE...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="page-number" href="/archives/2018/page/3/">3</a><a class="page-number" href="/archives/2018/page/4/">4</a><a class="extend next" rel="next" href="/archives/2018/page/2/">NEXT &#62;</a>
-    </nav>
     
 </main>
             <!-- profile -->
@@ -793,503 +600,9 @@ python中提供了socket模块来支持socket编程。1import socket
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 34
+        Total : 4
         </div>
         <!-- search  -->
         
@@ -1300,117 +613,12 @@ python中提供了socket模块来支持socket编程。1import socket
     
     
     
-    <div class="archive-year"> 2018 </div>
+    <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day4-Python-的字符串内建函数/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day3-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-分支和循环总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day4-Python字符串常用内建函数/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day3-python变量和运算符总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-python基础语法总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day4-字符串总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-类和对象2/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-网络编程/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/学生管理系统1-0/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/学生管理系统2-0/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day15-面向对象和pygame/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-正则表达式/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/登录注册/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day19-多线程/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-函数2/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-作业/">[Untitled Post]</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">[Untitled Post]</a>
         </li>
     
     
@@ -1424,7 +632,7 @@ python中提供了socket模块来支持socket编程。1import socket
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2018/12/21/day1-markdwon常用操作/">day1-markdwon常用操作</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/vim编辑器之神/">[Untitled Post]</a>
         </li>
     
     
@@ -1433,62 +641,26 @@ python中提供了socket模块来支持socket编程。1import socket
     
         </ul>
     
-    <div class="archive-year"> 2018 </div>
+    <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表作业/">[Untitled Post]</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/git常用指令/">[Untitled Post]</a>
         </li>
     
     
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day12-json和异常捕获/">[Untitled Post]</a>
-        </li>
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day10-函数3/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day7-容器类型/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-提升作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day11-文件操作/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-类和对象/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-函数基础知识总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-分支和循环作业/">[Untitled Post]</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2018/12/21/day1-markdwon常用操作/">markdwon常用操作</a>
         </li>
     
     </ul></div>

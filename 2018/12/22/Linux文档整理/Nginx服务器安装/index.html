@@ -266,12 +266,12 @@ height:33vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">574</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">487</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/12/21</span>
+                    <span class="post-intro-time">2018/12/22</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,61 +395,55 @@ height:33vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>1.使用位运算判断一个数是否是奇数<br>注：奇数的二进制的最后一位是1，偶数是0<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#用 &amp; 判断一个数奇偶性</span></span><br><span class="line"><span class="comment">#&amp; ：按位与，比较每一位上的数字，都是1，则为1，其余为0。</span></span><br><span class="line">num = <span class="number">33</span></span><br><span class="line"><span class="keyword">if</span> (num &amp; <span class="number">1</span>) == <span class="number">0</span> :</span><br><span class="line">    print(<span class="string">'%d为偶数'</span>%num)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'%d为奇数'</span> % num)</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/14827706-e90eea3c726e6c1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="计算结果"></p>
-<p>2.表达式0x13&amp;0x17的值是（19 ）</p>
-<blockquote>
-<p>0x13 = 0b0001 0011<br>0x17 = 0b0001 0111<br>——–&gt;0b0001 0011—–&gt;2^4 + 2 + 1 = 19</p>
-</blockquote>
-<p>3.若x=2,y=3则x&amp;y的结果是（2 ）</p>
-<blockquote>
-<p>2 = 0b010<br>3 = 0b011—–&gt;0b010 = 2</p>
-</blockquote>
-<p>4.表达式 -97 | 120 的运算结果是(-1)</p>
-<blockquote>
-<p>97 = 0b0110 0001<br>-97 = 0b1110 0001(yuan)<br>-97 = 0b1001 1110(fan)<br>-97 = 0b1001 1111(bu)<br>120 = 0b0111 1000————-&gt;1111 1111bu<br>1111 1110fan ————-&gt;1000 0001yuan</p>
-</blockquote>
-<p>5.在位运算中，操作数每右移一位，其结果相当于（ B）  </p>
-<p>A.操作数乘以2     B.操作数除以2 </p>
-<p>C.操作数除以4     D.操作数乘以4</p>
-<p>6.设x 是一个整数（16位）.若要通过x|y使x低度8位置1，高8位不变，则y的二进制数是（ 0b0000 0000 1111 1111）</p>
-<blockquote>
-<p>X|Y = <strong><strong> </strong></strong> 1111 1111<br>不变则Y = 0000 0000 1111 1111</p>
-</blockquote>
-<ol start="7">
-<li><p>下面定义变量正确的是(a)<br> a. a = b = c = 10<br> b. a,c = 10<br> c. in = 20<br> d. num = 10; t = 20</p>
-</li>
-<li><p>n = 6784，以下能够获取到7 的方法有（c，d）<br> a. n / 1000 % 100<br> b. n % 1000 / 100<br> c. n // 100 % 10<br> d. n // 10  % 100 // 10</p>
-</li>
-</ol>
-<p>9.以下表达式 10 / 4 + 23 // 4 * 2 - 30的计算结果是：<strong>-17.5__</strong>。</p>
-<blockquote>
-<p>2.5 + 5*2-30</p>
-</blockquote>
-<ol start="10">
-<li>写代码获取输入数字12345中的每一位上的数字<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">12345</span></span><br><span class="line">wan = n // <span class="number">10000</span></span><br><span class="line">qian = n % <span class="number">10000</span> // <span class="number">1000</span></span><br><span class="line">bai = n % <span class="number">10000</span> % <span class="number">1000</span> // <span class="number">100</span></span><br><span class="line">shi = n % <span class="number">10000</span> % <span class="number">1000</span> % <span class="number">100</span> // <span class="number">10</span></span><br><span class="line">ge = n % <span class="number">10</span></span><br><span class="line">print(<span class="string">'%d的万位为：%d'</span>%(n,wan))</span><br><span class="line">print(<span class="string">'%d的千位为：%d'</span>%(n,qian))</span><br><span class="line">print(<span class="string">'%d的百位为：%d'</span>%(n,bai ))</span><br><span class="line">print(<span class="string">'%d的十位为：%d'</span>%(n,shi))</span><br><span class="line">print(<span class="string">'%d的个位为：%d'</span>%(n,ge))</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><img src="https://upload-images.jianshu.io/upload_images/14827706-6e7dbd33824a4660.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="运行结果"></p>
-<ol start="11">
-<li>写出判断一个数是否能同时被3和7整除的条件语句<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">num = int(input(<span class="string">'请输入一个整数：'</span>))</span><br><span class="line"><span class="keyword">if</span> num % <span class="number">3</span> == <span class="number">0</span> <span class="keyword">and</span> num % <span class="number">7</span> == <span class="number">0</span> :</span><br><span class="line">    print(<span class="string">'%d能同时被3和7整除'</span>%num)</span><br><span class="line"><span class="keyword">else</span> :</span><br><span class="line">    print(<span class="string">'%d不能同时被3和7整除'</span> % num)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><img src="https://upload-images.jianshu.io/upload_images/14827706-3edc603b68c42a6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="结果1"><br><img src="https://upload-images.jianshu.io/upload_images/14827706-1ba18a190b46e525.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="结果2"></p>
-<ol start="12">
-<li>写出判断一个数是否能够被3或者7整除，但是不能同时被3和7整除的表达式<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">num = int(input(<span class="string">'请输入一个整数：'</span>))</span><br><span class="line"><span class="keyword">if</span> (num % <span class="number">3</span> == <span class="number">0</span> <span class="keyword">or</span> num % <span class="number">7</span> == <span class="number">0</span>) <span class="keyword">and</span> num % <span class="number">21</span> != <span class="number">0</span> :</span><br><span class="line">    print(<span class="string">'%d能被3或7整除,且不能同时被3和7整除'</span>%num)</span><br><span class="line"><span class="keyword">else</span> :</span><br><span class="line">    print(<span class="string">'%d不满足条件'</span> % num)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><img src="https://upload-images.jianshu.io/upload_images/14827706-4cb5505115860e84.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="结果1"><br><img src="https://upload-images.jianshu.io/upload_images/14827706-91745955bceba5ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="结果2"></p>
+        <h1 id="Nginx服务器"><a href="#Nginx服务器" class="headerlink" title="Nginx服务器"></a>Nginx服务器</h1><h3 id="1-阿里云添加80端口"><a href="#1-阿里云添加80端口" class="headerlink" title="1.阿里云添加80端口"></a>1.阿里云添加80端口</h3><p>阿里云上默认只有一个22端口用来做远程登录，如果希望在阿里云上安装支持http请求的nginx服务器，需要给阿里云添加80端口</p>
+<p><img src="./img/aliyun0.png" alt="打开安全组设置"><br><img src="./img/aliyun2.png" alt=""><br><img src="./img/aliyun3.png" alt=""><br><img src="./img/aliyun4.png" alt=""></p>
+<h3 id="2-安装nginx"><a href="#2-安装nginx" class="headerlink" title="2. 安装nginx"></a>2. 安装nginx</h3><p>a) 添加nginx存储库  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release</span><br></pre></td></tr></table></figure>
+<p>b) 安装nginx</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">	yum install nginx</span><br><span class="line">```  </span><br><span class="line">c) 运行nginx  </span><br><span class="line">Nginx不会自行启动。要运行Nginx</span><br></pre></td></tr></table></figure>
+<pre><code>systemctl start nginx
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">nginx的运行命令:</span><br></pre></td></tr></table></figure>
+<pre><code>systemctl status nginx 查看nginx的状态  
+systemctl start/stop/enable/disable nginx 启动/关闭/设置开机启动/禁止开机启动  
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">d) 系统启动时启动Nginx</span><br></pre></td></tr></table></figure>
+<pre><code>systemctl enable nginx
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">e）如果您正在运行防火墙，请运行以下命令以允许HTTP和HTTPS通信：</span><br></pre></td></tr></table></figure>
+<pre><code>sudo firewall-cmd --permanent --zone=public --add-service=http 
+
+sudo firewall-cmd --permanent --zone=public --add-service=https
+
+sudo firewall-cmd --reload
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">### 3.nginx目录共享配置  </span><br><span class="line">a) 在contOS目录中确定一个需要共享的文件夹，例如： /home/yuting  </span><br><span class="line">b) 打开 etc/nginx/nginx.conf 文件，设置server</span><br></pre></td></tr></table></figure>
+<pre><code>#共享设置 - 在浏览器中输入服务器ip地址，会展示共享目录的文件列表
+root /home/yuting;
+location / {
+       autoindex on;
+       autoindex_exact_size on;
+       autoindex_localtime on;
+}  
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">除了可以共享文件，还可以自定义页面</span><br></pre></td></tr></table></figure>
+<pre><code>#自定义服务器页面
+location / {
+        root /home/yuting;
+        index index.html index.htm;
+}
+</code></pre><p><code>`</code></p>
+<p>注意： 如果出现权限问题，可以修改目录的权限  </p>
+<h1 id="ssh密钥认证"><a href="#ssh密钥认证" class="headerlink" title="ssh密钥认证"></a>ssh密钥认证</h1><p>1.在主机和从机上执行：<code>ssh-keygen</code></p>
+<p>2.在从机上执行:  <code>scp  id_rsa.pub  root@主机地址:~/.ssh/master.pub</code><br>(上面这条指令是将从机上的 id_rsa.pub文件拷贝传递给到主机的.ssh文件夹下，并且命名为’master.pub’)</p>
+<p>3.在主机中的.ssh文件夹中创建authorized_keys文件： <code>touch authorized_keys</code> </p>
+<p>4.修改文件authorized_keys的权限: <code>chmod 600  authorized_keys</code>  </p>
+<p>5.将master.pub放进authorized_keys文件中:  <code>cat master.pub &gt;&gt;  authorized_keys</code></p>
+<p>6.在操作主机的时候，需要主机能够自己免密访问自己就将自己的公钥放在自己的authorized_keys文件中</p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://yoursite.com">酱油壹号</a>
-            </p><p>原文链接：<a href="http://yoursite.com/2018/12/21/day3-作业/">http://yoursite.com/2018/12/21/day3-作业/</a>
-            </p><p>发表日期：<a href="http://yoursite.com/2018/12/21/day3-作业/">December 21st 2018, 9:34:21 am</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2018/12/21/day3-作业/">December 21st 2018, 9:31:35 am</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2018/12/22/Linux文档整理/Nginx服务器安装/">http://yoursite.com/2018/12/22/Linux文档整理/Nginx服务器安装/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2018/12/22/Linux文档整理/Nginx服务器安装/">December 22nd 2018, 2:29:47 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2018/12/22/Linux文档整理/Nginx服务器安装/">December 20th 2018, 5:37:16 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -458,7 +452,7 @@ height:33vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href="/2018/12/21/day2-作业/" title="">
+                <a href="/2018/12/22/Linux文档整理/vim编辑器之神/" title="">
                     <div class="nextTitle">[Untitled Post]</div>
                 </a>
             
@@ -466,7 +460,7 @@ height:33vh;
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2018/12/21/day4-Python-的字符串内建函数/" title="">
+                <a href="/2018/12/22/Linux文档整理/git常用指令/" title="">
                     <div class="prevTitle">[Untitled Post]</div>
                 </a>
             
@@ -612,7 +606,7 @@ top:33vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Nginx服务器"><span class="toc-number">1.</span> <span class="toc-text">Nginx服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-阿里云添加80端口"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.阿里云添加80端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-安装nginx"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 安装nginx</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ssh密钥认证"><span class="toc-number">2.</span> <span class="toc-text">ssh密钥认证</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -663,503 +657,9 @@ top:33vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 34
+        Total : 4
         </div>
         <!-- search  -->
         
@@ -1170,117 +670,12 @@ top:33vh;
     
     
     
-    <div class="archive-year"> 2018 </div>
+    <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day4-Python-的字符串内建函数/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day3-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-分支和循环总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day4-Python字符串常用内建函数/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day3-python变量和运算符总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-python基础语法总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day4-字符串总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-类和对象2/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-网络编程/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/学生管理系统1-0/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/学生管理系统2-0/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day15-面向对象和pygame/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-正则表达式/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/登录注册/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day19-多线程/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-函数2/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-作业/">[Untitled Post]</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">[Untitled Post]</a>
         </li>
     
     
@@ -1294,7 +689,7 @@ top:33vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2018/12/21/day1-markdwon常用操作/">day1-markdwon常用操作</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/vim编辑器之神/">[Untitled Post]</a>
         </li>
     
     
@@ -1303,62 +698,26 @@ top:33vh;
     
         </ul>
     
-    <div class="archive-year"> 2018 </div>
+    <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表作业/">[Untitled Post]</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/git常用指令/">[Untitled Post]</a>
         </li>
     
     
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day12-json和异常捕获/">[Untitled Post]</a>
-        </li>
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day10-函数3/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day7-容器类型/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-提升作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day11-文件操作/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-类和对象/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-函数基础知识总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-分支和循环作业/">[Untitled Post]</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2018/12/21/day1-markdwon常用操作/">markdwon常用操作</a>
         </li>
     
     </ul></div>

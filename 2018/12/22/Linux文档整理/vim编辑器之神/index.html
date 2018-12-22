@@ -266,12 +266,12 @@ height:33vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.3k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">655</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/12/21</span>
+                    <span class="post-intro-time">2018/12/22</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,16 +395,31 @@ height:33vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>Python 的字符串常用内建函数如下：<br>|序号|方法|描述|<br>|—|—|—|<br>1    |capitalize()|将字符串的第一个字符转换为大写<br>2|    center(width, fillchar)|返回一个指定的宽度 width 居中的字符串，fillchar 为填充的字符，默认为空格。<br>3|    count(str)|返回 str 在 string 里面出现的次数<br>4|    bytes.decode(encoding=”utf-8”, errors=”strict”)|Python3 中没有 decode 方法，但我们可以使用 bytes 对象的 decode() 方法来解码给定的 bytes 对象，这个 bytes 对象可以由 str.encode() 来编码返回。<br>5|    encode(encoding=’UTF-8’,errors=’strict’)|以 encoding 指定的编码格式编码字符串，如果出错默认报一个ValueError 的异常，除非 errors 指定的是’ignore’或者’replace’<br>6|    endswith(suffix)|检查字符串是否以 obj 结束，如果beg 或者 end 指定则检查指定的范围内是否以 obj 结束，如果是，返回 True,否则返回 False.<br>7|    expandtabs(tabsize=8)|把字符串 string 中的 tab 符号转为空格，tab 符号默认的空格数是 8 。<br>8|    find(str, beg=0 end=len(string))|检测 str 是否包含在字符串中，如果指定范围 beg 和 end ，则检查是否包含在指定范围内，如果包含返回开始的索引值，否则返回-1<br>9|    index(str, beg=0, end=len(string))|跟find()方法一样，只不过如果str不在字符串中会报一个异常.<br>10|    isalnum()|如果字符串至少有一个字符并且所有字符都是字母或数字则返 回 True,否则返回 False<br>11|    isalpha()|如果字符串至少有一个字符并且所有字符都是字母则返回 True, 否则返回 False<br>12    |isdigit()|如果字符串只包含数字则返回 True 否则返回 False..<br>13    |islower()|如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是小写，则返回 True，否则返回 False<br>14    |isnumeric()|如果字符串中只包含数字字符，则返回 True，否则返回 False（中文数字也可以）<br>15    |isspace()|如果字符串中只包含空白，则返回 True，否则返回 False.<br>16|    istitle()|如果字符串是标题化的(见 title())则返回 True，否则返回 False<br>17|isupper()|如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是大写，则返回 True，否则返回 False<br>18|    join(seq)|以指定字符串作为分隔符，将 seq 中所有的元素(的字符串表示)合并为一个新的字符串<br>19|    len(string)|返回字符串长度<br>20|    ljust(width[, fillchar])|返回一个原字符串左对齐,并使用 fillchar 填充至长度 width 的新字符串，fillchar 默认为空格。<br>21    |lower()|转换字符串中所有大写字符为小写.<br>22    |lstrip()|截掉字符串左边的空格或指定字符。<br>23|    maketrans()|创建字符映射的转换表，对于接受两个参数的最简单的调用方式，第一个参数是字符串，表示需要转换的字符，第二个参数也是字符串表示转换的目标。<br>24    |max(str)|返回字符串 str 中最大的字母。<br>25|    min(str)|返回字符串 str 中最小的字母。<br>26    |replace(old, new [, max])|把 将字符串中的 str1 替换成 str2,如果 max 指定，则替换不超过 max 次。<br>27    |rfind(str, beg=0,end=len(string))|类似于 find()函数，不过是从右边开始查找.<br>28    |rindex( str, beg=0, end=len(string))|类似于 index()，不过是从右边开始.<br>29|     rjust(width,[, fillchar])|返回一个原字符串右对齐,并使用fillchar(默认空格）填充至长度 width 的新字符串<br>30    |rstrip()|删除字符串字符串末尾的空格.<br>31    |split(str=””, num=string.count(str))|num=string.count(str)) 以 str 为分隔符截取字符串，如果 num 有指定值，则仅截取 num 个子字符串<br>32    |splitlines([keepends])|按照行(‘\r’, ‘\r\n’, \n’)分隔，返回一个包含各行作为元素的列表，如果参数 keepends 为 False，不包含换行符，如果为 True，则保留换行符。<br>33    |startswith(str, beg=0,end=len(string))|检查字符串是否是以 obj 开头，是则返回 True，否则返回 False。如果beg 和 end 指定值，则在指定范围内检查。<br>34    |strip([chars])|在字符串上执行 lstrip()和 rstrip()<br>35    |swapcase()|将字符串中大写转换为小写，小写转换为大写<br>36    |title()|返回”标题化”的字符串,就是说所有单词都是以大写开始，其余字母均为小写(见 istitle())<br>37    |translate(table, deletechars=””)|根据 str 给出的表(包含 256 个字符)转换 string 的字符, 要过滤掉的字符放到 deletechars 参数中<br>38    |upper()|转换字符串中的小写字母为大写<br>39    |zfill (width)|返回长度为 width 的字符串，原字符串右对齐，前面填充0<br>40    |isdecimal()|检查字符串是否只包含十进制字符，如果是返回 true，否则返回 false。</p>
-
+        <h1 id="vim编辑器之神"><a href="#vim编辑器之神" class="headerlink" title="vim编辑器之神"></a>vim编辑器之神</h1><h3 id="配置vimrc配置"><a href="#配置vimrc配置" class="headerlink" title="配置vimrc配置"></a>配置vimrc配置</h3><p>在shell中可以通过 <code>vim ~/.vimrc</code> 或者 <code>vim /etc/vimrc</code> 打开vimrc文件对vim进行配置。在这个文件中可以进行很多和vim相关的配置，常用的如下（如果对其他配置感兴趣的可以自己百度）：</p>
+<p><img src="./img/vim1.png" alt=""> </p>
+<h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><h4 id="1-模式切换"><a href="#1-模式切换" class="headerlink" title="1.模式切换"></a>1.模式切换</h4><p>我们可以将vim分为命令模式、编辑模式和末行模式三种<br><strong>命令模式：</strong>进入vim的时候vim是处于命令模式状态下的，这个时候输入内容不会出现在编辑区  (最末什么都没有)</p>
+<p><strong>末行模式：</strong>在命令模式下输入冒号，让vim进入末行模式。在末行模式的冒号后面可以输入相关的一些指令进行相关操作  (最后有一个冒号)</p>
+<p><strong>编辑模式：</strong>在命令模式下按’i’进入编辑模式。在编辑模式下可以对文件内容进行编辑 (最后 –INSERT– 或者 –插入–)  </p>
+<p>####2.保存和退出<br>在末行模式下输入相应的指令可以对编辑区的内容进行保存和退出vim界面<br><strong>w</strong> – 只保存(类似快捷键ctr+s)<br><strong>q</strong> – 退出（在编辑区的内容全部都保存的情况下才有效）<br><strong>wq</strong> – 保存并退出<br><strong>q!</strong>  – 强制退出（不保存修改信息）    </p>
+<p>####3.光标操作<br>以下光标操作都是在命令模式下输入的<br><strong>^(shift+6)</strong>  – 移动到行首<br><strong>$(shift+4)</strong>  – 移动到行尾<br><strong>G(shift+g)</strong>    – 移动到文件末尾<br><strong>行号G</strong>            – 移动到指定行,例如:30G, 让光标直接跳转到行号是30的那一行<br><strong>gg</strong>                – 移动到文件开头  </p>
+<p>####4.文本操作<br>以下操作不带冒号的是在命令模式下输入，前面有冒号代码后面的内容是在末行模式下输入<br><strong>dd</strong>            – 删除光标所在的行<br><strong>数字dd</strong>        – 从光标所在行开始往后面开始删，删除指定数量行内容<br><strong>:%d</strong>        – 删除所有     </p>
+<p><strong>yy</strong>         – 复制光标所在的行<br><strong>数字yy</strong>        – 从光标所在行开始复制指定行数的内容<br><strong>p</strong>            – 将复制的内容粘贴到光标所在的位置<br><strong>u</strong>            – 撤销<br><strong>ctr+r</strong>    – 反撤销    </p>
+<p><strong>:%!sort</strong>  – 对内容排序  </p>
+<p><strong>:/查找对象[/gice]</strong>    – 搜索匹配正则表达式的内容，按回车回到命令模式后按n往前查找，按N往后查找  </p>
+<p>*<em>:1,$s/被替换对象/替换内容[/gice</em>]*    – 将正则表达式匹配到的内容替换成指定内容   </p>
+<pre><code>-    g: 全局匹配  
+-     i: 忽略大小写 
+-   c: 替换时需要提示  
+-   e: 忽略错误  
+</code></pre>
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://yoursite.com">酱油壹号</a>
-            </p><p>原文链接：<a href="http://yoursite.com/2018/12/21/day4-Python-的字符串内建函数/">http://yoursite.com/2018/12/21/day4-Python-的字符串内建函数/</a>
-            </p><p>发表日期：<a href="http://yoursite.com/2018/12/21/day4-Python-的字符串内建函数/">December 21st 2018, 9:34:21 am</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2018/12/21/day4-Python-的字符串内建函数/">December 21st 2018, 9:31:35 am</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2018/12/22/Linux文档整理/vim编辑器之神/">http://yoursite.com/2018/12/22/Linux文档整理/vim编辑器之神/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2018/12/22/Linux文档整理/vim编辑器之神/">December 22nd 2018, 2:29:47 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2018/12/22/Linux文档整理/vim编辑器之神/">December 21st 2018, 3:20:04 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -412,16 +427,11 @@ height:33vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2018/12/21/day3-作业/" title="">
-                    <div class="nextTitle">[Untitled Post]</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2018/12/21/day4-字符串总结/" title="">
+                <a href="/2018/12/22/Linux文档整理/Nginx服务器安装/" title="">
                     <div class="prevTitle">[Untitled Post]</div>
                 </a>
             
@@ -567,7 +577,7 @@ top:33vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vim编辑器之神"><span class="toc-number">1.</span> <span class="toc-text">vim编辑器之神</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置vimrc配置"><span class="toc-number">1.0.1.</span> <span class="toc-text">配置vimrc配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用操作"><span class="toc-number">1.0.2.</span> <span class="toc-text">常用操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-模式切换"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">1.模式切换</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -618,503 +628,9 @@ top:33vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 34
+        Total : 4
         </div>
         <!-- search  -->
         
@@ -1125,117 +641,12 @@ top:33vh;
     
     
     
-    <div class="archive-year"> 2018 </div>
+    <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day4-Python-的字符串内建函数/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day3-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-分支和循环总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day4-Python字符串常用内建函数/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day3-python变量和运算符总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day2-python基础语法总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day4-字符串总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-类和对象2/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-网络编程/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/学生管理系统1-0/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/学生管理系统2-0/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day15-面向对象和pygame/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-正则表达式/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/登录注册/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day14-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day17-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day18-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day19-多线程/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-函数2/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-作业/">[Untitled Post]</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">[Untitled Post]</a>
         </li>
     
     
@@ -1249,7 +660,7 @@ top:33vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2018/12/21/day1-markdwon常用操作/">day1-markdwon常用操作</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/vim编辑器之神/">[Untitled Post]</a>
         </li>
     
     
@@ -1258,62 +669,26 @@ top:33vh;
     
         </ul>
     
-    <div class="archive-year"> 2018 </div>
+    <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表作业/">[Untitled Post]</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/git常用指令/">[Untitled Post]</a>
         </li>
     
     
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day12-json和异常捕获/">[Untitled Post]</a>
-        </li>
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day10-函数3/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day6-列表/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day7-容器类型/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-提升作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day11-文件操作/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day13-类和对象/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day9-作业/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day8-函数基础知识总结/">[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span><a class="archive-post-title" href="/2018/12/21/day5-分支和循环作业/">[Untitled Post]</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2018/12/21/day1-markdwon常用操作/">markdwon常用操作</a>
         </li>
     
     </ul></div>
