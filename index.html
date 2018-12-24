@@ -430,6 +430,53 @@ ls -S/-t            - 按大小/时间排序
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">
+            
+                <span>Nginx服务器安装</span>
+        </a>
+        <div class="abstract-content">
+            Nginx服务器1.阿里云添加80端口阿里云上默认只有一个22端口用来做远程登录，如果希望在阿里云上安装支持http请求的nginx服务器，需要给阿里云添加80端口
+
+2.安装nginx
+a) 添加nginx存储库  
+
+1yum install epel-release
+
+b) 安装nginx
+
+yum install nginx
+
+c) 运行nginxNginx不会自行启动。要运行Nginx  
+
+systemctl start nginx
+
+nginx的运行命令:  
+
+systemctl status nginx 查看nginx的状态  
+systemctl start/stop...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2018/12/22/Linux文档整理/git常用指令/">
             
                 <span>git常用指令</span>
@@ -469,53 +516,6 @@ ls -S/-t            - 按大小/时间排序
 常用操作1.模式切换我们可以将vim分为命令模式、编辑模式和末行模式三种命令模式：进入vim的时候vim是处于命令模式状态下的，这个时候输入内容不会出现在编辑区  (最末什么都没有)
 末行模式：在命令模式下输入冒号，让vim进入末行模式。在末行模式的冒号后面可以输入相关的一些指令进行相关操作  (最后有一个冒号)
 编辑模式：在命令模式下...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">
-            
-                <span>Nginx服务器安装</span>
-        </a>
-        <div class="abstract-content">
-            Nginx服务器1.阿里云添加80端口阿里云上默认只有一个22端口用来做远程登录，如果希望在阿里云上安装支持http请求的nginx服务器，需要给阿里云添加80端口
-
-2.安装nginx
-a) 添加nginx存储库  
-
-1yum install epel-release
-
-b) 安装nginx
-
-yum install nginx
-
-c) 运行nginxNginx不会自行启动。要运行Nginx  
-
-systemctl start nginx
-
-nginx的运行命令:  
-
-systemctl status nginx 查看nginx的状态  
-systemctl start/stop...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -819,17 +819,17 @@ systemctl start/stop...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">Nginx服务器安装</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/vim编辑器之神/">vim编辑器之神</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/git常用指令/">git常用指令</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">Nginx服务器安装</a>
         </li>
     
     

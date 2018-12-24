@@ -453,34 +453,44 @@ height:33vh;
 <p><strong>killall 进程名</strong>                - 处理名字匹配的进程</p>
 <p><strong>uptime</strong>                    - 查看系统状态</p>
 <h3 id="三、权限管理"><a href="#三、权限管理" class="headerlink" title="三、权限管理"></a>三、权限管理</h3><h4 id="1-user和group-一个系统可以有多个用户和多个分组；-一个分组中可以有多个用户，一个用户在不同的分组中-多对多"><a href="#1-user和group-一个系统可以有多个用户和多个分组；-一个分组中可以有多个用户，一个用户在不同的分组中-多对多" class="headerlink" title="1.user和group : 一个系统可以有多个用户和多个分组； 一个分组中可以有多个用户，一个用户在不同的分组中(多对多)"></a>1.user和group : 一个系统可以有多个用户和多个分组； 一个分组中可以有多个用户，一个用户在不同的分组中(多对多)</h4><p><strong>users</strong>                                     - 查看当前用户</p>
-<p>groups                                 - 查看当前分组</p>
-<p>groupadd  分组名                            - 添加分组</p>
-<p>useradd ‐G 分组列表 ‐m ‐s /bin/bash 用户名        - 创建一个用户添加到指定的分组中(在home创建相应的文件夹)</p>
-<p>usermod -G 分组列表 用户名                    - 修改分组</p>
-<p>passwd 用户名                            - 修改密码</p>
-<p>su - 用户名                                - 切换用户身份</p>
-<p>sudo                                        - 以管理员执行其他程序<br>注意： a.在ubuntu需要将用户添加到sudo分组中，才能使用sudo以管理员的身份执行程序<br>          b.在centOS中需要先执行visudo指令进入sudoers文件中在指定的位置添加内容</p>
+<p><strong>groups</strong>                                 - 查看当前分组</p>
+<p><strong>groupadd  分组名</strong>                            - 添加分组</p>
+<p><strong>useradd ‐G 分组列表 ‐m ‐s /bin/bash 用户名</strong>        - 创建一个用户添加到指定的分组中(在home创建相应的文件夹)</p>
+<p><strong>usermod -G 分组列表 用户名</strong>                    - 修改分组</p>
+<p><strong>passwd 用户名</strong>                            - 修改密码</p>
+<p><strong>su - 用户名</strong>                                - 切换用户身份</p>
+<p><strong>sudo</strong>                                        - 以管理员执行其他程序</p>
+<p><strong>注意：</strong></p>
+<p><strong>a.在ubuntu需要将用户添加到sudo分组中，才能使用sudo以管理员的身份执行程序</strong><br><strong>b.在centOS中需要先执行visudo指令进入sudoers文件中在指定的位置添加内容</strong></p>
 <pre><code>## Allow root to run any commands anywhere
 root    ALL=(ALL)       ALL
-xiaoming ALL=(ALL)      ALL        (自己添加的，xiaoming是用户名)
-</code></pre><p>2.chmod<br>chmod       权限值   文件            - 修改指定文件的权限</p>
-<p>chmod    [a,u,g,o][+,-][r,w,x]  文件            - 为指定文件，给所有用户添加相应的权限<br>                                              (a:所有，u:自己，g:同组，o:其他；<br>                                            +：添加， -: 取消；<br>                                            r:读，w:写，x:执行)<br>chown  用户名     文件            - 改变文件所有者</p>
-<p>(权限制是三组二进制值)<br>self      group    other<br>rwx      rwx        rwx<br>111       101        001            - 自己读写可执行，同一分组的只读可执行，其他的只可执行<br>110      100        000</p>
-<p>三、日志管理<br>1.cat指令<br>cat       文件                - 查看文件内容</p>
-<p>2.查看部分<br>head -n  N  文件        - 查看前N行内容<br>tail  -n  N    文件         - 查看后N行内容</p>
-<p>3.<br>less [-N]  文件</p>
-<pre><code>- 按 j 向下
+xiaoming ALL=(ALL)      ALL(自己添加的，xiaoming是用户名)
+</code></pre><h4 id="2-chmod"><a href="#2-chmod" class="headerlink" title="2.chmod"></a>2.chmod</h4><p><strong>chmod       权限值   文件</strong>            - 修改指定文件的权限</p>
+<p><strong>chmod    [a,u,g,o][+,-][r,w,x]  文件</strong>            - 为指定文件，给所有用户添加相应的权限</p>
+<p><strong>(a:所有，u:自己，g:同组，o:其他；+：添加， -: 取消<br>r:读，w:写，x:执行)</strong></p>
+<p><strong>chown  用户名     文件</strong>            - 改变文件所有者</p>
+<p><strong>(权限制是三组二进制值)</strong></p>
+<pre><code>self      group    other
+rwx      rwx        rwx
+111       101        001 - 自己读写可执行，同一分组的只读可执行，其他的只可执行
+110      100        000
+</code></pre><h3 id="三、日志管理"><a href="#三、日志管理" class="headerlink" title="三、日志管理"></a>三、日志管理</h3><h4 id="1-cat指令"><a href="#1-cat指令" class="headerlink" title="1.cat指令"></a>1.cat指令</h4><p><strong>cat       文件</strong>                - 查看文件内容</p>
+<h4 id="2-查看部分"><a href="#2-查看部分" class="headerlink" title="2.查看部分"></a>2.查看部分</h4><p><strong>head -n  N  文件</strong>        - 查看前N行内容</p>
+<p><strong>tail  -n  N    文件</strong>         - 查看后N行内容</p>
+<h4 id="3-less-N-文件"><a href="#3-less-N-文件" class="headerlink" title="3.less [-N]  文件"></a>3.less [-N]  文件</h4><pre><code>- 按 j 向下
 - 按 k 向上
 - 按 f 向下翻屏
 - 按    b 向上翻屏
 - 按 g 到全文开头
 - 按 G 到全文结尾
 - 按 Q 退出  
-</code></pre><p>more [-N]  文件            - 和less差不多，这个是尽可能多，less是尽可能少的加载</p>
-<p>4.处理<br>sort                  - 排序  (cat 文件 |sort)<br>uniq                - 去重  (cat 文件 |uniq) - 只会去重相邻的重复是数据，一般结合sort一起使用:  |sort|uniq<br>awk ‘{print $N}’    - 打印第N列的内容(netstat -natp|awk ‘{print $4}’)</p>
-<p>history |awk ‘{print $4}’ |sort |uniq ‐c | sort ‐rnk 1 | head ‐n 3           -获取历史指令中，使用最频繁的三个指令</p>
-<p>5.统计<br>wc -c(字符)/-w(单词)/-l(行)  文件</p>
-<p>6.查找<br>grep  查看对象    目录/文件  参数</p>
+</code></pre><p><strong>more [-N]  文件</strong>            - 和less差不多，这个是尽可能多，less是尽可能少的加载</p>
+<h4 id="4-处理"><a href="#4-处理" class="headerlink" title="4.处理"></a>4.处理</h4><p><strong>sort</strong>                  - 排序  (cat 文件 |sort)</p>
+<p><strong>uniq</strong>                - 去重  (cat 文件 |uniq) - 只会去重相邻的重复数据，一般结合sort一起使用:  <strong>|sort|uniq</strong></p>
+<p><strong>awk ‘{print $N}’</strong>    - 打印第N列的内容<strong>(netstat -natp|awk ‘{print $4}’)</strong></p>
+<p><strong>history |awk ‘{print $4}’ |sort |uniq ‐c | sort ‐rnk 1 | head ‐n 3</strong>           -获取历史指令中，使用最频繁的三个指令</p>
+<h4 id="5-统计"><a href="#5-统计" class="headerlink" title="5.统计"></a>5.统计</h4><p><strong>wc -c(字符)/-w(单词)/-l(行)  文件</strong></p>
+<h4 id="6-查找"><a href="#6-查找" class="headerlink" title="6.查找"></a>6.查找</h4><p><strong>grep  查看对象    目录/文件  参数</strong></p>
 <pre><code>参数：
     -i    忽略大小写
     -n   显示行标号
@@ -495,17 +505,26 @@ xiaoming ALL=(ALL)      ALL        (自己添加的，xiaoming是用户名)
     grep you bb.txt -i
     grep you bb.txt -i -n
     grep -E &apos;[0-9]+&apos; bb.txt 
-</code></pre><p>find       DIR    -name  ‘<em>.xxx’        找到目录下所有名字匹配的文件<br>    找出文件夹<br>    例：find /tmp/xyz/ ‐perm 0642 ‐size +10k ‐size ‐100k ‐name ‘</em>.log’</p>
-<p>which  指令        - 精确查找当前可执行的指令<br>whereis  指令    - 查找所有匹配的命令</p>
-<p>ps -aux|awk ‘{print $2,$3,$4,$11}’ &gt; 存储数据.txt    很好用！执行查看进程操作获取数据的指令后把结果保存在后面的存储数据文件中！（覆盖原文件内容）<br>ps -aux|awk ‘{print $2,$3,$4,$11}’ &gt;&gt; 存储数据.txt  在原文件后追加新获得的数据。</p>
-<p>wget url ：下载</p>
-<p>四、网络管理</p>
-<p>ifconfig     查看网卡状态</p>
-<p>netstat   -natp                    - 查看网络连接状态<br>netstat   -natp|grep  端口号            - 查看指定端口的网络连接状态    </p>
-<p>ping  地址<br>ping  -i   时间    地址<br>ping  -c  次数    地址</p>
-<p>telnet  ip地址    端口         - 查看远程主机网络连接状况</p>
-<p>dig 地址            - 查看DNS<br>wget  地址            - 下载</p>
-<p>包管理工具 ：yum<br>yum install 包名         安装对应的包名，前提是包已存在<br>yum search 包名        搜索对应的包名</p>
+</code></pre><p><strong>find       DIR    -name  ‘*.xxx’</strong>        找到目录下所有名字匹配的文件</p>
+<pre><code>找出文件夹
+例：find /tmp/xyz/ ‐perm 0642 ‐size +10k ‐size ‐100k ‐name &apos;*.log&apos;
+</code></pre><p><strong>which  指令</strong>        - 精确查找当前可执行的指令</p>
+<p><strong>whereis  指令</strong>    - 查找所有匹配的命令</p>
+<p><strong>ps -aux|awk ‘{print \$2,\$3,\$4,$11}’ &gt; 存储数据.txt</strong>    很好用！执行查看进程操作获取数据的指令后把结果保存在后面的存储数据文件中！（覆盖原文件内容）</p>
+<p><strong>ps -aux|awk ‘{print \$2,\$3,\$4,$11}’ &gt;&gt; 存储数据.txt </strong> 在原文件后追加新获得的数据。</p>
+<p><strong>wget url</strong> ：下载</p>
+<h3 id="四、网络管理"><a href="#四、网络管理" class="headerlink" title="四、网络管理"></a>四、网络管理</h3><p><strong>ifconfig</strong>     查看网卡状态</p>
+<p><strong>netstat   -natp</strong>                    - 查看网络连接状态</p>
+<p><strong>netstat   -natp|grep  端口号</strong>            - 查看指定端口的网络连接状态    </p>
+<pre><code>ping  地址 
+ping  -i   时间    地址
+ping  -c  次数    地址
+</code></pre><p><strong>telnet  ip地址    端口</strong>         - 查看远程主机网络连接状况</p>
+<p><strong>dig 地址</strong>            - 查看DNS</p>
+<p><strong>wget  地址</strong>            - 下载</p>
+<p><strong>包管理工具 ：yum </strong></p>
+<p><strong>yum install 包名</strong>         安装对应的包名，前提是包已存在</p>
+<p><strong>yum search 包名</strong>        搜索对应的包名</p>
 
     </article>
     <!-- license  -->
@@ -514,7 +533,7 @@ xiaoming ALL=(ALL)      ALL        (自己添加的，xiaoming是用户名)
             <p>原文作者：<a href="http://yoursite.com">酱油壹号</a>
             </p><p>原文链接：<a href="http://yoursite.com/2018/12/22/linux指令/">http://yoursite.com/2018/12/22/linux指令/</a>
             </p><p>发表日期：<a href="http://yoursite.com/2018/12/22/linux指令/">December 22nd 2018, 5:55:00 pm</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2018/12/22/linux指令/">December 24th 2018, 7:12:47 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2018/12/22/linux指令/">December 24th 2018, 8:50:23 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -672,7 +691,7 @@ top:33vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux指令系统-部分"><span class="toc-number">1.</span> <span class="toc-text">Linux指令系统(部分)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#指令格式："><span class="toc-number">1.0.1.</span> <span class="toc-text">指令格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一、日常操作"><span class="toc-number">1.0.2.</span> <span class="toc-text">一、日常操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-cd指令-进入指定文件夹"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">1.cd指令       - 进入指定文件夹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-ls指令-查看当前目录中的内容"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">2. ls指令        - 查看当前目录中的内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-pwd指令-显示当前完整目录"><span class="toc-number">1.0.2.3.</span> <span class="toc-text">3.pwd指令         - 显示当前完整目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-文件操作指令"><span class="toc-number">1.0.2.4.</span> <span class="toc-text">4.文件操作指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-history-显示历史指令记录"><span class="toc-number">1.0.2.5.</span> <span class="toc-text">5.history        - 显示历史指令记录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-链接"><span class="toc-number">1.0.2.6.</span> <span class="toc-text">6.链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-快捷键"><span class="toc-number">1.0.2.7.</span> <span class="toc-text">7.快捷键</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、进程相关指令"><span class="toc-number">1.0.3.</span> <span class="toc-text">二、进程相关指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-ps指令"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">1.ps指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-top指令"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">2.top指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-free指令"><span class="toc-number">1.0.3.3.</span> <span class="toc-text">3.free指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-kill指令"><span class="toc-number">1.0.3.4.</span> <span class="toc-text">4.kill指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、权限管理"><span class="toc-number">1.0.4.</span> <span class="toc-text">三、权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-user和group-一个系统可以有多个用户和多个分组；-一个分组中可以有多个用户，一个用户在不同的分组中-多对多"><span class="toc-number">1.0.4.1.</span> <span class="toc-text">1.user和group : 一个系统可以有多个用户和多个分组； 一个分组中可以有多个用户，一个用户在不同的分组中(多对多)</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux指令系统-部分"><span class="toc-number">1.</span> <span class="toc-text">Linux指令系统(部分)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#指令格式："><span class="toc-number">1.0.1.</span> <span class="toc-text">指令格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一、日常操作"><span class="toc-number">1.0.2.</span> <span class="toc-text">一、日常操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-cd指令-进入指定文件夹"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">1.cd指令       - 进入指定文件夹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-ls指令-查看当前目录中的内容"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">2. ls指令        - 查看当前目录中的内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-pwd指令-显示当前完整目录"><span class="toc-number">1.0.2.3.</span> <span class="toc-text">3.pwd指令         - 显示当前完整目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-文件操作指令"><span class="toc-number">1.0.2.4.</span> <span class="toc-text">4.文件操作指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-history-显示历史指令记录"><span class="toc-number">1.0.2.5.</span> <span class="toc-text">5.history        - 显示历史指令记录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-链接"><span class="toc-number">1.0.2.6.</span> <span class="toc-text">6.链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-快捷键"><span class="toc-number">1.0.2.7.</span> <span class="toc-text">7.快捷键</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、进程相关指令"><span class="toc-number">1.0.3.</span> <span class="toc-text">二、进程相关指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-ps指令"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">1.ps指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-top指令"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">2.top指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-free指令"><span class="toc-number">1.0.3.3.</span> <span class="toc-text">3.free指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-kill指令"><span class="toc-number">1.0.3.4.</span> <span class="toc-text">4.kill指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、权限管理"><span class="toc-number">1.0.4.</span> <span class="toc-text">三、权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-user和group-一个系统可以有多个用户和多个分组；-一个分组中可以有多个用户，一个用户在不同的分组中-多对多"><span class="toc-number">1.0.4.1.</span> <span class="toc-text">1.user和group : 一个系统可以有多个用户和多个分组； 一个分组中可以有多个用户，一个用户在不同的分组中(多对多)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-chmod"><span class="toc-number">1.0.4.2.</span> <span class="toc-text">2.chmod</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、日志管理"><span class="toc-number">1.0.5.</span> <span class="toc-text">三、日志管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-cat指令"><span class="toc-number">1.0.5.1.</span> <span class="toc-text">1.cat指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-查看部分"><span class="toc-number">1.0.5.2.</span> <span class="toc-text">2.查看部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-less-N-文件"><span class="toc-number">1.0.5.3.</span> <span class="toc-text">3.less [-N]  文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-处理"><span class="toc-number">1.0.5.4.</span> <span class="toc-text">4.处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-统计"><span class="toc-number">1.0.5.5.</span> <span class="toc-text">5.统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-查找"><span class="toc-number">1.0.5.6.</span> <span class="toc-text">6.查找</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、网络管理"><span class="toc-number">1.0.6.</span> <span class="toc-text">四、网络管理</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -759,17 +778,17 @@ top:33vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">Nginx服务器安装</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/vim编辑器之神/">vim编辑器之神</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/git常用指令/">git常用指令</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">Nginx服务器安装</a>
         </li>
     
     
