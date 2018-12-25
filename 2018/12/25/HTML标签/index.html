@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Nginx服务器安装 · ZH&#39;s Blog</title>
+    <title>HTML标签 · ZH&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">Perseverance</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Nginx服务器安装</a>
+                <a href="#" class="post-name">HTML标签</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:33vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Nginx服务器安装
+            HTML标签
             <!-- 404 -->
             
         </h1>
@@ -272,12 +272,12 @@ height:33vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">487</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">953</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/12/22</span>
+                    <span class="post-intro-time">2018/12/25</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,53 +401,100 @@ height:33vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="Nginx服务器"><a href="#Nginx服务器" class="headerlink" title="Nginx服务器"></a>Nginx服务器</h1><h2 id="1-阿里云添加80端口"><a href="#1-阿里云添加80端口" class="headerlink" title="1.阿里云添加80端口"></a>1.阿里云添加80端口</h2><p>阿里云上默认只有一个22端口用来做远程登录，如果希望在阿里云上安装支持http请求的nginx服务器，需要给阿里云添加80端口</p>
-<p><img src="/images/aliyun0.png" alt="打开安全组设置"><br><img src="/images/aliyun2.png" alt=""><br><img src="/images/aliyun3.png" alt=""><br><img src="/images/aliyun4.png" alt=""></p>
-<h2 id="2-安装nginx"><a href="#2-安装nginx" class="headerlink" title="2.安装nginx"></a>2.安装nginx</h2><blockquote>
-<p>a) 添加nginx存储库  </p>
+        <h2 id="HTML标签"><a href="#HTML标签" class="headerlink" title="HTML标签"></a>HTML标签</h2><h3 id="1-文本标签"><a href="#1-文本标签" class="headerlink" title="1.文本标签"></a>1.文本标签</h3><h4 id="标题标签：级别递减"><a href="#标题标签：级别递减" class="headerlink" title="标题标签：级别递减"></a>标题标签：级别递减</h4><pre><code>&lt;h1&gt;我是标题1&lt;/h1&gt;
+&lt;h2&gt;我是标题2&lt;/h2&gt;
+&lt;h3&gt;我是标题3&lt;/h3&gt;
+&lt;h4&gt;我是标题4&lt;/h4&gt;
+&lt;h5&gt;我是标题5&lt;/h5&gt;
+&lt;h6&gt;我是标题6&lt;/h6&gt;
+</code></pre><h4 id="段落标签"><a href="#段落标签" class="headerlink" title="段落标签"></a>段落标签</h4><pre><code>&lt;p&gt;&lt;/p&gt;
+</code></pre><h4 id="文本符号和强制换行符"><a href="#文本符号和强制换行符" class="headerlink" title="文本符号和强制换行符"></a>文本符号和强制换行符</h4><p><strong>空格：</strong></p>
+<pre><code>&amp;nbsp;空一个像素
+&amp;emsp;一个空格键
+</code></pre><p><strong>换行标签</strong></p>
+<pre><code>&lt;br&gt;
+</code></pre><h4 id="文字效果标签"><a href="#文字效果标签" class="headerlink" title="文字效果标签"></a>文字效果标签</h4><p><strong>文字加粗</strong></p>
+<pre><code>&lt;b&gt;单纯加粗&lt;/b&gt;
+&lt;strong&gt;强调加粗&lt;/strong&gt;
+</code></pre><p><strong>文字倾斜</strong></p>
+<pre><code>&lt;i&gt;倾斜&lt;/i&gt;
+&lt;em&gt;强调倾斜&lt;/em&gt;
+</code></pre><h4 id="单纯文字标签"><a href="#单纯文字标签" class="headerlink" title="单纯文字标签"></a>单纯文字标签</h4><pre><code>&lt;font&gt;纯文本标签&lt;/font&gt;
+</code></pre><h3 id="2-列表标签"><a href="#2-列表标签" class="headerlink" title="2.列表标签"></a>2.列表标签</h3><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><pre><code>ul-li:(都是双标签)
+ul标签：代表整个列表
+li标签：代表列表中的元素
+</code></pre><h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4><pre><code>ol-li:(都是双标签)
+ol标签：代表整个列表
+li标签：代表列表中的元素
+</code></pre><h3 id="3-图片标签"><a href="#3-图片标签" class="headerlink" title="3.图片标签"></a>3.图片标签</h3><pre><code>&lt;img src=&quot;图片地址&quot; title=&quot;图片标题&quot; 
+alt=&quot;图片加载失败提示语&quot; /&gt;
+</code></pre><h3 id="4-超链接标签"><a href="#4-超链接标签" class="headerlink" title="4.超链接标签"></a>4.超链接标签</h3><pre><code>&lt;a href=&quot;链接地址&quot; target=&quot;_blank&quot;&gt;显示内容&lt;/a&gt;
+</code></pre><blockquote>
+<p>1.显示内容:</p>
+<p>超链接在网页中可点击的内容，可是文字或图片</p>
+<p>2.href属性：点击后跳转目标的地址</p>
+<p>a.设置另一个网页的地址：跳转到指定网页</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>b) 安装nginx</p>
+<p>b.设置成另一个本地html路径：跳转到本地网页中</p>
+<p>c.设置成当前页面标签对应的选择器：让当前网页滚动到指定位置</p>
+<p>d.设置为空：刷新网页（会重新请求数据）</p>
+<p>3.target属性</p>
+<p>_self（默认值）：在当前页面中显示新的网页</p>
+<p>_blank：在新的页面显示新的网页</p>
 </blockquote>
-<pre><code>yum install nginx
-</code></pre><blockquote>
-<p>c) 运行nginx<br>Nginx不会自行启动。要运行Nginx  </p>
-</blockquote>
-<pre><code>systemctl start nginx
-</code></pre><blockquote>
-<p>nginx的运行命令:  </p>
-</blockquote>
-<pre><code>systemctl status nginx 查看nginx的状态  
-systemctl start/stop/enable/disable nginx 启动/关闭/设置开机启动/禁止开机启动  
-</code></pre><blockquote>
-<p>d) 系统启动时启动Nginx  </p>
-</blockquote>
-<pre><code>systemctl enable nginx
-</code></pre><blockquote>
-<p>e）如果您正在运行防火墙，请运行以下命令以允许HTTP和HTTPS通信：   </p>
-</blockquote>
-<pre><code>sudo firewall-cmd --permanent --zone=public --add-service=http 
-sudo firewall-cmd --permanent --zone=public --add-service=https
-sudo firewall-cmd --reload
-</code></pre><h2 id="3-nginx目录共享配置"><a href="#3-nginx目录共享配置" class="headerlink" title="3.nginx目录共享配置"></a>3.nginx目录共享配置</h2><p>a) 在contOS目录中确定一个需要共享的文件夹，例如：/home/yuting<br>b) 打开etc/nginx/nginx.conf 文件，设置server<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#共享设置 - 在浏览器中输入服务器ip地址，会展示共享目录的文件列表</span><br><span class="line">root /home/yuting;</span><br><span class="line">location / &#123;</span><br><span class="line">autoindex on;</span><br><span class="line">autoindex_exact_size on;</span><br><span class="line"> autoindex_localtime on;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>除了可以共享文件，还可以自定义页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#自定义服务器页面</span><br><span class="line">location / &#123;</span><br><span class="line">root /home/yuting;</span><br><span class="line">index index.html index.htm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>注意： 如果出现权限问题，可以修改目录的权限  </p>
-<h1 id="ssh密钥认证"><a href="#ssh密钥认证" class="headerlink" title="ssh密钥认证"></a>ssh密钥认证</h1><p>1.在主机和从机上执行：<code>ssh-keygen</code></p>
-<p>2.在从机上执行:  <code>scp  id_rsa.pub  root@主机地址:~/.ssh/master.pub</code><br>(上面这条指令是将从机上的 id_rsa.pub文件拷贝传递给到主机的.ssh文件夹下，并且命名为’master.pub’)</p>
-<p>3.在主机中的.ssh文件夹中创建authorized_keys文件： <code>touch authorized_keys</code> </p>
-<p>4.修改文件authorized_keys的权限: <code>chmod 600  authorized_keys</code>  </p>
-<p>5.将master.pub放进authorized_keys文件中:  <code>cat master.pub &gt;&gt;  authorized_keys</code></p>
-<p>6.在操作主机的时候，需要主机能够自己免密访问自己就将自己的公钥放在自己的authorized_keys文件中</p>
+<h4 id="5-表格标签"><a href="#5-表格标签" class="headerlink" title="5.表格标签"></a>5.表格标签</h4><pre><code>表格标签（table-tr-td）：
+table标签：代表整个表格
+tr标签：代表表格中的一行
+td标签：代表表格中每一个单元格
 
+1.border：设置边框宽度（单位是像素）
+默认情况下是设置整个表格边框的宽度为border，同时设置每个单元格的边框宽为1。
+
+2.bordercolor：设置边框颜色
+html中的颜色值：
+a.颜色英文单词：red、black、yellow、pink等
+b.rgb对应的16进制值：例如 #00ff00（绿色）、#ff0000（红色）
+
+3.sellspacing:设置表格中单元格与单元格之间，以及单元格与边框之间的间距。
+
+4.sellpadding:设置表格中内容到单元格边框之间的间距,单位是像素。
+默认情况下，单元格的大小跟当前列中的内容的大小有关。
+
+5.bgcolor：设置背景颜色
+作为table属性：设置整个表格的背景颜色
+作为tr属性：设置整行的背景颜色
+作为td属性：设置单元格的背景颜色
+
+6.width:设置宽度
+作为table属性：设置整个列表宽度
+作为td属性：设置当前列的宽度
+
+7.height:设置高度
+作为table属性：设置整个列表高度
+作为tr属性：设置当前行的高度
+
+8.align：设置水平对齐方式
+left（默认）：左对齐（默认）
+right：右对齐
+center：居中
+
+作为table属性：让整个列表在网页中左右对齐和居中
+作为tr属性：让一行中所有的单元格中的内容，在单元格中左右对齐和居中
+作为td属性：让一个单元格中的内容，在单元格中左右对齐和居中
+</code></pre><p><strong>注意：html中所有的属性值都是写在双引号中的，双标签中内容是任意的。</strong></p>
+<h4 id="6-复杂的表格"><a href="#6-复杂的表格" class="headerlink" title="6.复杂的表格"></a>6.复杂的表格</h4><pre><code>合并：
+colspan：列合并
+rowspan:行合并
+</code></pre>
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://yoursite.com">酱油壹号</a>
-            </p><p>原文链接：<a href="http://yoursite.com/2018/12/22/Linux文档整理/Nginx服务器安装/">http://yoursite.com/2018/12/22/Linux文档整理/Nginx服务器安装/</a>
-            </p><p>发表日期：<a href="http://yoursite.com/2018/12/22/Linux文档整理/Nginx服务器安装/">December 22nd 2018, 3:04:00 pm</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2018/12/22/Linux文档整理/Nginx服务器安装/">December 22nd 2018, 4:36:10 pm</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2018/12/25/HTML标签/">http://yoursite.com/2018/12/25/HTML标签/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2018/12/25/HTML标签/">December 25th 2018, 9:25:51 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2018/12/25/HTML标签/">December 25th 2018, 10:16:15 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -455,17 +502,12 @@ sudo firewall-cmd --reload
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2018/12/22/day1-markdwon常用操作/" title="markdwon常用操作">
-                    <div class="nextTitle">markdwon常用操作</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2018/12/22/Linux文档整理/git常用指令/" title="git常用指令">
-                    <div class="prevTitle">git常用指令</div>
+                <a href="/2018/12/22/linux指令/" title="Linux指令">
+                    <div class="prevTitle">Linux指令</div>
                 </a>
             
         </li>
@@ -610,7 +652,7 @@ top:33vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Nginx服务器"><span class="toc-number">1.</span> <span class="toc-text">Nginx服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-阿里云添加80端口"><span class="toc-number">1.1.</span> <span class="toc-text">1.阿里云添加80端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-安装nginx"><span class="toc-number">1.2.</span> <span class="toc-text">2.安装nginx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-nginx目录共享配置"><span class="toc-number">1.3.</span> <span class="toc-text">3.nginx目录共享配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ssh密钥认证"><span class="toc-number">2.</span> <span class="toc-text">ssh密钥认证</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML标签"><span class="toc-number">1.</span> <span class="toc-text">HTML标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-文本标签"><span class="toc-number">1.1.</span> <span class="toc-text">1.文本标签</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#标题标签：级别递减"><span class="toc-number">1.1.1.</span> <span class="toc-text">标题标签：级别递减</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#段落标签"><span class="toc-number">1.1.2.</span> <span class="toc-text">段落标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文本符号和强制换行符"><span class="toc-number">1.1.3.</span> <span class="toc-text">文本符号和强制换行符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文字效果标签"><span class="toc-number">1.1.4.</span> <span class="toc-text">文字效果标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#单纯文字标签"><span class="toc-number">1.1.5.</span> <span class="toc-text">单纯文字标签</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-列表标签"><span class="toc-number">1.2.</span> <span class="toc-text">2.列表标签</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#无序列表"><span class="toc-number">1.2.1.</span> <span class="toc-text">无序列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#有序列表"><span class="toc-number">1.2.2.</span> <span class="toc-text">有序列表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-图片标签"><span class="toc-number">1.3.</span> <span class="toc-text">3.图片标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-超链接标签"><span class="toc-number">1.4.</span> <span class="toc-text">4.超链接标签</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-表格标签"><span class="toc-number">1.4.1.</span> <span class="toc-text">5.表格标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-复杂的表格"><span class="toc-number">1.4.2.</span> <span class="toc-text">6.复杂的表格</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
