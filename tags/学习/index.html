@@ -474,7 +474,7 @@ ls -S/-t            - 按大小/时间排序
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/22/day1-markdwon常用操作/">
+        <a class="abstract-title" href="/2018/12/22/markdwon常用操作/">
             
                 <span>markdwon常用操作</span>
         </a>
@@ -483,6 +483,53 @@ ls -S/-t            - 按大小/时间排序
 2.斜体和粗体使用 * 和 ** 来表示 斜体 和 粗体 字。例如：（标识符前后需加上空格，否则会按整句读取）这是 *斜体* 这是 **粗体**这是 斜体 这是 粗体
 3.添加外部链接使用 [描述](链接地址) 为文字添加外部链接，示例： [詹洪简书](https://www.jianshu.com/u/5bb8c539a12d)这是去往 詹洪简书 的链接
 4.无序列表使用 * + - 来表示无序列表，示例：- 无序列表1- 无序...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">
+            
+                <span>Nginx服务器安装</span>
+        </a>
+        <div class="abstract-content">
+            Nginx服务器1.阿里云添加80端口阿里云上默认只有一个22端口用来做远程登录，如果希望在阿里云上安装支持http请求的nginx服务器，需要给阿里云添加80端口
+
+2.安装nginx
+a) 添加nginx存储库  
+
+1yum install epel-release
+
+b) 安装nginx
+
+yum install nginx
+
+c) 运行nginxNginx不会自行启动。要运行Nginx  
+
+systemctl start nginx
+
+nginx的运行命令:  
+
+systemctl status nginx 查看nginx的状态  
+systemctl start/stop...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -545,53 +592,6 @@ ls -S/-t            - 按大小/时间排序
 常用操作1.模式切换我们可以将vim分为命令模式、编辑模式和末行模式三种命令模式：进入vim的时候vim是处于命令模式状态下的，这个时候输入内容不会出现在编辑区  (最末什么都没有)
 末行模式：在命令模式下输入冒号，让vim进入末行模式。在末行模式的冒号后面可以输入相关的一些指令进行相关操作  (最后有一个冒号)
 编辑模式：在命令模式下...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">
-            
-                <span>Nginx服务器安装</span>
-        </a>
-        <div class="abstract-content">
-            Nginx服务器1.阿里云添加80端口阿里云上默认只有一个22端口用来做远程登录，如果希望在阿里云上安装支持http请求的nginx服务器，需要给阿里云添加80端口
-
-2.安装nginx
-a) 添加nginx存储库  
-
-1yum install epel-release
-
-b) 安装nginx
-
-yum install nginx
-
-c) 运行nginxNginx不会自行启动。要运行Nginx  
-
-systemctl start nginx
-
-nginx的运行命令:  
-
-systemctl status nginx 查看nginx的状态  
-systemctl start/stop...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -814,9 +814,12 @@ systemctl start/stop...
     
     
     
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 9
+        Total : 10
         </div>
         <!-- search  -->
         
@@ -826,6 +829,20 @@ systemctl start/stop...
     
     
     
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/02</span><a class="archive-post-title" href="/2019/01/02/Django详解/">Django详解</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
@@ -857,11 +874,6 @@ systemctl start/stop...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">Nginx服务器安装</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/vim编辑器之神/">vim编辑器之神</a>
         </li>
     
@@ -872,7 +884,12 @@ systemctl start/stop...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/day1-markdwon常用操作/">markdwon常用操作</a>
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">Nginx服务器安装</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/markdwon常用操作/">markdwon常用操作</a>
         </li>
     
     </ul></div>
@@ -880,11 +897,11 @@ systemctl start/stop...
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="学习"><span class="iconfont-archer">&#xe606;</span>学习</span>
+        <span class="sidebar-tag-name" data-tags="Django"><span class="iconfont-archer">&#xe606;</span>Django</span>
     
         <span class="sidebar-tag-name" data-tags="Redis"><span class="iconfont-archer">&#xe606;</span>Redis</span>
     
-        <span class="sidebar-tag-name" data-tags="Django"><span class="iconfont-archer">&#xe606;</span>Django</span>
+        <span class="sidebar-tag-name" data-tags="学习"><span class="iconfont-archer">&#xe606;</span>学习</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
