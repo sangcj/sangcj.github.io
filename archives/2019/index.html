@@ -346,6 +346,50 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/03/Django（二）/">
+            
+                <span>Django（二）</span>
+        </a>
+        <div class="abstract-content">
+            概念ORM(objects relationship mapping):对象关系映射管理器：objects；默认模型的属性
+创建法1：
+
+create()方法
+
+模型名.objects.create(字段1=值1，字段2=值2)
+
+
+法2：
+
+save()方法
+
+模型对象.save()
+
+
+例：1234567891011def add_stu(request):    # 会自动映射成SQL语句    # 实现插入数据,实现的第一种方式     # Student.objects.create(s_name='小明')    # 实现的第二种方法    # 拿到学生对象，再赋值     ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/03</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Django">Django</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/02/web前端-Linux-Vim/">
             
                 <span>web前端+Linux+Vim</span>
@@ -395,9 +439,9 @@ BOM - 浏览器对象模型 - wind...
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/01/02/Django详解/">
+        <a class="abstract-title" href="/2019/01/02/Django（一）/">
             
-                <span>Django详解</span>
+                <span>Django(一)</span>
         </a>
         <div class="abstract-content">
             Django虚拟环境1.安装(cmd)：pip install virtualenv2.使用：virtualenv --no-site-packages -p 自己python解释器的绝对路径 name(设置本环境名字)注意:创建前需切换到自己建立的用于存储环境设置的文件夹目录下，下面路径中的env是我的环境目录123--no-site-packages:表示创建的虚拟环境为纯净的环境，未安装有其他的库-p:表示虚拟环境中的python版本
@@ -652,9 +696,12 @@ windows中：直接执行act...
     
     
     
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 11
+        Total : 12
         </div>
         <!-- search  -->
         
@@ -670,12 +717,17 @@ windows中：直接执行act...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span><a class="archive-post-title" href="/2019/01/03/Django（二）/">Django（二）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">01/02</span><a class="archive-post-title" href="/2019/01/02/web前端-Linux-Vim/">web前端+Linux+Vim</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/02</span><a class="archive-post-title" href="/2019/01/02/Django详解/">Django详解</a>
+            <span class="archive-post-date">01/02</span><a class="archive-post-title" href="/2019/01/02/Django（一）/">Django(一)</a>
         </li>
     
     
@@ -689,12 +741,12 @@ windows中：直接执行act...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/31</span><a class="archive-post-title" href="/2018/12/31/python运行Django项目/">python运行Django项目</a>
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href="/2018/12/31/Redis数据库基本操作/">Redis数据库基本操作</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/31</span><a class="archive-post-title" href="/2018/12/31/Redis数据库基本操作/">Redis数据库基本操作</a>
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href="/2018/12/31/python运行Django项目/">python运行Django项目</a>
         </li>
     
     
@@ -719,12 +771,12 @@ windows中：直接执行act...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">Nginx服务器安装</a>
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/git常用指令/">git常用指令</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/git常用指令/">git常用指令</a>
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">Nginx服务器安装</a>
         </li>
     
     
@@ -737,11 +789,11 @@ windows中：直接执行act...
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Django"><span class="iconfont-archer">&#xe606;</span>Django</span>
-    
         <span class="sidebar-tag-name" data-tags="Redis"><span class="iconfont-archer">&#xe606;</span>Redis</span>
     
         <span class="sidebar-tag-name" data-tags="学习"><span class="iconfont-archer">&#xe606;</span>学习</span>
+    
+        <span class="sidebar-tag-name" data-tags="Django"><span class="iconfont-archer">&#xe606;</span>Django</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
