@@ -346,6 +346,41 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/04/Django（四）/">
+            
+                <span>Django（四）</span>
+        </a>
+        <div class="abstract-content">
+            解析模板文件位置
+在settings.py文件中定义TEMPALTES的目录地址
+
+os.path.join(BASE_DIR, ‘templates’)temlates文件创建在项目主目录下
+
+
+12345678910111213141516TEMPLATES = [    &#123;        'BACKEND': 'django.template.backends.django.DjangoTemplates',        # 修改此处地址为相应目录        'DIRS': [os.path.join(BASE_DIR, 'templates')],        ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/04</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Django">Django</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/04/Djang（三）/">
             
                 <span>Djang（三）</span>
@@ -722,45 +757,6 @@ DCL - 数据控制语言 - grant / revoke / commit / rollback
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/22/linux指令/">
-            
-                <span>Linux指令</span>
-        </a>
-        <div class="abstract-content">
-            Linux指令系统(部分)指令格式：
-命令名称 [命名参数] [命令对象]
-
-一、日常操作1.cd指令       - 进入指定文件夹cd  目录     - 进入指定目录(也可以是文件夹对应的路径)~相对路径 — 绝对路径
-cd  ..       - 返回上层目录
-cd  ~    - 回到根目录
-2. ls指令        - 查看当前目录中的内容ls  -l/-lh         -竖排显示
-ls -a               - 隐藏文件也一起显示
-ls -R            - 递归显示所有内容
-ls -S/-t            - 按大小/时间排序
-3....
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
@@ -1025,9 +1021,28 @@ ls -S/-t            - 按大小/时间排序
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 14
+        Total : 15
         </div>
         <!-- search  -->
         
@@ -1040,6 +1055,11 @@ ls -S/-t            - 按大小/时间排序
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/04</span><a class="archive-post-title" href="/2019/01/04/Django（四）/">Django（四）</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1072,12 +1092,12 @@ ls -S/-t            - 按大小/时间排序
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/31</span><a class="archive-post-title" href="/2018/12/31/python运行Django项目/">python运行Django项目</a>
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href="/2018/12/31/Redis数据库基本操作/">Redis数据库基本操作</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/31</span><a class="archive-post-title" href="/2018/12/31/Redis数据库基本操作/">Redis数据库基本操作</a>
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href="/2018/12/31/python运行Django项目/">python运行Django项目</a>
         </li>
     
     
@@ -1107,12 +1127,12 @@ ls -S/-t            - 按大小/时间排序
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">Nginx服务器安装</a>
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/git常用指令/">git常用指令</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/git常用指令/">git常用指令</a>
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">Nginx服务器安装</a>
         </li>
     
     
@@ -1125,11 +1145,11 @@ ls -S/-t            - 按大小/时间排序
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Redis"><span class="iconfont-archer">&#xe606;</span>Redis</span>
+        <span class="sidebar-tag-name" data-tags="Django"><span class="iconfont-archer">&#xe606;</span>Django</span>
     
         <span class="sidebar-tag-name" data-tags="学习"><span class="iconfont-archer">&#xe606;</span>学习</span>
     
-        <span class="sidebar-tag-name" data-tags="Django"><span class="iconfont-archer">&#xe606;</span>Django</span>
+        <span class="sidebar-tag-name" data-tags="Redis"><span class="iconfont-archer">&#xe606;</span>Redis</span>
     
         <span class="sidebar-tag-name" data-tags="参考资料"><span class="iconfont-archer">&#xe606;</span>参考资料</span>
     
