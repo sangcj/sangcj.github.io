@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Perseverance</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name"></a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">Perseverance</a>
 </header>
@@ -220,24 +231,68 @@
 
 
 
+
+height:33vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            [Untitled Post]
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">439</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/01/10</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,57 +393,95 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">
-            
-                <span>Nginx服务器安装</span>
-        </a>
-        <div class="abstract-content">
-            Nginx服务器1.阿里云添加80端口阿里云上默认只有一个22端口用来做远程登录，如果希望在阿里云上安装支持http请求的nginx服务器，需要给阿里云添加80端口
+            <main class="main post-page">
+    <article class="article-entry">
+        <h3 id="serializers"><a href="#serializers" class="headerlink" title="serializers"></a>serializers</h3><p>1.在对应应用的路由文件中进行操作</p>
+<blockquote>
+<p>导包：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from rest_framework.routers import SimpleRouter</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>声明一个路由对象：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">router = SimpleRouter</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在路由中注册一个名为student(自己资源的名字)的资源，不用加斜杠</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">router.register(<span class="string">'student'</span>, views.StuView)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>向路由地址中添加生成的路由地址</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns += router.urls</span><br></pre></td></tr></table></figure>
+<p>2.在对应应用目录下新建一个python文件</p>
+<blockquote>
+<p>导包：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> rest_framework <span class="keyword">import</span> serializers</span><br><span class="line"><span class="comment"># 导入对应模型</span></span><br><span class="line"><span class="keyword">from</span> app.models <span class="keyword">import</span> Student</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>创建类：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StuSerializer</span><span class="params">(serializers.ModelSerializer)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        <span class="comment"># 序列化模型</span></span><br><span class="line">        model = Student</span><br><span class="line">        fields = [<span class="string">'s_name'</span>, <span class="string">'s_gender'</span>, <span class="string">'s_age'</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># instance是要序列化的字段,重构，设置需要的返回内容</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">to_representation</span><span class="params">(self, instance)</span>:</span></span><br><span class="line">        data = super(StuSerializer, self).to_representation(instance)</span><br><span class="line">        <span class="comment"># data = &#123;</span></span><br><span class="line">        <span class="comment">#     "s_name": "小花1", </span></span><br><span class="line">        <span class="comment">#     "s_gender": False,</span></span><br><span class="line">        <span class="comment">#     "s_age": 20 # &#125;  </span></span><br><span class="line">        data[<span class="string">'s_gender'</span>] = <span class="string">'男'</span> <span class="keyword">if</span> data[<span class="string">'s_gender'</span>] <span class="keyword">else</span> <span class="string">'女'</span></span><br><span class="line">        <span class="comment"># 设置后</span></span><br><span class="line">        <span class="comment"># data = &#123; </span></span><br><span class="line">        <span class="comment">#         "s_name": "小花1", </span></span><br><span class="line">        <span class="comment">#         "s_gender": "女", </span></span><br><span class="line">        <span class="comment">#         "s_age": 20 #     &#125;,  </span></span><br><span class="line">        <span class="keyword">return</span> data</span><br></pre></td></tr></table></figure>
+<p>3.在应用文件中创建对应的类<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mixins.RetrieveModelMixin设置通过路由后添加id查询指定学生</span></span><br><span class="line"><span class="comment"># mixins.ListModelMixin查看所有学生</span></span><br><span class="line"><span class="comment"># mixins.DestroyModelMixin设置可依据id删除指定学生权限</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StuView</span><span class="params">(viewsets.GenericViewSet,</span></span></span><br><span class="line"><span class="class"><span class="params">  # 查看所有资源,GET</span></span></span><br><span class="line"><span class="class"><span class="params">  mixins.ListModelMixin,</span></span></span><br><span class="line"><span class="class"><span class="params">  # 查看指定id资源,GET</span></span></span><br><span class="line"><span class="class"><span class="params">  mixins.RetrieveModelMixin,</span></span></span><br><span class="line"><span class="class"><span class="params">  # 删除指定资源，硬删除，DELETE</span></span></span><br><span class="line"><span class="class"><span class="params">  mixins.DestroyModelMixin,</span></span></span><br><span class="line"><span class="class"><span class="params">  # 创建资源，POST</span></span></span><br><span class="line"><span class="class"><span class="params">  mixins.CreateModelMixin,</span></span></span><br><span class="line"><span class="class"><span class="params">  # 修改资源，PUT/PATCH<span class="params">(修改单个)</span></span></span></span><br><span class="line"><span class="class"><span class="params">  mixins.UpdateModelMixin)</span>:</span></span><br><span class="line">  <span class="comment"># 指定资源返回的内容,要和路由设置匹配</span></span><br><span class="line">  <span class="comment"># 过滤掉被删除的学生信息,法1 </span></span><br><span class="line">  <span class="comment"># queryset = Student.objects.filter(is_delete=0)  </span></span><br><span class="line">  queryset = Student.objects.all()</span><br><span class="line">  <span class="comment"># 序列化queryset的结果,建一个py文件，此处名为serializers可自定义</span></span><br><span class="line">  <span class="comment"># pip uninstall djangorestframework 报错卸载重安  serializer_class = StuSerializer</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 查询所有信息时，过滤掉被删除的学生信息，法2，重构</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">get_queryset</span><span class="params">(self)</span>:</span></span><br><span class="line">        queryset = self.queryset</span><br><span class="line">        <span class="keyword">return</span> queryset.filter(is_delete=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">perform_destroy</span><span class="params">(self, instance)</span>:</span></span><br><span class="line">        <span class="comment"># 删除就把is_delete数据改为1,软删，查询时可过滤</span></span><br><span class="line">        instance.is_delete = <span class="number">1</span></span><br><span class="line">        instance.save()</span><br></pre></td></tr></table></figure></p>
 
-2.安装nginx
-a) 添加nginx存储库  
-
-1yum install epel-release
-
-b) 安装nginx
-
-yum install nginx
-
-c) 运行nginxNginx不会自行启动。要运行Nginx  
-
-systemctl start nginx
-
-nginx的运行命令:  
-
-systemctl status nginx 查看nginx的状态  
-systemctl start/stop...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">ZH</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2019/01/10/新建文本文档/">http://yoursite.com/2019/01/10/新建文本文档/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2019/01/10/新建文本文档/">January 10th 2019, 9:34:42 am</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2019/01/10/新建文本文档/">January 11th 2019, 9:58:41 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/03/20/django_rest_framework/" title="Django(五)">
+                    <div class="nextTitle">Django(五)</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/01/04/Django（四）/" title="Django（四）">
+                    <div class="prevTitle">Django（四）</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80MTc4My8xODMyOQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -484,6 +577,24 @@ systemctl start/stop...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:33vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#serializers"><span class="toc-number">1.</span> <span class="toc-text">serializers</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -878,6 +989,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
