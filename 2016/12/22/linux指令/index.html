@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="ZH">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="ZH">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Linux指令 · ZH&#39;s Blog</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/tusun.png">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Perseverance</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Linux指令</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">Perseverance</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:33vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Linux指令
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.6k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2016/12/22</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="Linux指令系统-部分"><a href="#Linux指令系统-部分" class="headerlink" title="Linux指令系统(部分)"></a>Linux指令系统(部分)</h1><h3 id="指令格式："><a href="#指令格式：" class="headerlink" title="指令格式："></a>指令格式：</h3><blockquote>
+<p>命令名称 [命名参数] [命令对象]</p>
+</blockquote>
+<h3 id="一、日常操作"><a href="#一、日常操作" class="headerlink" title="一、日常操作"></a>一、日常操作</h3><h4 id="1-cd指令-进入指定文件夹"><a href="#1-cd指令-进入指定文件夹" class="headerlink" title="1.cd指令       - 进入指定文件夹"></a>1.cd指令       - 进入指定文件夹</h4><p><strong>cd  目录</strong>     - 进入指定目录(也可以是文件夹对应的路径)~相对路径 — 绝对路径</p>
+<p><strong>cd  ..</strong>       - 返回上层目录</p>
+<p><strong>cd  ~</strong>    - 回到根目录</p>
+<h4 id="2-ls指令-查看当前目录中的内容"><a href="#2-ls指令-查看当前目录中的内容" class="headerlink" title="2. ls指令        - 查看当前目录中的内容"></a>2. ls指令        - 查看当前目录中的内容</h4><p><strong>ls  -l/-lh</strong>         -竖排显示</p>
+<p><strong>ls -a</strong>               - 隐藏文件也一起显示</p>
+<p><strong>ls -R</strong>            - 递归显示所有内容</p>
+<p><strong>ls -S/-t</strong>            - 按大小/时间排序</p>
+<h4 id="3-pwd指令-显示当前完整目录"><a href="#3-pwd指令-显示当前完整目录" class="headerlink" title="3.pwd指令         - 显示当前完整目录"></a>3.pwd指令         - 显示当前完整目录</h4><p>pwd</p>
+<h4 id="4-文件操作指令"><a href="#4-文件操作指令" class="headerlink" title="4.文件操作指令"></a>4.文件操作指令</h4><p><strong>touch  文件名</strong>        - 新建文件</p>
+<p><strong>cat 文件名</strong>           - 查看文件内容</p>
+<p><strong>rm    文件名</strong>        - 删除文件</p>
+<p><strong>rm - r 目录</strong>        - 删除文件夹</p>
+<p><strong>cp  文件名1  文件名2</strong>    - 将文件1中的内容拷贝到文件2中</p>
+<p><strong>cp -r  文件名/目录名   目录2</strong>    - 将文件/目录拷贝到目录2中</p>
+<p><strong>mv    文件名1  文件名2</strong>    - 将文件1中的内容移动到文件2中 ,并且删除文件1（文件重命名）</p>
+<p><strong>mv    文件名1  文件目录</strong>- 将文件1移动到指定目录中  </p>
+<p><strong>(注意：cp/mv/rm 后面可以跟： -i询问  -f强制  -n不覆盖)</strong></p>
+<p><strong>mkdir  目录名</strong>        - 新建文件夹</p>
+<p><strong>mkdir -p a/b/c</strong>        - 按层级创建a,b,c三个文件夹</p>
+<p><strong>mkdir -p a/{b,c}/{d,e,f}</strong>    -同一层级常见多个</p>
+<p><strong>rmdir  目录名</strong>        - 删除指定空目录</p>
+<h4 id="5-history-显示历史指令记录"><a href="#5-history-显示历史指令记录" class="headerlink" title="5.history        - 显示历史指令记录"></a>5.history        - 显示历史指令记录</h4><p><strong>bashrc 配置显示时间：</strong>export  HISTTIMEFORMAT=”[%y‐%m‐%d_%T] “ </p>
+<blockquote>
+<p>修改bashrc 后使其生效:  source ~/.bashrc  或 .  .bashrc   </p>
+</blockquote>
+<h4 id="6-链接"><a href="#6-链接" class="headerlink" title="6.链接"></a>6.链接</h4><p><strong>ln -s 源路径  目标路径</strong>        - 给源路径对应的文件在目标路<br>径下创建一个软链接(可以看成是快捷键)(源路径是绝对路径)</p>
+<p><strong>ln 源路径  目标路径</strong>            - 给源路径对应的文件在目标路径下创建一个硬链接</p>
+<h4 id="7-快捷键"><a href="#7-快捷键" class="headerlink" title="7.快捷键"></a>7.快捷键</h4><p><strong>ctr + f</strong>         - 前进一个字符</p>
+<p><strong>ctr + b</strong>        - 后退一个字符</p>
+<p><strong>ctr + a</strong>        - 回到行首</p>
+<p><strong>ctr + e</strong>         - 回到行尾</p>
+<p><strong>ctr + w</strong>        - 向左删除一个单词</p>
+<p><strong>ctr + u</strong>        - 向左删除全部</p>
+<p><strong>ctr + k</strong>        - 向右删除全部</p>
+<p><strong>ctr + y</strong>        - 粘贴上次删除的内容</p>
+<p><strong>ctr + l</strong>        - 清屏  </p>
+<h3 id="二、进程相关指令"><a href="#二、进程相关指令" class="headerlink" title="二、进程相关指令"></a>二、进程相关指令</h3><h4 id="1-ps指令"><a href="#1-ps指令" class="headerlink" title="1.ps指令"></a>1.ps指令</h4><p><strong>ps</strong>                        - 进程状态</p>
+<p><strong>ps -aux  或者  ps ex</strong>            - 查看进程</p>
+<p><strong>ps -aux|grep 进程名</strong>        - 查看指定进程</p>
+<p><strong>psgrep  进程名</strong></p>
+<h4 id="2-top指令"><a href="#2-top指令" class="headerlink" title="2.top指令"></a>2.top指令</h4><p><strong>top</strong>                        - 动态监控进程</p>
+<p><strong>top  -p PID1,PID2,….</strong>        - 动态监控指定进程</p>
+<h4 id="3-free指令"><a href="#3-free指令" class="headerlink" title="3.free指令"></a>3.free指令</h4><p><strong>free -单位</strong>                    - 以指定单位查看内存</p>
+<h4 id="4-kill指令"><a href="#4-kill指令" class="headerlink" title="4.kill指令"></a>4.kill指令</h4><p><strong>kill 进程号</strong>                    - 杀死指定的进程</p>
+<p><strong>kill -1/-9/-15</strong>                - -1(HUP)不间断重<br>启，-9(KILL)强制杀死进程,-15(TERM)正常终止进程  </p>
+<p><strong>pkill  进程名</strong>                - 按名字处理进程</p>
+<p><strong>killall 进程名</strong>                - 处理名字匹配的进程</p>
+<p><strong>uptime</strong>                    - 查看系统状态</p>
+<h3 id="三、权限管理"><a href="#三、权限管理" class="headerlink" title="三、权限管理"></a>三、权限管理</h3><h4 id="1-user和group-一个系统可以有多个用户和多个分组；-一个分组中可以有多个用户，一个用户在不同的分组中-多对多"><a href="#1-user和group-一个系统可以有多个用户和多个分组；-一个分组中可以有多个用户，一个用户在不同的分组中-多对多" class="headerlink" title="1.user和group : 一个系统可以有多个用户和多个分组； 一个分组中可以有多个用户，一个用户在不同的分组中(多对多)"></a>1.user和group : 一个系统可以有多个用户和多个分组； 一个分组中可以有多个用户，一个用户在不同的分组中(多对多)</h4><p><strong>users</strong>                                     - 查看当前用户</p>
+<p><strong>groups</strong>                                 - 查看当前分组</p>
+<p><strong>groupadd  分组名</strong>                            - 添加分组</p>
+<p><strong>useradd ‐G 分组列表 ‐m ‐s /bin/bash 用户名</strong>        - 创建一个用户添加到指定的分组中(在home创建相应的文件夹)</p>
+<p><strong>usermod -G 分组列表 用户名</strong>                    - 修改分组</p>
+<p><strong>passwd 用户名</strong>                            - 修改密码</p>
+<p><strong>su - 用户名</strong>                                - 切换用户身份</p>
+<p><strong>sudo</strong>                                        - 以管理员执行其他程序</p>
+<p><strong>注意：</strong></p>
+<p><strong>a.在ubuntu需要将用户添加到sudo分组中，才能使用sudo以管理员的身份执行程序</strong><br><strong>b.在centOS中需要先执行visudo指令进入sudoers文件中在指定的位置添加内容</strong></p>
+<pre><code>## Allow root to run any commands anywhere
+root    ALL=(ALL)       ALL
+xiaoming ALL=(ALL)      ALL(自己添加的，xiaoming是用户名)
+</code></pre><h4 id="2-chmod"><a href="#2-chmod" class="headerlink" title="2.chmod"></a>2.chmod</h4><p><strong>chmod       权限值   文件</strong>            - 修改指定文件的权限</p>
+<p><strong>chmod    [a,u,g,o][+,-][r,w,x]  文件</strong>            - 为指定文件，给所有用户添加相应的权限</p>
+<p><strong>(a:所有，u:自己，g:同组，o:其他；+：添加， -: 取消<br>r:读，w:写，x:执行)</strong></p>
+<p><strong>chown  用户名     文件</strong>            - 改变文件所有者</p>
+<p><strong>(权限制是三组二进制值)</strong></p>
+<pre><code>self      group    other
+rwx      rwx        rwx
+111       101        001 - 自己读写可执行，同一分组的只读可执行，其他的只可执行
+110      100        000
+</code></pre><h3 id="三、日志管理"><a href="#三、日志管理" class="headerlink" title="三、日志管理"></a>三、日志管理</h3><h4 id="1-cat指令"><a href="#1-cat指令" class="headerlink" title="1.cat指令"></a>1.cat指令</h4><p><strong>cat       文件</strong>                - 查看文件内容</p>
+<h4 id="2-查看部分"><a href="#2-查看部分" class="headerlink" title="2.查看部分"></a>2.查看部分</h4><p><strong>head -n  N  文件</strong>        - 查看前N行内容</p>
+<p><strong>tail  -n  N    文件</strong>         - 查看后N行内容</p>
+<h4 id="3-less-N-文件"><a href="#3-less-N-文件" class="headerlink" title="3.less [-N]  文件"></a>3.less [-N]  文件</h4><pre><code>- 按 j 向下
+- 按 k 向上
+- 按 f 向下翻屏
+- 按    b 向上翻屏
+- 按 g 到全文开头
+- 按 G 到全文结尾
+- 按 Q 退出  
+</code></pre><p><strong>more [-N]  文件</strong>            - 和less差不多，这个是尽可能多，less是尽可能少的加载</p>
+<h4 id="4-处理"><a href="#4-处理" class="headerlink" title="4.处理"></a>4.处理</h4><p><strong>sort</strong>                  - 排序  (cat 文件 |sort)</p>
+<p><strong>uniq</strong>                - 去重  (cat 文件 |uniq) - 只会去重相邻的重复数据，一般结合sort一起使用:  <strong>|sort|uniq</strong></p>
+<p><strong>awk ‘{print $N}’</strong>    - 打印第N列的内容<strong>(netstat -natp|awk ‘{print $4}’)</strong></p>
+<p><strong>history |awk ‘{print $4}’ |sort |uniq ‐c | sort ‐rnk 1 | head ‐n 3</strong>           -获取历史指令中，使用最频繁的三个指令</p>
+<h4 id="5-统计"><a href="#5-统计" class="headerlink" title="5.统计"></a>5.统计</h4><p><strong>wc -c(字符)/-w(单词)/-l(行)  文件</strong></p>
+<h4 id="6-查找"><a href="#6-查找" class="headerlink" title="6.查找"></a>6.查找</h4><p><strong>grep  查看对象    目录/文件  参数</strong></p>
+<pre><code>参数：
+    -i    忽略大小写
+    -n   显示行标号
+    -E   通过正则表达式匹配
+    -v   忽略字段
+    -rn  递归查找目录，并打印行号
+    —include=‘*.py’    仅包含 py文件
+    —exclude=‘*.js’    不包含 js 文件
+
+例如：
+    grep you bb.txt  
+    grep you bb.txt -i
+    grep you bb.txt -i -n
+    grep -E &apos;[0-9]+&apos; bb.txt 
+</code></pre><p><strong>find       DIR    -name  ‘*.xxx’</strong>        找到目录下所有名字匹配的文件</p>
+<pre><code>找出文件夹
+例：find /tmp/xyz/ ‐perm 0642 ‐size +10k ‐size ‐100k ‐name &apos;*.log&apos;
+</code></pre><p><strong>which  指令</strong>        - 精确查找当前可执行的指令</p>
+<p><strong>whereis  指令</strong>    - 查找所有匹配的命令</p>
+<p><strong>ps -aux|awk ‘{print \$2,\$3,\$4,$11}’ &gt; 存储数据.txt</strong>    很好用！执行查看进程操作获取数据的指令后把结果保存在后面的存储数据文件中！（覆盖原文件内容）</p>
+<p><strong>ps -aux|awk ‘{print \$2,\$3,\$4,$11}’ &gt;&gt; 存储数据.txt </strong> 在原文件后追加新获得的数据。</p>
+<p><strong>wget url</strong> ：下载</p>
+<h3 id="四、网络管理"><a href="#四、网络管理" class="headerlink" title="四、网络管理"></a>四、网络管理</h3><p><strong>ifconfig</strong>     查看网卡状态</p>
+<p><strong>netstat   -natp</strong>                    - 查看网络连接状态</p>
+<p><strong>netstat   -natp|grep  端口号</strong>            - 查看指定端口的网络连接状态    </p>
+<pre><code>ping  地址 
+ping  -i   时间    地址
+ping  -c  次数    地址
+</code></pre><p><strong>telnet  ip地址    端口</strong>         - 查看远程主机网络连接状况</p>
+<p><strong>dig 地址</strong>            - 查看DNS</p>
+<p><strong>wget  地址</strong>            - 下载</p>
+<p><strong>包管理工具 ：yum </strong></p>
+<p><strong>yum install 包名</strong>         安装对应的包名，前提是包已存在</p>
+<p><strong>yum search 包名</strong>        搜索对应的包名</p>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">ZH</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2016/12/22/linux指令/">http://yoursite.com/2016/12/22/linux指令/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2016/12/22/linux指令/">December 22nd 2016, 5:55:00 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2016/12/22/linux指令/">April 23rd 2019, 6:40:15 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2016/12/25/HTML标签/" title="HTML标签">
+                    <div class="nextTitle">HTML标签</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2016/12/22/markdwon常用操作/" title="markdwon常用操作">
+                    <div class="prevTitle">markdwon常用操作</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80MTc4My8xODMyOQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:1607470930@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/sangcj/sangcj.github.io" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/weixin.png">
+                </span>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer qq" title="qq">
+                  
+                  <img class="profile-qr" src="/assets/qq.png">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//www.zhihu.com" class="iconfont-archer zhihu" target="_blank" title="zhihu"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:33vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux指令系统-部分"><span class="toc-number">1.</span> <span class="toc-text">Linux指令系统(部分)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#指令格式："><span class="toc-number">1.0.1.</span> <span class="toc-text">指令格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一、日常操作"><span class="toc-number">1.0.2.</span> <span class="toc-text">一、日常操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-cd指令-进入指定文件夹"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">1.cd指令       - 进入指定文件夹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-ls指令-查看当前目录中的内容"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">2. ls指令        - 查看当前目录中的内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-pwd指令-显示当前完整目录"><span class="toc-number">1.0.2.3.</span> <span class="toc-text">3.pwd指令         - 显示当前完整目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-文件操作指令"><span class="toc-number">1.0.2.4.</span> <span class="toc-text">4.文件操作指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-history-显示历史指令记录"><span class="toc-number">1.0.2.5.</span> <span class="toc-text">5.history        - 显示历史指令记录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-链接"><span class="toc-number">1.0.2.6.</span> <span class="toc-text">6.链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-快捷键"><span class="toc-number">1.0.2.7.</span> <span class="toc-text">7.快捷键</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、进程相关指令"><span class="toc-number">1.0.3.</span> <span class="toc-text">二、进程相关指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-ps指令"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">1.ps指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-top指令"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">2.top指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-free指令"><span class="toc-number">1.0.3.3.</span> <span class="toc-text">3.free指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-kill指令"><span class="toc-number">1.0.3.4.</span> <span class="toc-text">4.kill指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、权限管理"><span class="toc-number">1.0.4.</span> <span class="toc-text">三、权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-user和group-一个系统可以有多个用户和多个分组；-一个分组中可以有多个用户，一个用户在不同的分组中-多对多"><span class="toc-number">1.0.4.1.</span> <span class="toc-text">1.user和group : 一个系统可以有多个用户和多个分组； 一个分组中可以有多个用户，一个用户在不同的分组中(多对多)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-chmod"><span class="toc-number">1.0.4.2.</span> <span class="toc-text">2.chmod</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、日志管理"><span class="toc-number">1.0.5.</span> <span class="toc-text">三、日志管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-cat指令"><span class="toc-number">1.0.5.1.</span> <span class="toc-text">1.cat指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-查看部分"><span class="toc-number">1.0.5.2.</span> <span class="toc-text">2.查看部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-less-N-文件"><span class="toc-number">1.0.5.3.</span> <span class="toc-text">3.less [-N]  文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-处理"><span class="toc-number">1.0.5.4.</span> <span class="toc-text">4.处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-统计"><span class="toc-number">1.0.5.5.</span> <span class="toc-text">5.统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-查找"><span class="toc-number">1.0.5.6.</span> <span class="toc-text">6.查找</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、网络管理"><span class="toc-number">1.0.6.</span> <span class="toc-text">四、网络管理</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 17
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">Nginx服务器安装</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/git常用指令/">git常用指令</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/vim编辑器之神/">vim编辑器之神</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/21</span><a class="archive-post-title" href="/2017/03/21/serializers配置/">serializers配置</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/20</span><a class="archive-post-title" href="/2017/03/20/Django（五）/">Django(五)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/04</span><a class="archive-post-title" href="/2017/01/04/Django（四）/">Django（四）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/04</span><a class="archive-post-title" href="/2017/01/04/Djang（三）/">Djang（三）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span><a class="archive-post-title" href="/2017/01/03/Django（二）/">Django（二）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/02</span><a class="archive-post-title" href="/2017/01/02/web前端-Linux-Vim/">web前端+Linux+Vim</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/02</span><a class="archive-post-title" href="/2017/01/02/Django（一）/">Django(一)</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2016 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href="/2016/12/31/Redis数据库基本操作/">Redis数据库基本操作</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href="/2016/12/31/python运行Django项目/">python运行Django项目</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/27</span><a class="archive-post-title" href="/2016/12/27/参考资料网站/">参考资料及一些好用的网站</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href="/2016/12/25/数据库/">数据库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href="/2016/12/25/HTML标签/">HTML标签</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2016/12/22/linux指令/">Linux指令</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2016/12/22/markdwon常用操作/">markdwon常用操作</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="Django"><span class="iconfont-archer">&#xe606;</span>Django</span>
+    
+        <span class="sidebar-tag-name" data-tags="学习"><span class="iconfont-archer">&#xe606;</span>学习</span>
+    
+        <span class="sidebar-tag-name" data-tags="Redis"><span class="iconfont-archer">&#xe606;</span>Redis</span>
+    
+        <span class="sidebar-tag-name" data-tags="参考资料"><span class="iconfont-archer">&#xe606;</span>参考资料</span>
+    
+        <span class="sidebar-tag-name" data-tags="好用的网站"><span class="iconfont-archer">&#xe606;</span>好用的网站</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="H5"><span class="iconfont-archer">&#xe60a;</span>H5</span>
+    
+        <span class="sidebar-category-name" data-categories="参考资料"><span class="iconfont-archer">&#xe60a;</span>参考资料</span>
+    
+        <span class="sidebar-category-name" data-categories="服务器"><span class="iconfont-archer">&#xe60a;</span>服务器</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "ZH"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+

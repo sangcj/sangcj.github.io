@@ -346,191 +346,30 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/01/02/web前端-Linux-Vim/">
+        <a class="abstract-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">
             
-                <span>web前端+Linux+Vim</span>
+                <span>Nginx服务器安装</span>
         </a>
         <div class="abstract-content">
-            Web前端HTML标签 - 承载内容 - contentCSS - 渲染页面 - display 
+            Nginx服务器1.阿里云添加80端口阿里云上默认只有一个22端口用来做远程登录，如果希望在阿里云上安装支持http请求的nginx服务器，需要给阿里云添加80端口
 
-选择器
-通配符选择器：*
-标签选择器：标签名
-类选择器：.+类名；如：.class
-ID选择器：#+id；id不能是数字
-属性选择器
-后代选择器 / 父子选择器
-兄弟选择器 / 相邻兄弟选择器
-伪类 / 伪元素
+2.安装nginx
+a) 添加nginx存储库  
 
+1yum install epel-release
 
-就近原则/具体性原则/重要性原则
-盒子模型（内容-padding-border-背景图-背景色-margin）
-常用样式属性和常用属性值
+b) 安装nginx
 
-JavaScript - 交互行为 - behavior
+yum install nginx
 
-语法规范 - ECMAScript
-BOM - 浏览器对象模型 - wind...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/25/数据库/">
-            
-                <span>数据库</span>
-        </a>
-        <div class="abstract-content">
-            数据库安装数据库 - 实现项目中数据持久化
+c) 运行nginxNginx不会自行启动。要运行Nginx  
 
-数据库类别：
+systemctl start nginx
 
+nginx的运行命令:  
 
-关系型数据库 - MySQL
-
-
-NoSQL数据库 - Redis
-
-关系型数据库 - MySQL
-特点：
-1.理论基础：集合论和关系代数
-2.用二维表组织数据(一行就是一条记录，一列就是一个字段)
-3.SQL - 结构化查询语言DDL - 数据定义语言 - create / drop / alter
-DML - 数据操作语言 - insert / delete / update / select
-DCL - 数据控制语言 - grant / revoke / commit / rollback
-关系型数据库可以保证数据的完...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/25/HTML标签/">
-            
-                <span>HTML标签</span>
-        </a>
-        <div class="abstract-content">
-            HTML标签1.文本标签标题标签：级别递减&lt;h1&gt;我是标题1&lt;/h1&gt;
-&lt;h2&gt;我是标题2&lt;/h2&gt;
-&lt;h3&gt;我是标题3&lt;/h3&gt;
-&lt;h4&gt;我是标题4&lt;/h4&gt;
-&lt;h5&gt;我是标题5&lt;/h5&gt;
-&lt;h6&gt;我是标题6&lt;/h6&gt;
-段落标签&lt;p&gt;&lt;/p&gt;
-文本符号和强制换行符空格：
-&amp;nbsp;空一个像素
-&amp;emsp;一个空格键
-换行标签
-&lt;br&gt;
-文字效果标签文字加粗
-&lt;b&gt;单纯加粗&lt;...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/22/linux指令/">
-            
-                <span>Linux指令</span>
-        </a>
-        <div class="abstract-content">
-            Linux指令系统(部分)指令格式：
-命令名称 [命名参数] [命令对象]
-
-一、日常操作1.cd指令       - 进入指定文件夹cd  目录     - 进入指定目录(也可以是文件夹对应的路径)~相对路径 — 绝对路径
-cd  ..       - 返回上层目录
-cd  ~    - 回到根目录
-2. ls指令        - 查看当前目录中的内容ls  -l/-lh         -竖排显示
-ls -a               - 隐藏文件也一起显示
-ls -R            - 递归显示所有内容
-ls -S/-t            - 按大小/时间排序
-3....
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/12/22/markdwon常用操作/">
-            
-                <span>markdwon常用操作</span>
-        </a>
-        <div class="abstract-content">
-            1.标题可以在行首通过改变添加#号的数目来控制标题的级别，从1~6级标题，如#H1、##H2、###H3等。可使用—作分割线，前后应空行，否则会出错，例：-–
-2.斜体和粗体使用 * 和 ** 来表示 斜体 和 粗体 字。例如：（标识符前后需加上空格，否则会按整句读取）这是 *斜体* 这是 **粗体**这是 斜体 这是 粗体
-3.添加外部链接使用 [描述](链接地址) 为文字添加外部链接，示例： [詹洪简书](https://www.jianshu.com/u/5bb8c539a12d)这是去往 詹洪简书 的链接
-4.无序列表使用 * + - 来表示无序列表，示例：- 无序列表1- 无序...
+systemctl status nginx 查看nginx的状态  
+systemctl start/stop...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -583,30 +422,16 @@ ls -S/-t            - 按大小/时间排序
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/22/Linux文档整理/Nginx服务器安装/">
+        <a class="abstract-title" href="/2018/12/22/Linux文档整理/vim编辑器之神/">
             
-                <span>Nginx服务器安装</span>
+                <span>vim编辑器之神</span>
         </a>
         <div class="abstract-content">
-            Nginx服务器1.阿里云添加80端口阿里云上默认只有一个22端口用来做远程登录，如果希望在阿里云上安装支持http请求的nginx服务器，需要给阿里云添加80端口
-
-2.安装nginx
-a) 添加nginx存储库  
-
-1yum install epel-release
-
-b) 安装nginx
-
-yum install nginx
-
-c) 运行nginxNginx不会自行启动。要运行Nginx  
-
-systemctl start nginx
-
-nginx的运行命令:  
-
-systemctl status nginx 查看nginx的状态  
-systemctl start/stop...
+            vim编辑器之神配置vimrc配置在shell中可以通过 vim ~/.vimrc 或者 vim /etc/vimrc 打开vimrc文件对vim进行配置。在这个文件中可以进行很多和vim相关的配置，常用的如下（如果对其他配置感兴趣的可以自己百度）：
+ 
+常用操作1.模式切换我们可以将vim分为命令模式、编辑模式和末行模式三种命令模式：进入vim的时候vim是处于命令模式状态下的，这个时候输入内容不会出现在编辑区  (最末什么都没有)
+末行模式：在命令模式下输入冒号，让vim进入末行模式。在末行模式的冒号后面可以输入相关的一些指令进行相关操作  (最后有一个冒号)
+编辑模式：在命令模式下...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -630,21 +455,196 @@ systemctl start/stop...
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2018/12/22/Linux文档整理/vim编辑器之神/">
+        <a class="abstract-title" href="/2017/01/02/web前端-Linux-Vim/">
             
-                <span>vim编辑器之神</span>
+                <span>web前端+Linux+Vim</span>
         </a>
         <div class="abstract-content">
-            vim编辑器之神配置vimrc配置在shell中可以通过 vim ~/.vimrc 或者 vim /etc/vimrc 打开vimrc文件对vim进行配置。在这个文件中可以进行很多和vim相关的配置，常用的如下（如果对其他配置感兴趣的可以自己百度）：
- 
-常用操作1.模式切换我们可以将vim分为命令模式、编辑模式和末行模式三种命令模式：进入vim的时候vim是处于命令模式状态下的，这个时候输入内容不会出现在编辑区  (最末什么都没有)
-末行模式：在命令模式下输入冒号，让vim进入末行模式。在末行模式的冒号后面可以输入相关的一些指令进行相关操作  (最后有一个冒号)
-编辑模式：在命令模式下...
+            Web前端HTML标签 - 承载内容 - contentCSS - 渲染页面 - display 
+
+选择器
+通配符选择器：*
+标签选择器：标签名
+类选择器：.+类名；如：.class
+ID选择器：#+id；id不能是数字
+属性选择器
+后代选择器 / 父子选择器
+兄弟选择器 / 相邻兄弟选择器
+伪类 / 伪元素
+
+
+就近原则/具体性原则/重要性原则
+盒子模型（内容-padding-border-背景图-背景色-margin）
+常用样式属性和常用属性值
+
+JavaScript - 交互行为 - behavior
+
+语法规范 - ECMAScript
+BOM - 浏览器对象模型 - wind...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/22</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/01/02</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2016/12/25/数据库/">
+            
+                <span>数据库</span>
+        </a>
+        <div class="abstract-content">
+            数据库安装数据库 - 实现项目中数据持久化
+
+数据库类别：
+
+
+关系型数据库 - MySQL
+
+
+NoSQL数据库 - Redis
+
+关系型数据库 - MySQL
+特点：
+1.理论基础：集合论和关系代数
+2.用二维表组织数据(一行就是一条记录，一列就是一个字段)
+3.SQL - 结构化查询语言DDL - 数据定义语言 - create / drop / alter
+DML - 数据操作语言 - insert / delete / update / select
+DCL - 数据控制语言 - grant / revoke / commit / rollback
+关系型数据库可以保证数据的完...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/12/25</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2016/12/25/HTML标签/">
+            
+                <span>HTML标签</span>
+        </a>
+        <div class="abstract-content">
+            HTML标签1.文本标签标题标签：级别递减&lt;h1&gt;我是标题1&lt;/h1&gt;
+&lt;h2&gt;我是标题2&lt;/h2&gt;
+&lt;h3&gt;我是标题3&lt;/h3&gt;
+&lt;h4&gt;我是标题4&lt;/h4&gt;
+&lt;h5&gt;我是标题5&lt;/h5&gt;
+&lt;h6&gt;我是标题6&lt;/h6&gt;
+段落标签&lt;p&gt;&lt;/p&gt;
+文本符号和强制换行符空格：
+&amp;nbsp;空一个像素
+&amp;emsp;一个空格键
+换行标签
+&lt;br&gt;
+文字效果标签文字加粗
+&lt;b&gt;单纯加粗&lt;...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/12/25</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2016/12/22/linux指令/">
+            
+                <span>Linux指令</span>
+        </a>
+        <div class="abstract-content">
+            Linux指令系统(部分)指令格式：
+命令名称 [命名参数] [命令对象]
+
+一、日常操作1.cd指令       - 进入指定文件夹cd  目录     - 进入指定目录(也可以是文件夹对应的路径)~相对路径 — 绝对路径
+cd  ..       - 返回上层目录
+cd  ~    - 回到根目录
+2. ls指令        - 查看当前目录中的内容ls  -l/-lh         -竖排显示
+ls -a               - 隐藏文件也一起显示
+ls -R            - 递归显示所有内容
+ls -S/-t            - 按大小/时间排序
+3....
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/12/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="学习">学习</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2016/12/22/markdwon常用操作/">
+            
+                <span>markdwon常用操作</span>
+        </a>
+        <div class="abstract-content">
+            1.标题可以在行首通过改变添加#号的数目来控制标题的级别，从1~6级标题，如#H1、##H2、###H3等。可使用—作分割线，前后应空行，否则会出错，例：-–
+2.斜体和粗体使用 * 和 ** 来表示 斜体 和 粗体 字。例如：（标识符前后需加上空格，否则会按整句读取）这是 *斜体* 这是 **粗体**这是 斜体 这是 粗体
+3.添加外部链接使用 [描述](链接地址) 为文字添加外部链接，示例： [詹洪简书](https://www.jianshu.com/u/5bb8c539a12d)这是去往 詹洪简书 的链接
+4.无序列表使用 * + - 来表示无序列表，示例：- 无序列表1- 无序...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/12/22</span>
             </div>
             <!-- tags  -->
             
@@ -968,10 +968,6 @@ systemctl start/stop...
     
     
     
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 17
@@ -985,87 +981,8 @@ systemctl start/stop...
     
     
     
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/21</span><a class="archive-post-title" href="/2019/03/21/serializers配置/">serializers配置</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/20</span><a class="archive-post-title" href="/2019/03/20/Django（五）/">Django(五)</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/04</span><a class="archive-post-title" href="/2019/01/04/Django（四）/">Django（四）</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/04</span><a class="archive-post-title" href="/2019/01/04/Djang（三）/">Djang（三）</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/03</span><a class="archive-post-title" href="/2019/01/03/Django（二）/">Django（二）</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/02</span><a class="archive-post-title" href="/2019/01/02/web前端-Linux-Vim/">web前端+Linux+Vim</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/02</span><a class="archive-post-title" href="/2019/01/02/Django（一）/">Django(一)</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/31</span><a class="archive-post-title" href="/2018/12/31/Redis数据库基本操作/">Redis数据库基本操作</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/31</span><a class="archive-post-title" href="/2018/12/31/python运行Django项目/">python运行Django项目</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/27</span><a class="archive-post-title" href="/2018/12/27/参考资料网站/">参考资料及一些好用的网站</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href="/2018/12/25/数据库/">数据库</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href="/2018/12/25/HTML标签/">HTML标签</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/linux指令/">Linux指令</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/vim编辑器之神/">vim编辑器之神</a>
-        </li>
     
     
         <li class="archive-post-item">
@@ -1079,7 +996,95 @@ systemctl start/stop...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/markdwon常用操作/">markdwon常用操作</a>
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2018/12/22/Linux文档整理/vim编辑器之神/">vim编辑器之神</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/21</span><a class="archive-post-title" href="/2017/03/21/serializers配置/">serializers配置</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/20</span><a class="archive-post-title" href="/2017/03/20/Django（五）/">Django(五)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/04</span><a class="archive-post-title" href="/2017/01/04/Django（四）/">Django（四）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/04</span><a class="archive-post-title" href="/2017/01/04/Djang（三）/">Djang（三）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span><a class="archive-post-title" href="/2017/01/03/Django（二）/">Django（二）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/02</span><a class="archive-post-title" href="/2017/01/02/web前端-Linux-Vim/">web前端+Linux+Vim</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/02</span><a class="archive-post-title" href="/2017/01/02/Django（一）/">Django(一)</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2016 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href="/2016/12/31/Redis数据库基本操作/">Redis数据库基本操作</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href="/2016/12/31/python运行Django项目/">python运行Django项目</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/27</span><a class="archive-post-title" href="/2016/12/27/参考资料网站/">参考资料及一些好用的网站</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href="/2016/12/25/数据库/">数据库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href="/2016/12/25/HTML标签/">HTML标签</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2016/12/22/linux指令/">Linux指令</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href="/2016/12/22/markdwon常用操作/">markdwon常用操作</a>
         </li>
     
     </ul></div>
@@ -1089,9 +1094,9 @@ systemctl start/stop...
     
         <span class="sidebar-tag-name" data-tags="Django"><span class="iconfont-archer">&#xe606;</span>Django</span>
     
-        <span class="sidebar-tag-name" data-tags="Redis"><span class="iconfont-archer">&#xe606;</span>Redis</span>
-    
         <span class="sidebar-tag-name" data-tags="学习"><span class="iconfont-archer">&#xe606;</span>学习</span>
+    
+        <span class="sidebar-tag-name" data-tags="Redis"><span class="iconfont-archer">&#xe606;</span>Redis</span>
     
         <span class="sidebar-tag-name" data-tags="参考资料"><span class="iconfont-archer">&#xe606;</span>参考资料</span>
     
